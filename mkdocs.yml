@@ -1,6 +1,7 @@
 site_name: BTS SIO SLAM E6 - Révision
 site_description: Programme de révision pour l'épreuve E6 du BTS SIO SLAM
 site_author: Votre Nom
+site_url: https://ggaillard.github.io/BTS_SIO_EDC_SLAM_revisions/
 repo_name: ggaillard/BTS_SIO_EDC_SLAM_revisions
 theme:
   name: material
