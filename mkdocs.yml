@@ -1,7 +1,7 @@
 site_name: BTS SIO SLAM E6 - Révision
 site_description: Programme de révision pour l'épreuve E6 du BTS SIO SLAM
 site_author: Votre Nom
-
+repo_name: ggaillard/BTS_SIO_EDC_SLAM_revisions
 theme:
   name: material
   language: fr
@@ -10,18 +10,46 @@ theme:
     - navigation.sections
     - toc.integrate
     - content.code.copy
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - content.tabs.link
+
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Passer au mode sombre
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Passer au mode clair
+
 
 plugins:
   - search
   - quizdown
+  - mermaid2
 
 markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - attr_list
   - pymdownx.highlight
   - pymdownx.superfences
   - admonition
   - pymdownx.details
   - pymdownx.tasklist:
-      custom_checkbox: true
+      custom_checkbox: true- 
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  
 
 nav:
   - Accueil: index.md
