@@ -15,7 +15,9 @@ theme:
     - navigation.top
     - navigation.tracking
     - content.tabs.link
-
+    - navigation.footer
+    - navigation.indexes
+    
   palette:
     - scheme: default
       primary: indigo
@@ -29,6 +31,11 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Passer au mode clair
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ggaillard/BTS_SIO_EDC_SLAM_revisions
 
 plugins:
   - search
@@ -57,4 +64,22 @@ nav:
     - Contenu du module: Module1_AnalyseRisques/02_Contenu.md
     - Auto-évaluation: Module1_AnalyseRisques/03_AutoEvaluationQCM.md
   - Module 2 - RGPD:
-    - QCM de positionnement: Module2_RGPD/01_PositionnementQCM
+    - QCM de positionnement: Module2_RGPD/01_PositionnementQCM.md
+    - Contenu du module: Module2_RGPD/02_Contenu.md
+    - Auto-évaluation: Module2_RGPD/03_AutoEvaluationQCM.md
+  - Module 3 - Authentification:
+    - QCM de positionnement: Module3_Authentification/01_PositionnementQCM.md
+    - Contenu du module: Module3_Authentification/02_Contenu.md
+    - Auto-évaluation: Module3_Authentification/03_AutoEvaluationQCM.md
+  - Module 4 - Sécurisation du code:
+    - QCM de positionnement: Module4_SécurisationCode/01_PositionnementQCM.md
+    - Contenu du module: Module4_SécurisationCode/02_Contenu.md
+    - Auto-évaluation: Module4_SécurisationCode/03_AutoEvaluationQCM.md
+  - Module 5 - Sécurité réseau:
+    - QCM de positionnement: Module5_SécuritéRéseau/01_PositionnementQCM.md
+    - Contenu du module: Module5_SécuritéRéseau/02_Contenu.md
+    - Auto-évaluation: Module5_SécuritéRéseau/03_AutoEvaluationQCM.md
+  - Module 6 - Gestion des incidents:
+    - QCM de positionnement: Module6_GestionIncidents/01_PositionnementQCM.md
+    - Contenu du module: Module6_GestionIncidents/02_Contenu.md
+    - Auto-évaluation: Module6_GestionIncidents/03_AutoEvaluationQCM.md
