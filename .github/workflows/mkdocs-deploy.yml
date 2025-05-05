@@ -19,4 +19,4 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Deploy MkDocs
-        run: mkdocs gh-deploy --force
+        run: mkdocs gh-deploy --force || echo "No changes to deploy"
