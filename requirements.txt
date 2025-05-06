@@ -1,5 +1,0 @@
-mkdocs>=1.4.2
-mkdocs-material>=9.0.6
-mkdocs-quizdown-plugin>=1.1.0
-mkdocs-quizdown>=1.0.0
-mkdocs-include-markdown-plugin>=0.10.3
