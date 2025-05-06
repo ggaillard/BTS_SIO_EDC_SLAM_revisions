@@ -15,9 +15,7 @@ theme:
     - navigation.top
     - navigation.tracking
     - content.tabs.link
-    - navigation.footer
-    - navigation.indexes
-    
+
   palette:
     - scheme: default
       primary: indigo
@@ -31,11 +29,6 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Passer au mode clair
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/ggaillard/BTS_SIO_EDC_SLAM_revisions
 
 plugins:
   - search
