@@ -12,6 +12,8 @@
         <meta name="author" content="Votre Nom">
       
       
+        <link rel="canonical" href="https://ggaillard.github.io/BTS_SIO_EDC_SLAM_revisions/Module4_S%C3%A9curisationCode/03_AutoEvaluationQCM/">
+      
       
         <link rel="prev" href="../02_Contenu/">
       
@@ -29,6 +31,9 @@
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -57,7 +62,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -106,6 +118,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -1172,142 +1210,150 @@
 <h1 id="qcm-dauto-evaluation-securisation-du-code-et-prevention-des-vulnerabilites">QCM d'auto-évaluation - Sécurisation du code et prévention des vulnérabilités</h1>
 <p>Ce QCM vous permet de vérifier votre compréhension des notions abordées dans ce module. Répondez aux questions pour évaluer votre progression.</p>
 <p>!!! quizdown id="qa1"</p>
-<div class="highlight"><pre><span></span><code>### Quel code PHP est vulnérable à une injection SQL ?
+<div class="codehilite"><pre><span></span><code><span class="c1">### Quel code PHP est vulnérable à une injection SQL ?</span>
 
-- [x] `$query = &quot;SELECT * FROM users WHERE username = &#39;&quot; . $_POST[&#39;username&#39;] . &quot;&#39;&quot;;`
-- [ ] `$stmt = $pdo-&gt;prepare(&quot;SELECT * FROM users WHERE username = ?&quot;); $stmt-&gt;execute([$_POST[&#39;username&#39;]]);`
-- [ ] `$username = filter_input(INPUT_POST, &#39;username&#39;, FILTER_SANITIZE_STRING); $query = &quot;SELECT * FROM users WHERE username = &#39;$username&#39;&quot;;`
-- [ ] `$query = &quot;SELECT * FROM users WHERE username = &quot; . $pdo-&gt;quote($_POST[&#39;username&#39;]);`
+<span class="o">-</span><span class="w"> </span><span class="err">[</span><span class="n">x</span><span class="err">]</span><span class="w"> </span><span class="n n-Quoted">`$query = &quot;SELECT * FROM users WHERE username = &#39;&quot; . $_POST[&#39;username&#39;] . &quot;&#39;&quot;;`</span>
+<span class="o">-</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="n n-Quoted">`$stmt = $pdo-&gt;prepare(&quot;SELECT * FROM users WHERE username = ?&quot;); $stmt-&gt;execute([$_POST[&#39;username&#39;]]);`</span>
+<span class="o">-</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="n n-Quoted">`$username = filter_input(INPUT_POST, &#39;username&#39;, FILTER_SANITIZE_STRING); $query = &quot;SELECT * FROM users WHERE username = &#39;$username&#39;&quot;;`</span>
+<span class="o">-</span><span class="w"> </span><span class="err">[</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="n n-Quoted">`$query = &quot;SELECT * FROM users WHERE username = &quot; . $pdo-&gt;quote($_POST[&#39;username&#39;]);`</span>
 
-&gt; **Explication :** Le premier exemple est vulnérable car il insère directement la valeur de `$_POST[&#39;username&#39;]` dans la requête SQL sans aucune validation ni échappement. Un attaquant pourrait saisir `&#39; OR &#39;1&#39;=&#39;1` pour obtenir tous les enregistrements.
-&gt;
-&gt; Les autres options utilisent des méthodes de protection :
-&gt; - La deuxième utilise une requête préparée avec un paramètre (méthode recommandée)
-&gt; - La troisième filtre l&#39;entrée (bien que `FILTER_SANITIZE_STRING` soit déprécié en PHP 8.1+)
-&gt; - La quatrième utilise la méthode `quote()` qui échappe correctement les caractères spéciaux
+<span class="o">&gt;</span><span class="w"> </span><span class="o">**</span><span class="n">Explication</span><span class="w"> </span><span class="o">:**</span><span class="w"> </span><span class="n">Le</span><span class="w"> </span><span class="n">premier</span><span class="w"> </span><span class="n">exemple</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">vulnérable</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="n">il</span><span class="w"> </span><span class="n">insère</span><span class="w"> </span><span class="n">directement</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">valeur</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n n-Quoted">`$_POST[&#39;username&#39;]`</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">requête</span><span class="w"> </span><span class="k">SQL</span><span class="w"> </span><span class="n">sans</span><span class="w"> </span><span class="n">aucune</span><span class="w"> </span><span class="k">validation</span><span class="w"> </span><span class="n">ni</span><span class="w"> </span><span class="n">échappement</span><span class="p">.</span><span class="w"> </span><span class="n">Un</span><span class="w"> </span><span class="n">attaquant</span><span class="w"> </span><span class="n">pourrait</span><span class="w"> </span><span class="n">saisir</span><span class="w"> </span><span class="n n-Quoted">`&#39; OR &#39;1&#39;=&#39;1`</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">obtenir</span><span class="w"> </span><span class="n">tous</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">enregistrements</span><span class="p">.</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Les</span><span class="w"> </span><span class="n">autres</span><span class="w"> </span><span class="k">options</span><span class="w"> </span><span class="n">utilisent</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">méthodes</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">protection</span><span class="w"> </span><span class="o">:</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">La</span><span class="w"> </span><span class="n">deuxième</span><span class="w"> </span><span class="n">utilise</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">requête</span><span class="w"> </span><span class="n">préparée</span><span class="w"> </span><span class="n">avec</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">paramètre</span><span class="w"> </span><span class="p">(</span><span class="n">méthode</span><span class="w"> </span><span class="n">recommandée</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">La</span><span class="w"> </span><span class="n">troisième</span><span class="w"> </span><span class="n">filtre</span><span class="w"> </span><span class="n">l</span><span class="s1">&#39;entrée (bien que `FILTER_SANITIZE_STRING` soit déprécié en PHP 8.1+)</span>
+<span class="s1">&gt; - La quatrième utilise la méthode `quote()` qui échappe correctement les caractères spéciaux</span>
 </code></pre></div>
+
 <p>!!! quizdown id="qa2"</p>
-<div class="highlight"><pre><span></span><code>### Quelle méthode permet de protéger une application contre une attaque XSS stockée ?
+<div class="codehilite"><pre><span></span><code><span class="err">###</span><span class="w"> </span><span class="n">Quelle</span><span class="w"> </span><span class="n">méthode</span><span class="w"> </span><span class="n">permet</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">protéger</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">contre</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">attaque</span><span class="w"> </span><span class="n">XSS</span><span class="w"> </span><span class="n">stockée</span><span class="w"> </span><span class="vm">?</span>
 
-- [ ] Utiliser un certificat SSL/TLS
-- [ ] Implémenter un contrôle d&#39;accès strict
-- [x] Utiliser des fonctions d&#39;échappement HTML (comme htmlspecialchars) lors de l&#39;affichage des données
-- [ ] Limiter le nombre de requêtes par IP
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Utiliser</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">certificat</span><span class="w"> </span><span class="n">SSL</span><span class="o">/</span><span class="n">TLS</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Implémenter</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">contrôle</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;accès strict</span>
+<span class="s1">- [x] Utiliser des fonctions d&#39;</span><span class="n">échappement</span><span class="w"> </span><span class="n">HTML</span><span class="w"> </span><span class="p">(</span><span class="n">comme</span><span class="w"> </span><span class="n">htmlspecialchars</span><span class="p">)</span><span class="w"> </span><span class="n">lors</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">l</span><span class="s1">&#39;affichage des données</span>
+<span class="s1">- [ ] Limiter le nombre de requêtes par IP</span>
 
-&gt; **Explication :** Pour protéger une application contre les attaques XSS stockées (où le code malveillant est enregistré en base de données puis affiché à d&#39;autres utilisateurs), il faut échapper les caractères spéciaux HTML lors de l&#39;affichage des données. Par exemple, en PHP, la fonction `htmlspecialchars()` convertit les caractères spéciaux comme `&lt;` en `&amp;lt;`, ce qui empêche l&#39;exécution de code JavaScript.
-&gt;
-&gt; Les autres méthodes ne protègent pas contre les XSS :
-&gt; - SSL/TLS chiffre les communications mais n&#39;empêche pas l&#39;exécution de code malveillant déjà présent dans l&#39;application
-&gt; - Le contrôle d&#39;accès limite qui peut accéder à quoi, mais pas le contenu des données affichées
-&gt; - La limitation des requêtes par IP est une protection contre les attaques par force brute ou DoS
+<span class="s1">&gt; **Explication :** Pour protéger une application contre les attaques XSS stockées (où le code malveillant est enregistré en base de données puis affiché à d&#39;</span><span class="n">autres</span><span class="w"> </span><span class="n">utilisateurs</span><span class="p">),</span><span class="w"> </span><span class="n">il</span><span class="w"> </span><span class="n">faut</span><span class="w"> </span><span class="n">échapper</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">caractères</span><span class="w"> </span><span class="n">spéciaux</span><span class="w"> </span><span class="n">HTML</span><span class="w"> </span><span class="n">lors</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">l</span><span class="s1">&#39;affichage des données. Par exemple, en PHP, la fonction `htmlspecialchars()` convertit les caractères spéciaux comme `&lt;` en `&amp;lt;`, ce qui empêche l&#39;</span><span class="n">exécution</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">JavaScript</span><span class="p">.</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Les</span><span class="w"> </span><span class="n">autres</span><span class="w"> </span><span class="n">méthodes</span><span class="w"> </span><span class="n">ne</span><span class="w"> </span><span class="n">protègent</span><span class="w"> </span><span class="n">pas</span><span class="w"> </span><span class="n">contre</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">XSS</span><span class="w"> </span><span class="err">:</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">SSL</span><span class="o">/</span><span class="n">TLS</span><span class="w"> </span><span class="n">chiffre</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">communications</span><span class="w"> </span><span class="n">mais</span><span class="w"> </span><span class="n">n</span><span class="s1">&#39;empêche pas l&#39;</span><span class="n">exécution</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">malveillant</span><span class="w"> </span><span class="n">déjà</span><span class="w"> </span><span class="n">présent</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">l</span><span class="s1">&#39;application</span>
+<span class="s1">&gt; - Le contrôle d&#39;</span><span class="n">accès</span><span class="w"> </span><span class="n">limite</span><span class="w"> </span><span class="n">qui</span><span class="w"> </span><span class="n">peut</span><span class="w"> </span><span class="n">accéder</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">quoi</span><span class="p">,</span><span class="w"> </span><span class="n">mais</span><span class="w"> </span><span class="n">pas</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">contenu</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">données</span><span class="w"> </span><span class="n">affichées</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">La</span><span class="w"> </span><span class="n">limitation</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">requêtes</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">IP</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">protection</span><span class="w"> </span><span class="n">contre</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">attaques</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">force</span><span class="w"> </span><span class="n">brute</span><span class="w"> </span><span class="n">ou</span><span class="w"> </span><span class="n">DoS</span>
 </code></pre></div>
+
 <p>!!! quizdown id="qa3"</p>
-<div class="highlight"><pre><span></span><code>### Comment implémenter correctement une vérification de jeton anti-CSRF ?
+<div class="codehilite"><pre><span></span><code><span class="err">###</span><span class="w"> </span><span class="n">Comment</span><span class="w"> </span><span class="n">implémenter</span><span class="w"> </span><span class="n">correctement</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">vérification</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">jeton</span><span class="w"> </span><span class="n">anti</span><span class="o">-</span><span class="n">CSRF</span><span class="w"> </span><span class="vm">?</span>
 
-- [ ] Stocker le jeton dans une variable JavaScript accessible depuis le navigateur
-- [ ] Utiliser un jeton identique pour tous les utilisateurs pour simplifier la vérification
-- [ ] Générer un nouveau jeton après chaque requête pour améliorer la sécurité
-- [x] Générer un jeton unique, le stocker en session et l&#39;inclure dans un champ caché du formulaire
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Stocker</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">jeton</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="k">variable</span><span class="w"> </span><span class="n">JavaScript</span><span class="w"> </span><span class="n">accessible</span><span class="w"> </span><span class="n">depuis</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">navigateur</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Utiliser</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">jeton</span><span class="w"> </span><span class="n">identique</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">tous</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">utilisateurs</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">simplifier</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">vérification</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Générer</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">nouveau</span><span class="w"> </span><span class="n">jeton</span><span class="w"> </span><span class="n">après</span><span class="w"> </span><span class="n">chaque</span><span class="w"> </span><span class="n">requête</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">améliorer</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">sécurité</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">x</span><span class="o">]</span><span class="w"> </span><span class="n">Générer</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">jeton</span><span class="w"> </span><span class="k">unique</span><span class="p">,</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">stocker</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="k">session</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">l</span><span class="s1">&#39;inclure dans un champ caché du formulaire</span>
 
-&gt; **Explication :** La méthode correcte pour implémenter un jeton anti-CSRF consiste à :
-&gt; 1. Générer un jeton aléatoire unique pour chaque session utilisateur
-&gt; 2. Stocker ce jeton côté serveur (généralement dans la session)
-&gt; 3. Inclure ce jeton dans un champ caché des formulaires HTML ou dans les en-têtes des requêtes AJAX
-&gt; 4. Vérifier côté serveur que le jeton reçu dans la requête correspond à celui stocké en session
-&gt;
-&gt; Les autres approches sont problématiques :
-&gt; - Un jeton accessible en JavaScript peut être volé par une attaque XSS
-&gt; - Un jeton identique pour tous les utilisateurs n&#39;offre aucune protection
-&gt; - Générer un nouveau jeton après chaque requête peut causer des problèmes avec le bouton &quot;retour&quot; du navigateur et les onglets multiples
+<span class="s1">&gt; **Explication :** La méthode correcte pour implémenter un jeton anti-CSRF consiste à :</span>
+<span class="s1">&gt; 1. Générer un jeton aléatoire unique pour chaque session utilisateur</span>
+<span class="s1">&gt; 2. Stocker ce jeton côté serveur (généralement dans la session)</span>
+<span class="s1">&gt; 3. Inclure ce jeton dans un champ caché des formulaires HTML ou dans les en-têtes des requêtes AJAX</span>
+<span class="s1">&gt; 4. Vérifier côté serveur que le jeton reçu dans la requête correspond à celui stocké en session</span>
+<span class="s1">&gt;</span>
+<span class="s1">&gt; Les autres approches sont problématiques :</span>
+<span class="s1">&gt; - Un jeton accessible en JavaScript peut être volé par une attaque XSS</span>
+<span class="s1">&gt; - Un jeton identique pour tous les utilisateurs n&#39;</span><span class="n">offre</span><span class="w"> </span><span class="n">aucune</span><span class="w"> </span><span class="n">protection</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Générer</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">nouveau</span><span class="w"> </span><span class="n">jeton</span><span class="w"> </span><span class="n">après</span><span class="w"> </span><span class="n">chaque</span><span class="w"> </span><span class="n">requête</span><span class="w"> </span><span class="n">peut</span><span class="w"> </span><span class="n">causer</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">problèmes</span><span class="w"> </span><span class="n">avec</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">bouton</span><span class="w"> </span><span class="ss">&quot;retour&quot;</span><span class="w"> </span><span class="n">du</span><span class="w"> </span><span class="n">navigateur</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">onglets</span><span class="w"> </span><span class="n">multiples</span>
 </code></pre></div>
+
 <p>!!! quizdown id="qa4"</p>
-<div class="highlight"><pre><span></span><code>### Quelle pratique peut aider à prévenir les vulnérabilités de désérialisation non sécurisée ?
+<div class="codehilite"><pre><span></span><code><span class="err">###</span><span class="w"> </span><span class="n">Quelle</span><span class="w"> </span><span class="n">pratique</span><span class="w"> </span><span class="n">peut</span><span class="w"> </span><span class="n">aider</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">prévenir</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">vulnérabilités</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">désérialisation</span><span class="w"> </span><span class="n">non</span><span class="w"> </span><span class="n">sécurisée</span><span class="w"> </span><span class="vm">?</span>
 
-- [ ] Utiliser exclusivement le chiffrement symétrique
-- [x] Vérifier l&#39;intégrité des données avant la désérialisation et utiliser des formats d&#39;échange de données sécurisés
-- [ ] Désérialiser tous les objets dans un thread séparé
-- [ ] Toujours utiliser la sérialisation native du langage de programmation
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Utiliser</span><span class="w"> </span><span class="n">exclusivement</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">chiffrement</span><span class="w"> </span><span class="n">symétrique</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">x</span><span class="o">]</span><span class="w"> </span><span class="n">Vérifier</span><span class="w"> </span><span class="n">l</span><span class="s1">&#39;intégrité des données avant la désérialisation et utiliser des formats d&#39;</span><span class="n">échange</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">données</span><span class="w"> </span><span class="n">sécurisés</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Désérialiser</span><span class="w"> </span><span class="n">tous</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">objets</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">thread</span><span class="w"> </span><span class="n">séparé</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Toujours</span><span class="w"> </span><span class="n">utiliser</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">sérialisation</span><span class="w"> </span><span class="n">native</span><span class="w"> </span><span class="n">du</span><span class="w"> </span><span class="n">langage</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">programmation</span>
 
-&gt; **Explication :** Les vulnérabilités de désérialisation non sécurisée sont dangereuses car elles peuvent permettre l&#39;exécution de code arbitraire. Pour les prévenir, il est recommandé de :
-&gt;
-&gt; - Vérifier l&#39;intégrité des données avant la désérialisation (par exemple avec une signature numérique)
-&gt; - Préférer des formats d&#39;échange de données sécurisés comme JSON sans code dynamique
-&gt; - Ne pas désérialiser des données provenant de sources non fiables
-&gt; - Utiliser des bibliothèques de désérialisation sécurisées et à jour
-&gt; - Implémenter des vérifications de type et des validations strictes
-&gt;
-&gt; La désérialisation dans un thread séparé n&#39;empêche pas l&#39;exécution de code malveillant, et la sérialisation native peut justement être vulnérable dans certains langages.
+<span class="o">&gt;</span><span class="w"> </span><span class="o">**</span><span class="n">Explication</span><span class="w"> </span><span class="err">:</span><span class="o">**</span><span class="w"> </span><span class="n">Les</span><span class="w"> </span><span class="n">vulnérabilités</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">désérialisation</span><span class="w"> </span><span class="n">non</span><span class="w"> </span><span class="n">sécurisée</span><span class="w"> </span><span class="n">sont</span><span class="w"> </span><span class="n">dangereuses</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="n">elles</span><span class="w"> </span><span class="n">peuvent</span><span class="w"> </span><span class="n">permettre</span><span class="w"> </span><span class="n">l</span><span class="s1">&#39;exécution de code arbitraire. Pour les prévenir, il est recommandé de :</span>
+<span class="s1">&gt;</span>
+<span class="s1">&gt; - Vérifier l&#39;</span><span class="n">intégrité</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">données</span><span class="w"> </span><span class="n">avant</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">désérialisation</span><span class="w"> </span><span class="p">(</span><span class="n">par</span><span class="w"> </span><span class="n">exemple</span><span class="w"> </span><span class="n">avec</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">signature</span><span class="w"> </span><span class="n">numérique</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Préférer</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">formats</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;échange de données sécurisés comme JSON sans code dynamique</span>
+<span class="s1">&gt; - Ne pas désérialiser des données provenant de sources non fiables</span>
+<span class="s1">&gt; - Utiliser des bibliothèques de désérialisation sécurisées et à jour</span>
+<span class="s1">&gt; - Implémenter des vérifications de type et des validations strictes</span>
+<span class="s1">&gt;</span>
+<span class="s1">&gt; La désérialisation dans un thread séparé n&#39;</span><span class="n">empêche</span><span class="w"> </span><span class="n">pas</span><span class="w"> </span><span class="n">l</span><span class="err">&#39;</span><span class="n">exécution</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">malveillant</span><span class="p">,</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">sérialisation</span><span class="w"> </span><span class="n">native</span><span class="w"> </span><span class="n">peut</span><span class="w"> </span><span class="n">justement</span><span class="w"> </span><span class="n">être</span><span class="w"> </span><span class="n">vulnérable</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">certains</span><span class="w"> </span><span class="n">langages</span><span class="p">.</span>
 </code></pre></div>
+
 <p>!!! quizdown id="qa5"</p>
-<div class="highlight"><pre><span></span><code>### Quelle méthode est efficace pour prévenir les attaques par inclusion de fichier (File Inclusion) ?
+<div class="codehilite"><pre><span></span><code><span class="err">###</span><span class="w"> </span><span class="n">Quelle</span><span class="w"> </span><span class="n">méthode</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">efficace</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">prévenir</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">attaques</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">inclusion</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">fichier</span><span class="w"> </span><span class="p">(</span><span class="k">File</span><span class="w"> </span><span class="n">Inclusion</span><span class="p">)</span><span class="w"> </span><span class="vm">?</span>
 
-- [ ] Utiliser exclusivement le protocole HTTPS
-- [ ] Limiter la taille des fichiers uploadés
-- [x] Valider et restreindre les noms de fichiers à une liste blanche (whitelist)
-- [ ] Encoder les noms de fichiers en Base64
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Utiliser</span><span class="w"> </span><span class="n">exclusivement</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">protocole</span><span class="w"> </span><span class="n">HTTPS</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Limiter</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">taille</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">fichiers</span><span class="w"> </span><span class="n">uploadés</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">x</span><span class="o">]</span><span class="w"> </span><span class="n">Valider</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">restreindre</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">noms</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">fichiers</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">liste</span><span class="w"> </span><span class="n">blanche</span><span class="w"> </span><span class="p">(</span><span class="n">whitelist</span><span class="p">)</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Encoder</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">noms</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">fichiers</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">Base64</span>
 
-&gt; **Explication :** Les attaques par inclusion de fichier (Local File Inclusion - LFI ou Remote File Inclusion - RFI) exploitent les fonctionnalités d&#39;inclusion dynamique de fichiers en manipulant les paramètres pour accéder à des fichiers non autorisés ou exécuter du code malveillant.
-&gt;
-&gt; La validation stricte des noms de fichiers et l&#39;utilisation d&#39;une liste blanche (whitelist) sont les méthodes les plus efficaces :
-&gt; - Vérifier que le fichier est dans un répertoire autorisé (pas de traversée de répertoires avec `../`)
-&gt; - Limiter les inclusions à une liste prédéfinie de fichiers
-&gt; - Éviter d&#39;utiliser des entrées utilisateur pour déterminer le fichier à inclure
-&gt;
-&gt; Les autres méthodes ne protègent pas contre ce type d&#39;attaque : HTTPS sécurise la communication mais pas les inclusions de fichiers, limiter la taille concerne les uploads, et l&#39;encodage Base64 peut être décodé facilement.
+<span class="o">&gt;</span><span class="w"> </span><span class="o">**</span><span class="n">Explication</span><span class="w"> </span><span class="err">:</span><span class="o">**</span><span class="w"> </span><span class="n">Les</span><span class="w"> </span><span class="n">attaques</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">inclusion</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">fichier</span><span class="w"> </span><span class="p">(</span><span class="k">Local</span><span class="w"> </span><span class="k">File</span><span class="w"> </span><span class="n">Inclusion</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">LFI</span><span class="w"> </span><span class="n">ou</span><span class="w"> </span><span class="n">Remote</span><span class="w"> </span><span class="k">File</span><span class="w"> </span><span class="n">Inclusion</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">RFI</span><span class="p">)</span><span class="w"> </span><span class="n">exploitent</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">fonctionnalités</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;inclusion dynamique de fichiers en manipulant les paramètres pour accéder à des fichiers non autorisés ou exécuter du code malveillant.</span>
+<span class="s1">&gt;</span>
+<span class="s1">&gt; La validation stricte des noms de fichiers et l&#39;</span><span class="n">utilisation</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;une liste blanche (whitelist) sont les méthodes les plus efficaces :</span>
+<span class="s1">&gt; - Vérifier que le fichier est dans un répertoire autorisé (pas de traversée de répertoires avec `../`)</span>
+<span class="s1">&gt; - Limiter les inclusions à une liste prédéfinie de fichiers</span>
+<span class="s1">&gt; - Éviter d&#39;</span><span class="n">utiliser</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">entrées</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">déterminer</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">fichier</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">inclure</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Les</span><span class="w"> </span><span class="n">autres</span><span class="w"> </span><span class="n">méthodes</span><span class="w"> </span><span class="n">ne</span><span class="w"> </span><span class="n">protègent</span><span class="w"> </span><span class="n">pas</span><span class="w"> </span><span class="n">contre</span><span class="w"> </span><span class="n">ce</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;attaque : HTTPS sécurise la communication mais pas les inclusions de fichiers, limiter la taille concerne les uploads, et l&#39;</span><span class="n">encodage</span><span class="w"> </span><span class="n">Base64</span><span class="w"> </span><span class="n">peut</span><span class="w"> </span><span class="n">être</span><span class="w"> </span><span class="n">décodé</span><span class="w"> </span><span class="n">facilement</span><span class="p">.</span>
 </code></pre></div>
+
 <p>!!! quizdown id="qa6"</p>
-<div class="highlight"><pre><span></span><code>### Qu&#39;est-ce que la validation côté serveur des entrées utilisateur ?
+<div class="codehilite"><pre><span></span><code><span class="err">###</span><span class="w"> </span><span class="n">Qu</span><span class="s1">&#39;est-ce que la validation côté serveur des entrées utilisateur ?</span>
 
-- [ ] Une technique pour améliorer les performances des applications web
-- [ ] Une vérification effectuée uniquement par le navigateur
-- [x] Un processus qui vérifie que les données reçues du client sont conformes aux attentes avant leur traitement
-- [ ] Une méthode pour compresser les données transmises entre le client et le serveur
+<span class="s1">- [ ] Une technique pour améliorer les performances des applications web</span>
+<span class="s1">- [ ] Une vérification effectuée uniquement par le navigateur</span>
+<span class="s1">- [x] Un processus qui vérifie que les données reçues du client sont conformes aux attentes avant leur traitement</span>
+<span class="s1">- [ ] Une méthode pour compresser les données transmises entre le client et le serveur</span>
 
-&gt; **Explication :** La validation côté serveur des entrées utilisateur est un processus essentiel qui vérifie que les données reçues du client sont conformes aux attentes (type, format, longueur, etc.) avant leur traitement. C&#39;est une mesure de sécurité fondamentale car :
-&gt;
-&gt; - La validation côté client (JavaScript) peut être contournée facilement
-&gt; - Toutes les données provenant du client doivent être considérées comme potentiellement malveillantes
-&gt; - C&#39;est la dernière ligne de défense avant le traitement des données
-&gt;
-&gt; La validation peut inclure :
-&gt; - Vérification du type de données
-&gt; - Vérification de format (par exemple, email, date, code postal)
-&gt; - Vérification de plage ou de longueur
-&gt; - Vérification par rapport à une liste blanche de valeurs autorisées
+<span class="s1">&gt; **Explication :** La validation côté serveur des entrées utilisateur est un processus essentiel qui vérifie que les données reçues du client sont conformes aux attentes (type, format, longueur, etc.) avant leur traitement. C&#39;</span><span class="n">est</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">mesure</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">sécurité</span><span class="w"> </span><span class="n">fondamentale</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="err">:</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">La</span><span class="w"> </span><span class="n">validation</span><span class="w"> </span><span class="n">côté</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="p">(</span><span class="n">JavaScript</span><span class="p">)</span><span class="w"> </span><span class="n">peut</span><span class="w"> </span><span class="n">être</span><span class="w"> </span><span class="n">contournée</span><span class="w"> </span><span class="n">facilement</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Toutes</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">données</span><span class="w"> </span><span class="n">provenant</span><span class="w"> </span><span class="n">du</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="n">doivent</span><span class="w"> </span><span class="n">être</span><span class="w"> </span><span class="n">considérées</span><span class="w"> </span><span class="n">comme</span><span class="w"> </span><span class="n">potentiellement</span><span class="w"> </span><span class="n">malveillantes</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">C</span><span class="err">&#39;</span><span class="n">est</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">dernière</span><span class="w"> </span><span class="n">ligne</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">défense</span><span class="w"> </span><span class="n">avant</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">traitement</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">données</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">La</span><span class="w"> </span><span class="n">validation</span><span class="w"> </span><span class="n">peut</span><span class="w"> </span><span class="n">inclure</span><span class="w"> </span><span class="err">:</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Vérification</span><span class="w"> </span><span class="n">du</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">données</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Vérification</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="nf">format</span><span class="w"> </span><span class="p">(</span><span class="n">par</span><span class="w"> </span><span class="n">exemple</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="nc">date</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">postal</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Vérification</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">plage</span><span class="w"> </span><span class="n">ou</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">longueur</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Vérification</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">rapport</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">liste</span><span class="w"> </span><span class="n">blanche</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">valeurs</span><span class="w"> </span><span class="n">autorisées</span>
 </code></pre></div>
+
 <p>!!! quizdown id="qa7"</p>
-<div class="highlight"><pre><span></span><code>### Quel est le but d&#39;un test de pénétration (pentest) dans le cycle de développement sécurisé ?
+<div class="codehilite"><pre><span></span><code><span class="err">###</span><span class="w"> </span><span class="n">Quel</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;un test de pénétration (pentest) dans le cycle de développement sécurisé ?</span>
 
-- [ ] Tester les performances de l&#39;application sous charge
-- [ ] Vérifier la compatibilité de l&#39;application avec différents navigateurs
-- [x] Identifier les vulnérabilités de sécurité en simulant des attaques réelles
-- [ ] Valider que l&#39;application répond aux exigences fonctionnelles
+<span class="s1">- [ ] Tester les performances de l&#39;</span><span class="n">application</span><span class="w"> </span><span class="n">sous</span><span class="w"> </span><span class="n">charge</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Vérifier</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">compatibilité</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">l</span><span class="s1">&#39;application avec différents navigateurs</span>
+<span class="s1">- [x] Identifier les vulnérabilités de sécurité en simulant des attaques réelles</span>
+<span class="s1">- [ ] Valider que l&#39;</span><span class="n">application</span><span class="w"> </span><span class="n">répond</span><span class="w"> </span><span class="n">aux</span><span class="w"> </span><span class="n">exigences</span><span class="w"> </span><span class="n">fonctionnelles</span>
 
-&gt; **Explication :** Un test de pénétration (pentest) a pour but d&#39;identifier les vulnérabilités de sécurité en simulant des attaques réelles qu&#39;un attaquant pourrait mener. Il est généralement réalisé par des experts en sécurité qui utilisent des techniques similaires à celles des hackers mais avec l&#39;autorisation explicite du propriétaire du système.
-&gt;
-&gt; Dans le cycle de développement sécurisé, les pentests interviennent généralement :
-&gt; - Après les tests de sécurité automatisés (comme l&#39;analyse statique de code)
-&gt; - Avant la mise en production
-&gt; - Périodiquement sur les systèmes en production
-&gt;
-&gt; Ils permettent de découvrir des vulnérabilités que les outils automatisés ne peuvent pas détecter et offrent une vision plus réaliste de l&#39;exposition aux menaces.
+<span class="o">&gt;</span><span class="w"> </span><span class="o">**</span><span class="n">Explication</span><span class="w"> </span><span class="err">:</span><span class="o">**</span><span class="w"> </span><span class="n">Un</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">pénétration</span><span class="w"> </span><span class="p">(</span><span class="n">pentest</span><span class="p">)</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;identifier les vulnérabilités de sécurité en simulant des attaques réelles qu&#39;</span><span class="n">un</span><span class="w"> </span><span class="n">attaquant</span><span class="w"> </span><span class="n">pourrait</span><span class="w"> </span><span class="n">mener</span><span class="p">.</span><span class="w"> </span><span class="n">Il</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">généralement</span><span class="w"> </span><span class="n">réalisé</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">experts</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">sécurité</span><span class="w"> </span><span class="n">qui</span><span class="w"> </span><span class="n">utilisent</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">techniques</span><span class="w"> </span><span class="n">similaires</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">celles</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">hackers</span><span class="w"> </span><span class="n">mais</span><span class="w"> </span><span class="n">avec</span><span class="w"> </span><span class="n">l</span><span class="s1">&#39;autorisation explicite du propriétaire du système.</span>
+<span class="s1">&gt;</span>
+<span class="s1">&gt; Dans le cycle de développement sécurisé, les pentests interviennent généralement :</span>
+<span class="s1">&gt; - Après les tests de sécurité automatisés (comme l&#39;</span><span class="n">analyse</span><span class="w"> </span><span class="n">statique</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">code</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Avant</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">mise</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">production</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Périodiquement</span><span class="w"> </span><span class="n">sur</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">systèmes</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">production</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">Ils</span><span class="w"> </span><span class="n">permettent</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">découvrir</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">vulnérabilités</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">outils</span><span class="w"> </span><span class="n">automatisés</span><span class="w"> </span><span class="n">ne</span><span class="w"> </span><span class="n">peuvent</span><span class="w"> </span><span class="n">pas</span><span class="w"> </span><span class="n">détecter</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">offrent</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">vision</span><span class="w"> </span><span class="n">plus</span><span class="w"> </span><span class="n">réaliste</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">l</span><span class="err">&#39;</span><span class="n">exposition</span><span class="w"> </span><span class="n">aux</span><span class="w"> </span><span class="n">menaces</span><span class="p">.</span>
 </code></pre></div>
+
 <p>!!! quizdown id="qa8"</p>
-<div class="highlight"><pre><span></span><code>### Quelle est la meilleure approche pour gérer les erreurs dans une application en production ?
+<div class="codehilite"><pre><span></span><code><span class="err">###</span><span class="w"> </span><span class="n">Quelle</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">meilleure</span><span class="w"> </span><span class="n">approche</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">gérer</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">erreurs</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">production</span><span class="w"> </span><span class="vm">?</span>
 
-- [ ] Désactiver tous les messages d&#39;erreur pour éviter de donner des informations aux attaquants
-- [ ] Afficher des messages d&#39;erreur détaillés pour aider à résoudre les problèmes rapidement
-- [x] Afficher des messages génériques aux utilisateurs et journaliser les détails pour les développeurs
-- [ ] Utiliser les mêmes messages d&#39;erreur pour tous les types d&#39;erreurs
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Désactiver</span><span class="w"> </span><span class="n">tous</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">messages</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;erreur pour éviter de donner des informations aux attaquants</span>
+<span class="s1">- [ ] Afficher des messages d&#39;</span><span class="n">erreur</span><span class="w"> </span><span class="n">détaillés</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">aider</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">résoudre</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">problèmes</span><span class="w"> </span><span class="n">rapidement</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">x</span><span class="o">]</span><span class="w"> </span><span class="n">Afficher</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">messages</span><span class="w"> </span><span class="n">génériques</span><span class="w"> </span><span class="n">aux</span><span class="w"> </span><span class="n">utilisateurs</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">journaliser</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">détails</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">développeurs</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Utiliser</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">mêmes</span><span class="w"> </span><span class="n">messages</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;erreur pour tous les types d&#39;</span><span class="n">erreurs</span>
 
-&gt; **Explication :** La meilleure approche pour gérer les erreurs en production est d&#39;afficher des messages génériques aux utilisateurs tout en journalisant les détails techniques pour les développeurs. Cette approche :
-&gt;
-&gt; - Évite de divulguer des informations sensibles qui pourraient aider un attaquant (comme des noms de tables, des versions de composants, des structures de répertoires)
-&gt; - Fournit une expérience utilisateur acceptable en informant qu&#39;une erreur s&#39;est produite
-&gt; - Conserve toutes les informations nécessaires au diagnostic et à la correction du problème
-&gt;
-&gt; Désactiver complètement les messages d&#39;erreur dégrade l&#39;expérience utilisateur, tandis qu&#39;afficher des détails techniques expose des informations sensibles.
+<span class="o">&gt;</span><span class="w"> </span><span class="o">**</span><span class="n">Explication</span><span class="w"> </span><span class="err">:</span><span class="o">**</span><span class="w"> </span><span class="n">La</span><span class="w"> </span><span class="n">meilleure</span><span class="w"> </span><span class="n">approche</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">gérer</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">erreurs</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">production</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;afficher des messages génériques aux utilisateurs tout en journalisant les détails techniques pour les développeurs. Cette approche :</span>
+<span class="s1">&gt;</span>
+<span class="s1">&gt; - Évite de divulguer des informations sensibles qui pourraient aider un attaquant (comme des noms de tables, des versions de composants, des structures de répertoires)</span>
+<span class="s1">&gt; - Fournit une expérience utilisateur acceptable en informant qu&#39;</span><span class="n">une</span><span class="w"> </span><span class="n">erreur</span><span class="w"> </span><span class="n">s</span><span class="s1">&#39;est produite</span>
+<span class="s1">&gt; - Conserve toutes les informations nécessaires au diagnostic et à la correction du problème</span>
+<span class="s1">&gt;</span>
+<span class="s1">&gt; Désactiver complètement les messages d&#39;</span><span class="n">erreur</span><span class="w"> </span><span class="n">dégrade</span><span class="w"> </span><span class="n">l</span><span class="s1">&#39;expérience utilisateur, tandis qu&#39;</span><span class="n">afficher</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">détails</span><span class="w"> </span><span class="n">techniques</span><span class="w"> </span><span class="n">expose</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">informations</span><span class="w"> </span><span class="n">sensibles</span><span class="p">.</span>
 </code></pre></div>
+
 <h2 id="interpretation-de-votre-score">Interprétation de votre score</h2>
 <ul>
 <li>
@@ -1365,8 +1411,16 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
         
       </main>
       
@@ -1396,7 +1450,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "content.code.copy", "navigation.top", "navigation.tracking", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
