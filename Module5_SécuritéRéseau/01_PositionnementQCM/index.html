@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#qcm-de-positionnement-analyse-des-risques-et-besoins-de-securite" class="md-skip">
+        <a href="#qcm-de-positionnement-securite-des-applications-et-services-web" class="md-skip">
           Aller au contenu
         </a>
       
@@ -943,6 +943,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    QCM de positionnement
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -954,6 +967,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#interpretation-de-votre-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interprétation de votre score
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-cles-a-retenir-avant-de-commencer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points clés à retenir avant de commencer
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1148,100 +1198,84 @@
 
 
 
-<h1 id="qcm-de-positionnement-analyse-des-risques-et-besoins-de-securite">QCM de positionnement - Analyse des risques et besoins de sécurité</h1>
-<p>Ce QCM vous permet d'évaluer vos connaissances avant d'aborder le module. Cochez vos réponses et cliquez sur "Calculer le score" pour voir votre résultat.</p>
-<form id="qcmForm">
-  <div class="question">
-    <p><strong>1. Que signifie l'acronyme DICP en sécurité informatique ?</strong></p>
-    <input type="radio" id="q1a" name="q1" value="a">
-    <label for="q1a">a) Disponibilité, Intégrité, Confidentialité, Performance</label><br>
+<h1 id="qcm-de-positionnement-securite-des-applications-et-services-web">QCM de positionnement - Sécurité des applications et services web</h1>
+<p>Ce QCM vous permet d'évaluer vos connaissances avant d'aborder le module. Répondez aux questions puis vérifiez vos réponses pour savoir quels points nécessitent votre attention.</p>
+<p>!!! quizdown id="q1"</p>
+<div class="codehilite"><pre><span></span><code><span class="err">###</span><span class="w"> </span><span class="n">Quelle</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">principale</span><span class="w"> </span><span class="n">protection</span><span class="w"> </span><span class="n">offerte</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">l</span><span class="s1">&#39;en-tête HTTP Content-Security-Policy ?</span>
 
-    <input type="radio" id="q1b" name="q1" value="b">
-    <label for="q1b">b) Disponibilité, Intégrité, Confidentialité, Preuve</label><br>
+<span class="s1">- [ ] Empêcher les attaques par injection SQL</span>
+<span class="s1">- [x] Réduire les risques d&#39;</span><span class="n">attaques</span><span class="w"> </span><span class="n">XSS</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">contrôlant</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">sources</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">contenu</span><span class="w"> </span><span class="n">autorisées</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Chiffrer</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">communications</span><span class="w"> </span><span class="n">entre</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">serveur</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Limiter</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">requêtes</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">seconde</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">éviter</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">attaques</span><span class="w"> </span><span class="n">DDoS</span>
 
-    <input type="radio" id="q1c" name="q1" value="c">
-    <label for="q1c">c) Données, Information, Connaissance, Protection</label><br>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">**</span><span class="n">Explication</span><span class="w"> </span><span class="err">:</span><span class="o">**</span><span class="w"> </span><span class="n">Content</span><span class="o">-</span><span class="n">Security</span><span class="o">-</span><span class="n">Policy</span><span class="w"> </span><span class="p">(</span><span class="n">CSP</span><span class="p">)</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">en</span><span class="o">-</span><span class="n">tête</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">sécurité</span><span class="w"> </span><span class="n">qui</span><span class="w"> </span><span class="n">permet</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">définir</span><span class="w"> </span><span class="n">quelles</span><span class="w"> </span><span class="n">sources</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">contenu</span><span class="w"> </span><span class="p">(</span><span class="n">scripts</span><span class="p">,</span><span class="w"> </span><span class="n">styles</span><span class="p">,</span><span class="w"> </span><span class="n">images</span><span class="p">,</span><span class="w"> </span><span class="n">etc</span><span class="p">.)</span><span class="w"> </span><span class="n">sont</span><span class="w"> </span><span class="n">autorisées</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">être</span><span class="w"> </span><span class="n">chargées</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">navigateur</span><span class="p">.</span><span class="w"> </span><span class="n">Il</span><span class="w"> </span><span class="n">constitue</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">défense</span><span class="w"> </span><span class="n">efficace</span><span class="w"> </span><span class="n">contre</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">attaques</span><span class="w"> </span><span class="n">XSS</span><span class="w"> </span><span class="p">(</span><span class="k">Cross</span><span class="o">-</span><span class="n">Site</span><span class="w"> </span><span class="n">Scripting</span><span class="p">)</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">empêchant</span><span class="w"> </span><span class="n">l</span><span class="err">&#39;</span><span class="n">exécution</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">scripts</span><span class="w"> </span><span class="n">provenant</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">sources</span><span class="w"> </span><span class="n">non</span><span class="w"> </span><span class="n">autorisées</span><span class="p">.</span>
+</code></pre></div>
 
-    <input type="radio" id="q1d" name="q1" value="d">
-    <label for="q1d">d) Défense, Intégrité, Contrôle, Protection</label>
-  </div>
+<p>!!! quizdown id="q2"</p>
+<div class="codehilite"><pre><span></span><code><span class="err">###</span><span class="w"> </span><span class="n">Quelle</span><span class="w"> </span><span class="n">méthode</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;authentification pour une API REST utilise un jeton signé contenant des informations sur l&#39;</span><span class="n">utilisateur</span><span class="w"> </span><span class="vm">?</span>
 
-  <div class="question">
-    <p><strong>2. Parmi ces éléments, lequel n'est PAS une catégorie du modèle STRIDE ?</strong></p>
-    <input type="radio" id="q2a" name="q2" value="a">
-    <label for="q2a">a) Spoofing (usurpation d'identité)</label><br>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Basic</span><span class="w"> </span><span class="n">Authentication</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">API</span><span class="w"> </span><span class="k">Key</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">x</span><span class="o">]</span><span class="w"> </span><span class="n">JSON</span><span class="w"> </span><span class="n">Web</span><span class="w"> </span><span class="n">Token</span><span class="w"> </span><span class="p">(</span><span class="n">JWT</span><span class="p">)</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">OAuth</span><span class="w"> </span><span class="mf">1.0</span>
 
-    <input type="radio" id="q2b" name="q2" value="b">
-    <label for="q2b">b) Tampering (altération de données)</label><br>
+<span class="o">&gt;</span><span class="w"> </span><span class="o">**</span><span class="n">Explication</span><span class="w"> </span><span class="err">:</span><span class="o">**</span><span class="w"> </span><span class="n">JSON</span><span class="w"> </span><span class="n">Web</span><span class="w"> </span><span class="n">Token</span><span class="w"> </span><span class="p">(</span><span class="n">JWT</span><span class="p">)</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">standard</span><span class="w"> </span><span class="n">ouvert</span><span class="w"> </span><span class="p">(</span><span class="n">RFC</span><span class="w"> </span><span class="mi">7519</span><span class="p">)</span><span class="w"> </span><span class="n">qui</span><span class="w"> </span><span class="n">définit</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="nf">format</span><span class="w"> </span><span class="n">compact</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">autonome</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">transmettre</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">manière</span><span class="w"> </span><span class="n">sécurisée</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">informations</span><span class="w"> </span><span class="n">entre</span><span class="w"> </span><span class="n">différentes</span><span class="w"> </span><span class="n">parties</span><span class="w"> </span><span class="n">sous</span><span class="w"> </span><span class="n">forme</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;objet JSON. Ces jetons sont signés numériquement et peuvent contenir des revendications (claims) sur l&#39;</span><span class="n">identité</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">l</span><span class="err">&#39;</span><span class="n">utilisateur</span><span class="p">,</span><span class="w"> </span><span class="n">ses</span><span class="w"> </span><span class="n">rôles</span><span class="p">,</span><span class="w"> </span><span class="n">etc</span><span class="p">.</span><span class="w"> </span><span class="n">Ils</span><span class="w"> </span><span class="n">sont</span><span class="w"> </span><span class="n">particulièrement</span><span class="w"> </span><span class="n">adaptés</span><span class="w"> </span><span class="n">aux</span><span class="w"> </span><span class="n">API</span><span class="w"> </span><span class="n">REST</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="n">ils</span><span class="w"> </span><span class="n">sont</span><span class="w"> </span><span class="n">sans</span><span class="w"> </span><span class="n">état</span><span class="w"> </span><span class="p">(</span><span class="n">stateless</span><span class="p">).</span>
+</code></pre></div>
 
-    <input type="radio" id="q2c" name="q2" value="c">
-    <label for="q2c">c) Tracking (suivi des utilisateurs)</label><br>
+<p>!!! quizdown id="q3"</p>
+<div class="codehilite"><pre><span></span><code><span class="err">###</span><span class="w"> </span><span class="n">Quelle</span><span class="w"> </span><span class="n">pratique</span><span class="w"> </span><span class="n">correspond</span><span class="w"> </span><span class="n">au</span><span class="w"> </span><span class="n">principe</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="ss">&quot;défense en profondeur&quot;</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">sécurité</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">applications</span><span class="w"> </span><span class="n">web</span><span class="w"> </span><span class="vm">?</span>
 
-    <input type="radio" id="q2d" name="q2" value="d">
-    <label for="q2d">d) Elevation of privilege (élévation de privilèges)</label>
-  </div>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Utiliser</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">seul</span><span class="w"> </span><span class="n">mécanisme</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">sécurité</span><span class="w"> </span><span class="n">très</span><span class="w"> </span><span class="n">robuste</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Confier</span><span class="w"> </span><span class="n">toute</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">sécurité</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">pare</span><span class="o">-</span><span class="n">feu</span><span class="w"> </span><span class="n">applicatif</span><span class="w"> </span><span class="n">web</span><span class="w"> </span><span class="p">(</span><span class="n">WAF</span><span class="p">)</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Éduquer</span><span class="w"> </span><span class="n">uniquement</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">développeurs</span><span class="w"> </span><span class="n">aux</span><span class="w"> </span><span class="n">bonnes</span><span class="w"> </span><span class="n">pratiques</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">sécurité</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">x</span><span class="o">]</span><span class="w"> </span><span class="n">Mettre</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">place</span><span class="w"> </span><span class="n">plusieurs</span><span class="w"> </span><span class="n">couches</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">sécurité</span><span class="w"> </span><span class="n">complémentaires</span>
 
-  <!-- Ajoutez d'autres questions de la même manière -->
+<span class="o">&gt;</span><span class="w"> </span><span class="o">**</span><span class="n">Explication</span><span class="w"> </span><span class="err">:</span><span class="o">**</span><span class="w"> </span><span class="n">Le</span><span class="w"> </span><span class="n">principe</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">défense</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">profondeur</span><span class="w"> </span><span class="n">consiste</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">mettre</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">place</span><span class="w"> </span><span class="n">plusieurs</span><span class="w"> </span><span class="n">couches</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">sécurité</span><span class="w"> </span><span class="n">complémentaires</span><span class="p">,</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">sorte</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">couche</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">compromise</span><span class="p">,</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">autres</span><span class="w"> </span><span class="n">continuent</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">protéger</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">système</span><span class="p">.</span><span class="w"> </span><span class="n">Par</span><span class="w"> </span><span class="n">exemple</span><span class="p">,</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">web</span><span class="p">,</span><span class="w"> </span><span class="n">cela</span><span class="w"> </span><span class="n">peut</span><span class="w"> </span><span class="n">inclure</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">validation</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">entrées</span><span class="w"> </span><span class="n">côté</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">serveur</span><span class="p">,</span><span class="w"> </span><span class="n">paramétrage</span><span class="w"> </span><span class="n">sécurisé</span><span class="w"> </span><span class="n">du</span><span class="w"> </span><span class="n">framework</span><span class="p">,</span><span class="w"> </span><span class="n">requêtes</span><span class="w"> </span><span class="n">préparées</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">données</span><span class="p">,</span><span class="w"> </span><span class="n">en</span><span class="o">-</span><span class="n">têtes</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">sécurité</span><span class="w"> </span><span class="n">HTTP</span><span class="p">,</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">surveillance</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">activités</span><span class="w"> </span><span class="n">suspectes</span><span class="p">.</span>
+</code></pre></div>
 
-  <button type="button" onclick="calculateScore()">Calculer le score</button>
-</form>
+<p>!!! quizdown id="q4"</p>
+<div class="codehilite"><pre><span></span><code><span class="err">###</span><span class="w"> </span><span class="n">Parmi</span><span class="w"> </span><span class="n">ces</span><span class="w"> </span><span class="n">fonctionnalités</span><span class="p">,</span><span class="w"> </span><span class="n">laquelle</span><span class="w"> </span><span class="n">n</span><span class="s1">&#39;est PAS un avantage de HTTPS par rapport à HTTP ?</span>
 
-<div id="results" style="display: none;">
-  <h2>Résultats</h2>
-  <p>Votre score : <span id="score">0</span>/5</p>
-  <div id="feedback"></div>
-  <div id="corrections" style="display: none;">
-    <h3>Réponses correctes :</h3>
-    <p>1. b) Disponibilité, Intégrité, Confidentialité, Preuve</p>
-    <p>2. c) Tracking (suivi des utilisateurs)</p>
-    <!-- Ajoutez les autres réponses correctes -->
-  </div>
-  <button type="button" onclick="showCorrections()">Voir les réponses correctes</button>
-</div>
+<span class="s1">- [ ] Confidentialité des données transmises</span>
+<span class="s1">- [ ] Intégrité des données transmises</span>
+<span class="s1">- [ ] Authentification du serveur</span>
+<span class="s1">- [x] Amélioration des performances de l&#39;</span><span class="n">application</span>
 
-<script>
-function calculateScore() {
-  const answers = {
-    q1: "b",
-    q2: "c",
-    q3: "b",
-    q4: "b",
-    q5: "b"
-  };
+<span class="o">&gt;</span><span class="w"> </span><span class="o">**</span><span class="n">Explication</span><span class="w"> </span><span class="err">:</span><span class="o">**</span><span class="w"> </span><span class="n">HTTPS</span><span class="w"> </span><span class="p">(</span><span class="n">HTTP</span><span class="w"> </span><span class="n">Secure</span><span class="p">)</span><span class="w"> </span><span class="n">offre</span><span class="w"> </span><span class="n">trois</span><span class="w"> </span><span class="n">avantages</span><span class="w"> </span><span class="n">principaux</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">rapport</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">HTTP</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">confidentialité</span><span class="w"> </span><span class="p">(</span><span class="n">les</span><span class="w"> </span><span class="n">données</span><span class="w"> </span><span class="n">sont</span><span class="w"> </span><span class="n">chiffrées</span><span class="p">),</span><span class="w"> </span><span class="n">l</span><span class="s1">&#39;intégrité (les données ne peuvent pas être modifiées sans détection) et l&#39;</span><span class="n">authentification</span><span class="w"> </span><span class="p">(</span><span class="n">le</span><span class="w"> </span><span class="n">serveur</span><span class="w"> </span><span class="n">prouve</span><span class="w"> </span><span class="n">son</span><span class="w"> </span><span class="n">identité</span><span class="p">).</span><span class="w"> </span><span class="n">Cependant</span><span class="p">,</span><span class="w"> </span><span class="n">HTTPS</span><span class="w"> </span><span class="n">n</span><span class="s1">&#39;améliore pas les performances de l&#39;</span><span class="n">application</span><span class="p">,</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">peut</span><span class="w"> </span><span class="n">même</span><span class="w"> </span><span class="n">légèrement</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">réduire</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">raison</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">surcharge</span><span class="w"> </span><span class="n">liée</span><span class="w"> </span><span class="n">au</span><span class="w"> </span><span class="n">chiffrement</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">au</span><span class="w"> </span><span class="n">déchiffrement</span><span class="p">.</span><span class="w"> </span><span class="n">Cette</span><span class="w"> </span><span class="n">légère</span><span class="w"> </span><span class="n">baisse</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">performance</span><span class="w"> </span><span class="n">est</span><span class="w"> </span><span class="n">largement</span><span class="w"> </span><span class="n">compensée</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">avantages</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">sécurité</span><span class="p">.</span>
+</code></pre></div>
 
-  let score = 0;
-  let feedback = "";
+<p>!!! quizdown id="q5"</p>
+<div class="codehilite"><pre><span></span><code><span class="err">###</span><span class="w"> </span><span class="n">Quelle</span><span class="w"> </span><span class="n">technique</span><span class="w"> </span><span class="n">permet</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">protéger</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">web</span><span class="w"> </span><span class="n">contre</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">attaques</span><span class="w"> </span><span class="n">CSRF</span><span class="w"> </span><span class="p">(</span><span class="k">Cross</span><span class="o">-</span><span class="n">Site</span><span class="w"> </span><span class="n">Request</span><span class="w"> </span><span class="n">Forgery</span><span class="p">)</span><span class="w"> </span><span class="vm">?</span>
 
-  // Vérifier chaque réponse
-  for (const [question, correctAnswer] of Object.entries(answers)) {
-    const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Utiliser</span><span class="w"> </span><span class="n">uniquement</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">cookies</span><span class="w"> </span><span class="n">HttpOnly</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">x</span><span class="o">]</span><span class="w"> </span><span class="n">Inclure</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">jeton</span><span class="w"> </span><span class="n">anti</span><span class="o">-</span><span class="n">CSRF</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">formulaires</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Mettre</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">place</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">politique</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">mots</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">passe</span><span class="w"> </span><span class="n">forts</span>
+<span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n"> </span><span class="o">]</span><span class="w"> </span><span class="n">Limiter</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">débit</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">requêtes</span><span class="w"> </span><span class="n">API</span>
 
-    if (selectedOption) {
-      if (selectedOption.value === correctAnswer) {
-        score++;
-      }
-    }
-  }
+<span class="o">&gt;</span><span class="w"> </span><span class="o">**</span><span class="n">Explication</span><span class="w"> </span><span class="err">:</span><span class="o">**</span><span class="w"> </span><span class="n">Les</span><span class="w"> </span><span class="n">attaques</span><span class="w"> </span><span class="n">CSRF</span><span class="w"> </span><span class="n">exploitent</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">confiance</span><span class="w"> </span><span class="n">qu</span><span class="s1">&#39;un site accorde au navigateur d&#39;</span><span class="n">un</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="n">authentifié</span><span class="p">.</span><span class="w"> </span><span class="n">La</span><span class="w"> </span><span class="n">protection</span><span class="w"> </span><span class="n">principale</span><span class="w"> </span><span class="n">consiste</span><span class="w"> </span><span class="n">à</span><span class="w"> </span><span class="n">inclure</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">jeton</span><span class="w"> </span><span class="k">unique</span><span class="w"> </span><span class="p">(</span><span class="n">token</span><span class="p">)</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">chaque</span><span class="w"> </span><span class="n">formulaire</span><span class="w"> </span><span class="n">ou</span><span class="w"> </span><span class="n">requête</span><span class="w"> </span><span class="n">modifiant</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">données</span><span class="p">.</span><span class="w"> </span><span class="n">Ce</span><span class="w"> </span><span class="n">jeton</span><span class="p">,</span><span class="w"> </span><span class="n">vérifié</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">serveur</span><span class="p">,</span><span class="w"> </span><span class="n">garantit</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">requête</span><span class="w"> </span><span class="n">provient</span><span class="w"> </span><span class="n">bien</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;un formulaire légitime de l&#39;</span><span class="n">application</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">non</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;un site tiers. Les cookies HttpOnly protègent contre le vol de cookies par XSS mais pas contre le CSRF. Les politiques de mots de passe et la limitation de débit ciblent d&#39;</span><span class="n">autres</span><span class="w"> </span><span class="n">types</span><span class="w"> </span><span class="n">d</span><span class="err">&#39;</span><span class="n">attaques</span><span class="p">.</span>
+</code></pre></div>
 
-  // Afficher le score et le feedback
-  document.getElementById("score").textContent = score;
-
-  if (score === 5) {
-    feedback = "Excellent ! Vous maîtrisez déjà les concepts de base de l'analyse des risques.";
-  } else if (score >= 3) {
-    feedback = "Bon travail ! Vous avez de bonnes connaissances, mais certains concepts méritent d'être approfondis.";
-  } else {
-    feedback = "Ce module va vous permettre d'acquérir les bases essentielles de l'analyse des risques.";
-  }
-
-  document.getElementById("feedback").textContent = feedback;
-  document.getElementById("results").style.display = "block";
-}
-
-function showCorrections() {
-  document.getElementById("corrections").style.display = "block";
-}
-</script>
+<h2 id="interpretation-de-votre-score">Interprétation de votre score</h2>
+<ul>
+<li>
+<p><strong>5/5</strong> : Excellent ! Vous avez déjà une bonne connaissance des principes de sécurité des applications web. Ce module vous permettra d'approfondir vos connaissances pratiques.</p>
+</li>
+<li>
+<p><strong>3-4/5</strong> : Bon travail ! Vous connaissez les bases de la sécurité des applications web mais certains concepts méritent d'être approfondis. Ce module vous aidera à consolider votre compréhension.</p>
+</li>
+<li>
+<p><strong>0-2/5</strong> : Ce module sera particulièrement bénéfique pour vous, car il vous permettra d'acquérir les connaissances essentielles sur la sécurité des applications web, un domaine fondamental pour tout développeur SLAM.</p>
+</li>
+</ul>
+<h2 id="points-cles-a-retenir-avant-de-commencer">Points clés à retenir avant de commencer</h2>
+<ul>
+<li>La sécurité des applications web doit être intégrée dès la conception</li>
+<li>Différentes couches de sécurité sont nécessaires (défense en profondeur)</li>
+<li>Les attaques web évoluent constamment et nécessitent une veille régulière</li>
+<li>Les bonnes pratiques et standards de sécurité (OWASP) sont des ressources précieuses</li>
+<li>La sécurité est un compromis avec l'utilisabilité et les performances
+```</li>
+</ul>
 
 
 
