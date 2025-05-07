@@ -89,25 +89,26 @@ Vous développez une application web de gestion de réservations d'hôtel qui co
 
 1. **Exigences RGPD impactant le développement** :
    
-   - **Minimisation des données** : Ne collecter que les données strictement nécessaires
-   - **Limitation de la conservation** : Définir des durées de conservation appropriées
-   - **Sécurité** : Chiffrement des données sensibles, protection contre les attaques
-   - **Droits des personnes** : Mécanismes permettant l'accès, la rectification, l'effacement, etc.
-   - **Consentement** : Recueil explicite et granulaire du consentement
-   - **Journalisation** : Traçabilité des accès et modifications de données personnelles
+     - **Minimisation des données** : Ne collecter que les données strictement nécessaires
+     - **Limitation de la conservation** : Définir des durées de conservation appropriées
+     - **Sécurité** : Chiffrement des données sensibles, protection contre les attaques
+     - **Droits des personnes** : Mécanismes permettant l'accès, la rectification, l'effacement, etc.
+     - **Consentement** : Recueil explicite et granulaire du consentement
+     - **Journalisation** : Traçabilité des accès et modifications de données personnelles
 
 2. **Fonctionnalités pour le droit à l'effacement** :
    
-   - **Interface administrateur** dédiée pour traiter les demandes d'effacement
-   - **Processus technique d'anonymisation** plutôt que suppression physique pour préserver l'intégrité référentielle
-   - **Cascade d'effacement** dans toutes les tables liées (réservations, préférences, commentaires)
-   - **Mécanisme de sauvegarde intermédiaire** des données avant effacement pour répondre aux obligations légales
-   - **Notification automatique** de confirmation d'effacement à l'utilisateur
-   - **Journal d'audit** des demandes d'effacement et de leur traitement
+     - **Interface administrateur** dédiée pour traiter les demandes d'effacement
+     - **Processus technique d'anonymisation** plutôt que suppression physique pour préserver l'intégrité référentielle
+     - **Cascade d'effacement** dans toutes les tables liées (réservations, préférences, commentaires)
+     - **Mécanisme de sauvegarde intermédiaire** des données avant effacement pour répondre aux obligations légales
+     - **Notification automatique** de confirmation d'effacement à l'utilisateur
+     - **Journal d'audit** des demandes d'effacement et de leur traitement
 
 3. **Mécanisme de journalisation conforme** :
-   - **Structure de la journalisation** :
- - 
+   
+    - **Structure de la journalisation** :
+  
      * Qui : identifiant de l'utilisateur ou du système accédant aux données
      * Quoi : nature de l'opération (lecture, modification, suppression)
      * Quand : horodatage précis
