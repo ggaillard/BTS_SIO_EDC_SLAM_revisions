@@ -130,6 +130,7 @@ Votre équipe découvre qu'une vulnérabilité dans l'API de votre application m
 ### Correction
 
 1. **Actions techniques immédiates** :
+   
    - **Isolation de la vulnérabilité** : Désactivation temporaire de l'endpoint vulnérable ou mise en place d'un correctif d'urgence
    - **Analyse de l'étendue** : Examination des logs d'API pour déterminer quelles données ont été compromises et quels utilisateurs sont affectés
    - **Collecte de preuves** : Sauvegarde sécurisée des logs et des artifacts techniques pour l'investigation
@@ -138,7 +139,9 @@ Votre équipe découvre qu'une vulnérabilité dans l'API de votre application m
    - **Surveillance renforcée** : Mise en place d'alertes spécifiques pour détecter des comportements similaires
 
 2. **Plan de communication RGPD** :
+   
    - **Notification à la CNIL** (sous 72h) contenant :
+  
      * Nature de la violation
      * Catégories et nombre approximatif de personnes concernées
      * Catégories et volume de données compromises
@@ -146,6 +149,7 @@ Votre équipe découvre qu'une vulnérabilité dans l'API de votre application m
      * Mesures prises pour y remédier et atténuer les impacts
    
    - **Communication aux personnes concernées** :
+  
      * Description claire de la nature de la violation
      * Coordonnées du DPO ou d'un point de contact
      * Conséquences possibles pour les personnes
@@ -153,23 +157,28 @@ Votre équipe découvre qu'une vulnérabilité dans l'API de votre application m
      * Recommandations de mesures préventives (changement de mot de passe, etc.)
    
    - **Documentation interne** :
+  
      * Rapport technique détaillé
      * Chronologie de l'incident
      * Impact sur les données et les personnes
      * Mesures prises et leur efficacité
 
 3. **Mesures correctives à long terme** :
+   
    - **Révision de l'architecture API** :
+- 
      * Implémentation d'une authentification forte (OAuth 2.0, JWT avec durée limitée)
      * Limitation de débit (throttling) pour prévenir les extractions massives
      * Chiffrement des données sensibles de bout en bout
    
    - **Améliorations du cycle de développement** :
+- 
      * Intégration de tests de sécurité automatisés dans le CI/CD
      * Revues de code axées sur la sécurité
      * Formation des développeurs aux vulnérabilités API (OWASP API Security Top 10)
    
    - **Surveillance et détection** :
+- 
      * Mise en place d'un système de détection d'anomalies sur les appels API
      * Audit régulier des accès aux données sensibles
      * Tests d'intrusion périodiques ciblant spécifiquement l'API
