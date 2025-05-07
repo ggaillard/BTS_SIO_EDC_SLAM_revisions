@@ -4,6 +4,7 @@
 
 ### Rappel théorique
 Dans le développement logiciel, la gestion des vulnérabilités de sécurité suit généralement ces étapes :
+
 1. **Identification** : découverte de la vulnérabilité (tests, signalement, scanners de code)
 2. **Évaluation** : qualification de la gravité et des impacts potentiels
 3. **Correction** : développement et déploiement d'un correctif
@@ -23,9 +24,11 @@ Une vulnérabilité d'injection SQL a été découverte dans l'application de ge
 ### Correction
 
 1. **Évaluation de la gravité** :
+   
    - **Gravité élevée (CVSS ~8.0)** : La vulnérabilité permet d'exécuter des requêtes SQL arbitraires
    - **Vecteur d'attaque** : Nécessite une authentification (impact limité)
    - **Impacts potentiels** : 
+  
      * Accès non autorisé à des données sensibles
      * Modification ou suppression de données
      * Élévation de privilèges potentielle
@@ -33,10 +36,12 @@ Une vulnérabilité d'injection SQL a été découverte dans l'application de ge
 
 2. **Méthode de correction** :
    - **Correction immédiate** :
+  
      * Déploiement d'un correctif d'urgence remplaçant les requêtes dynamiques par des requêtes paramétrées
      * Mise en place d'un WAF (Web Application Firewall) pour bloquer les tentatives d'injection
    
    - **Solution pérenne** :
+  
      * Revue complète du code pour identifier d'autres instances similaires
      * Utilisation systématique d'un ORM ou de requêtes préparées
      * Implémentation de validation stricte des entrées utilisateur
@@ -44,16 +49,19 @@ Une vulnérabilité d'injection SQL a été découverte dans l'application de ge
 
 3. **Procédure d'analyse post-incident** :
    - **Documentation de l'incident** :
+  
      * Chronologie détaillée
      * Code vulnérable identifié
      * Méthode d'exploitation utilisée
    
    - **Analyse des causes profondes** :
+  
      * Comment la vulnérabilité a-t-elle été introduite ?
      * Pourquoi n'a-t-elle pas été détectée plus tôt ?
      * Quelles pratiques de développement ont contribué au problème ?
    
    - **Améliorations des processus** :
+  
      * Intégration d'outils d'analyse statique dans le pipeline CI/CD
      * Formation des développeurs aux pratiques de codage sécurisé
      * Mise à jour des standards de développement et des revues de code
@@ -63,6 +71,7 @@ Une vulnérabilité d'injection SQL a été découverte dans l'application de ge
 
 ### Rappel théorique
 Le concept de "Privacy by Design" (protection des données dès la conception) est un principe fondamental du RGPD qui impose :
+
 - L'intégration de la protection des données dès la conception des applications
 - La mise en œuvre de mesures techniques et organisationnelles appropriées
 - La minimisation des données traitées
@@ -79,6 +88,7 @@ Vous développez une application web de gestion de réservations d'hôtel qui co
 ### Correction
 
 1. **Exigences RGPD impactant le développement** :
+   
    - **Minimisation des données** : Ne collecter que les données strictement nécessaires
    - **Limitation de la conservation** : Définir des durées de conservation appropriées
    - **Sécurité** : Chiffrement des données sensibles, protection contre les attaques
@@ -87,6 +97,7 @@ Vous développez une application web de gestion de réservations d'hôtel qui co
    - **Journalisation** : Traçabilité des accès et modifications de données personnelles
 
 2. **Fonctionnalités pour le droit à l'effacement** :
+   
    - **Interface administrateur** dédiée pour traiter les demandes d'effacement
    - **Processus technique d'anonymisation** plutôt que suppression physique pour préserver l'intégrité référentielle
    - **Cascade d'effacement** dans toutes les tables liées (réservations, préférences, commentaires)
@@ -96,6 +107,7 @@ Vous développez une application web de gestion de réservations d'hôtel qui co
 
 3. **Mécanisme de journalisation conforme** :
    - **Structure de la journalisation** :
+ - 
      * Qui : identifiant de l'utilisateur ou du système accédant aux données
      * Quoi : nature de l'opération (lecture, modification, suppression)
      * Quand : horodatage précis
