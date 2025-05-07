@@ -1,133 +1,98 @@
-# QCM d'auto-évaluation - Analyse des risques
+# QCM d'auto-évaluation - Gestion des incidents et conformité orienté SLAM
 
 Ce QCM vous permet de vérifier votre compréhension des notions abordées dans ce module. Répondez aux questions pour évaluer votre progression.
 
 !!! quizdown id="qa1"
 
-    ### Un système de paiement en ligne a besoin d'un niveau élevé de :
+    ### Lors de la découverte d'une vulnérabilité de type XSS stockée dans votre application, quelle devrait être votre première action technique ?
     
-    - [ ] Disponibilité uniquement
-    - [ ] Intégrité uniquement
-    - [ ] Disponibilité et intégrité uniquement
-    - [x] Disponibilité, intégrité et confidentialité
+    - [ ] Notifier immédiatement tous les utilisateurs de l'application
+    - [x] Identifier et corriger le code vulnérable pour empêcher l'exploitation
+    - [ ] Réinitialiser la base de données pour supprimer tout code malveillant stocké
+    - [ ] Désactiver complètement l'application jusqu'à nouvel ordre
     
-    > **Explication :** Un système de paiement en ligne nécessite :
-    > - Une **disponibilité** élevée car les transactions doivent pouvoir être effectuées à tout moment
-    > - Une **intégrité** élevée car les montants des transactions ne doivent pas être altérés
-    > - Une **confidentialité** élevée car les données bancaires sont des informations sensibles
-    > 
-    > La preuve est également importante (pour éviter la répudiation des transactions), mais les trois autres critères sont particulièrement critiques pour ce type de système.
+    > **Explication :** La première action technique doit être d'identifier et de corriger le code vulnérable pour stopper immédiatement l'exploitation de la faille. Cela implique généralement d'implémenter un échappement correct des données avant leur affichage. Cette action est prioritaire car elle empêche de nouvelles injections et protège les utilisateurs qui accèdent à l'application. Les autres actions peuvent être pertinentes, mais interviennent après cette étape cruciale.
 
 !!! quizdown id="qa2"
 
-    ### Quelle vulnérabilité correspond à la catégorie "Information Disclosure" du modèle STRIDE ?
+    ### Dans le cadre du RGPD, quelle fonctionnalité technique un développeur doit-il implémenter pour respecter le droit à la portabilité des données ?
     
-    - [ ] Un attaquant modifie le prix d'un produit dans la base de données
-    - [ ] Un attaquant se connecte avec les identifiants d'un autre utilisateur
-    - [x] Un attaquant accède à la liste des clients et leurs coordonnées
-    - [ ] Un attaquant rend le site web indisponible par une attaque DDoS
+    - [ ] Une fonction permettant d'anonymiser les données utilisateur
+    - [ ] Un mécanisme de chiffrement des données personnelles
+    - [x] Une API d'export des données dans un format structuré et couramment utilisé
+    - [ ] Un système de sauvegarde automatique des données utilisateur
     
-    > **Explication :** Dans le modèle STRIDE :
-    > - La modification des prix correspond à du **Tampering** (altération de données)
-    > - L'utilisation d'identifiants volés correspond à du **Spoofing** (usurpation d'identité)
-    > - L'accès non autorisé à des informations correspond à de l'**Information Disclosure** (divulgation d'informations)
-    > - Rendre un site indisponible correspond à du **Denial of Service** (déni de service)
+    > **Explication :** Le droit à la portabilité des données exige que les utilisateurs puissent obtenir leurs données personnelles dans un format structuré, couramment utilisé et lisible par machine, afin de pouvoir les transmettre à un autre service. Le développeur doit donc implémenter une fonctionnalité d'export dans un format standard comme JSON ou XML, accessible via une API ou une interface utilisateur. Cette exigence est spécifique et distincte des autres mesures de protection des données.
 
 !!! quizdown id="qa3"
 
-    ### Parmi ces mesures, laquelle est considérée comme corrective ?
+    ### Quelle technique permet de prévenir efficacement les attaques par injection SQL dans une application ?
     
-    - [ ] Mise en place d'un pare-feu
-    - [ ] Formation des utilisateurs à la sécurité
-    - [x] Restauration des données à partir d'une sauvegarde
-    - [ ] Journalisation des accès au système
+    - [ ] Validation côté client des entrées utilisateur
+    - [ ] Limitation de la longueur des champs de saisie
+    - [ ] Chiffrement de la base de données
+    - [x] Utilisation de requêtes préparées (prepared statements)
     
-    > **Explication :**
-    > - Un **pare-feu** est une mesure préventive qui bloque les accès non autorisés
-    > - La **formation des utilisateurs** est une mesure préventive qui réduit les risques d'erreurs humaines
-    > - La **restauration des données** est une mesure corrective qui permet de revenir à un état fonctionnel après un incident
-    > - La **journalisation** est une mesure détective qui permet de détecter et analyser les incidents
+    > **Explication :** Les requêtes préparées constituent la meilleure défense contre les injections SQL car elles séparent le code SQL des données, rendant impossible l'injection de code malveillant. Les données fournies par l'utilisateur sont traitées uniquement comme des paramètres et non comme du code exécutable. La validation côté client peut être contournée, la limitation de longueur n'empêche pas certaines injections, et le chiffrement de la base de données n'a aucun effet sur les injections SQL.
 
 !!! quizdown id="qa4"
 
-    ### Quelle méthode serait la plus appropriée pour évaluer les besoins de sécurité d'une application ?
+    ### Dans le contexte d'une analyse post-mortem après un incident de sécurité applicative, qu'est-ce qu'une "cause profonde" ?
     
-    - [ ] Analyse des logs système
-    - [ ] Test de pénétration
-    - [x] Analyse d'impact et évaluation des risques
-    - [ ] Audit de conformité RGPD
+    - [ ] La personne responsable de l'introduction de la vulnérabilité
+    - [ ] La méthode spécifique utilisée par l'attaquant pour exploiter la vulnérabilité
+    - [x] Le facteur fondamental qui a permis l'existence et l'exploitation de la vulnérabilité
+    - [ ] Le coût total associé à la résolution de l'incident
     
-    > **Explication :**
-    > - L'**analyse des logs** permet de détecter des incidents de sécurité mais pas d'évaluer les besoins
-    > - Le **test de pénétration** permet d'identifier des vulnérabilités techniques mais pas de déterminer les besoins de sécurité
-    > - L'**analyse d'impact et évaluation des risques** permet d'identifier les actifs à protéger, les menaces potentielles et leurs impacts, ce qui est fondamental pour déterminer les besoins de sécurité
-    > - L'**audit de conformité RGPD** vérifie le respect de la réglementation sur les données personnelles, mais ne couvre pas tous les aspects de la sécurité
+    > **Explication :** Une "cause profonde" est le facteur fondamental ou la condition qui, si corrigé ou éliminé, aurait empêché l'incident de se produire. Elle va au-delà des symptômes visibles pour identifier les défaillances systémiques, comme des pratiques de développement inadéquates, l'absence de tests de sécurité, ou des problèmes organisationnels. L'identification des causes profondes permet d'apporter des améliorations qui empêcheront la récurrence de problèmes similaires.
 
 !!! quizdown id="qa5"
 
-    ### Dans le contexte d'une attaque par injection SQL, quelle mesure préventive est la plus efficace ?
+    ### Quelle pratique n'est PAS recommandée dans le cadre de la journalisation sécurisée des activités d'une application ?
     
-    - [ ] Surveillance des logs de la base de données
-    - [x] Utilisation de requêtes préparées
-    - [ ] Sauvegarde régulière de la base de données
-    - [ ] Limitation du nombre de requêtes par utilisateur
+    - [ ] Horodater précisément chaque événement journalisé
+    - [ ] Centraliser les logs dans un système distinct de l'application
+    - [x] Enregistrer les mots de passe et données d'authentification pour faciliter le diagnostic
+    - [ ] Mettre en place une rotation des fichiers de logs
     
-    > **Explication :**
-    > - La **surveillance des logs** est une mesure détective, pas préventive
-    > - Les **requêtes préparées** séparent le code SQL des données, empêchant les injections SQL à la source
-    > - La **sauvegarde** est une mesure corrective qui permet de restaurer les données après une attaque
-    > - La **limitation des requêtes** peut réduire l'impact d'attaques par force brute mais n'empêche pas les injections SQL
+    > **Explication :** L'enregistrement des mots de passe et des données d'authentification dans les logs est une pratique dangereuse qui expose des informations sensibles et contrevient aux principes de sécurité et au RGPD. Ces informations ne devraient jamais apparaître en clair dans les journaux, même pour des raisons de diagnostic. Les bonnes pratiques incluent l'horodatage précis, la centralisation des logs et leur rotation régulière pour faciliter la gestion et l'analyse tout en maintenant la sécurité.
 
 !!! quizdown id="qa6"
 
-    ### Pour un système de vote électronique, quel critère DICP est particulièrement important pour garantir qu'un vote ne peut pas être modifié ?
+    ### Pour une application traitant des données de santé, quelle mesure est obligatoire selon le RGPD ?
     
-    - [ ] Disponibilité
-    - [x] Intégrité
-    - [ ] Confidentialité
-    - [ ] Preuve
+    - [ ] Héberger l'application exclusivement sur des serveurs européens
+    - [x] Réaliser une analyse d'impact relative à la protection des données (AIPD)
+    - [ ] Obtenir une certification ISO 27001
+    - [ ] Chiffrer systématiquement toutes les communications avec AES-256
     
-    > **Explication :** Pour un système de vote électronique :
-    > - L'**intégrité** garantit que les votes ne peuvent pas être modifiés une fois enregistrés
-    > - La **confidentialité** assure le secret du vote
-    > - La **disponibilité** permet aux électeurs de voter quand ils le souhaitent
-    > - La **preuve** permet de vérifier qu'un vote a bien été pris en compte
-    >
-    > L'intégrité est particulièrement critique car elle garantit que la volonté des électeurs est respectée.
+    > **Explication :** Le RGPD impose explicitement la réalisation d'une Analyse d'Impact relative à la Protection des Données (AIPD) lorsque le traitement est susceptible d'engendrer un risque élevé pour les droits et libertés des personnes, ce qui est systématiquement le cas pour les données de santé. Cette analyse permet d'évaluer la nécessité et la proportionnalité du traitement, ainsi que les risques et les mesures pour y faire face. Les autres mesures peuvent être recommandées mais ne sont pas spécifiquement obligatoires.
 
 !!! quizdown id="qa7"
 
-    ### Quelle affirmation concernant les événements redoutés est correcte ?
+    ### Dans le cadre de l'intégration continue (CI), quelle pratique contribue le plus à la détection précoce des vulnérabilités de sécurité ?
     
-    - [ ] Un événement redouté est toujours causé par une attaque externe
-    - [x] Un événement redouté peut avoir plusieurs causes différentes
-    - [ ] Un événement redouté a toujours un impact faible sur l'organisation
-    - [ ] Un événement redouté ne concerne que la confidentialité des données
+    - [ ] Code review manuelle par un autre développeur
+    - [ ] Tests fonctionnels automatisés
+    - [x] Analyse statique de code avec des outils spécialisés en sécurité
+    - [ ] Déploiement automatique vers l'environnement de production
     
-    > **Explication :**
-    > - Un événement redouté peut être causé par des attaques externes, mais aussi par des erreurs humaines, des pannes matérielles, des catastrophes naturelles, etc.
-    > - Un même événement redouté (par exemple : "les données client sont divulguées") peut avoir diverses causes (hacking, erreur d'un employé, perte d'un appareil...)
-    > - L'impact peut être faible, moyen ou élevé selon le contexte
-    > - Les événements redoutés peuvent concerner tous les critères DICP, pas uniquement la confidentialité
+    > **Explication :** L'analyse statique de code avec des outils spécialisés en sécurité (SAST - Static Application Security Testing) permet de détecter automatiquement des vulnérabilités potentielles directement dans le code source, sans nécessiter l'exécution du programme. Intégrée dans le pipeline CI, cette analyse s'exécute à chaque commit ou pull request, permettant d'identifier très tôt les problèmes de sécurité, avant même que le code ne soit déployé. Les autres pratiques sont importantes mais moins efficaces spécifiquement pour la détection des vulnérabilités.
 
 !!! quizdown id="qa8"
 
-    ### Qu'est-ce qu'une "menace" dans le contexte de l'analyse des risques ?
+    ### Quelle affirmation concernant la gestion des incidents de sécurité est correcte ?
     
-    - [ ] Une vulnérabilité dans un système informatique
-    - [x] Un événement susceptible d'avoir un impact négatif sur un actif
-    - [ ] Une mesure de protection contre les attaques
-    - [ ] Un indicateur de performance de sécurité
+    - [ ] Un incident de sécurité doit toujours être géré exclusivement par l'équipe technique
+    - [ ] La communication sur un incident ne doit se faire qu'après sa résolution complète
+    - [ ] Une fois l'incident résolu, les logs peuvent être supprimés pour économiser de l'espace
+    - [x] La documentation d'un incident doit inclure les actions correctives et préventives mises en œuvre
     
-    > **Explication :** Dans le contexte de l'analyse des risques :
-    > - Une **menace** est un événement potentiel qui peut porter atteinte à la sécurité (ex: piratage, incendie)
-    > - Une **vulnérabilité** est une faiblesse qui peut être exploitée par une menace
-    > - Une **mesure de protection** (ou contrôle) est mise en place pour réduire les risques
-    > - Un **risque** est la combinaison d'une menace, d'une vulnérabilité et d'un impact potentiel
+    > **Explication :** Une bonne gestion des incidents inclut nécessairement la documentation des actions correctives (pour résoudre l'incident) et préventives (pour éviter qu'il ne se reproduise). Cette documentation est essentielle pour l'apprentissage organisationnel et peut être requise pour des raisons de conformité ou légales. La gestion d'un incident doit être multidisciplinaire, la communication doit être rapide et transparente, et les logs doivent être conservés selon une politique de rétention définie, pas supprimés arbitrairement.
 
 ## Interprétation de votre score
 
-- **7-8/8** : Excellent ! Vous avez une très bonne compréhension des concepts d'analyse des risques.
+- **7-8/8** : Excellent ! Vous avez une très bonne compréhension des principes de gestion des incidents et de conformité dans le contexte du développement d'applications.
   
 - **5-6/8** : Bon travail ! Vous maîtrisez les concepts essentiels mais quelques points méritent d'être revus.
   
@@ -137,18 +102,19 @@ Ce QCM vous permet de vérifier votre compréhension des notions abordées dans 
 
 ## Points clés à retenir
 
-1. **Analysez toujours les besoins DICP** selon le contexte et les enjeux métier
+1. **Intégrez la sécurité dès la conception** (Security by Design) dans vos applications
 
-2. **Catégorisez les menaces** à l'aide de modèles comme STRIDE pour être exhaustif
+2. **Implémentez les mesures techniques** nécessaires pour assurer la conformité au RGPD
 
-3. **Mettez en place des mesures de sécurité** préventives, détectives et correctives
+3. **Préparez-vous à gérer les incidents** en mettant en place une procédure claire et en formant les équipes
 
-4. **Évaluez les risques** en fonction de la probabilité et de l'impact des menaces
+4. **Documentez systématiquement** les incidents et leurs résolutions pour améliorer les processus
 
-5. **Priorisez les actions** en fonction du niveau de risque et des contraintes (coût, temps, ressources)
+5. **Utilisez les bonnes pratiques de développement sécurisé** et les outils d'analyse automatisés dans votre pipeline CI/CD
 
 ## Pour aller plus loin
 
-- Familiarisez-vous avec les méthodologies d'analyse de risques comme EBIOS, MEHARI ou ISO 27005
-- Entraînez-vous à identifier les risques dans différents contextes métier
-- Pratiquez l'évaluation des besoins DICP sur des cas concrets
+- Familiarisez-vous avec le Top 10 OWASP et les bonnes pratiques de développement sécurisé
+- Explorez les frameworks d'analyse et de gestion des incidents comme NIST SP 800-61
+- Approfondissez vos connaissances sur l'implémentation technique des exigences du RGPD
+- Pratiquez l'identification et la correction des vulnérabilités sur des plateformes comme OWASP WebGoat

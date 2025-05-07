@@ -1,129 +1,175 @@
-## Module 6 : Gestion des incidents et conformité
+# Module 6 : Gestion des incidents et conformité orienté SLAM
 
-### Exercice 6.1 : Élaboration d'un plan de réponse aux incidents
+## Exercice 6.1 : Analyse d'une vulnérabilité de sécurité applicative (20 min)
 
-**Rappel théorique**
-Un plan de réponse aux incidents de sécurité comporte généralement six phases :
-1. **Préparation** : mise en place préalable des processus et outils
-2. **Identification** : détection et qualification de l'incident
-3. **Confinement** : limitation de l'impact et de la propagation
-4. **Éradication** : suppression de la menace
-5. **Rétablissement** : retour à la normale
-6. **Retour d'expérience** : analyse et amélioration continue
+### Rappel théorique
+Dans le développement logiciel, la gestion des vulnérabilités de sécurité suit généralement ces étapes :
+1. **Identification** : découverte de la vulnérabilité (tests, signalement, scanners de code)
+2. **Évaluation** : qualification de la gravité et des impacts potentiels
+3. **Correction** : développement et déploiement d'un correctif
+4. **Communication** : information des parties prenantes
+5. **Post-mortem** : analyse des causes profondes et amélioration des processus
 
-**Énoncé**
-Pour une entreprise de e-commerce ayant subi une attaque par ransomware :
-1. Élaborez un plan de réponse immédiate (premières 24h)
-2. Définissez les rôles et responsabilités des membres de l'équipe de réponse
-3. Proposez un modèle de communication de crise pour les parties prenantes
+Le framework CVSS (Common Vulnerability Scoring System) permet d'évaluer la gravité des vulnérabilités sur une échelle de 0 à 10.
 
-**Correction**
+### Énoncé
 
-1. **Plan de réponse immédiate (24h)** :
-   - **H+0-1** : Constatation et alerte de l'équipe de réponse
-   - **H+1-2** : Isolation réseau des systèmes affectés et sauvegarde forensique
-   - **H+2-4** : Évaluation de l'étendue de la compromission et identification du ransomware
-   - **H+4-8** : Constitution de la cellule de crise et décision sur la continuité d'activité
-   - **H+8-12** : Mise en œuvre du plan de continuité et préparation des communications
-   - **H+12-24** : Début de l'investigation, signalement aux autorités (ANSSI, CNIL)
+Une vulnérabilité d'injection SQL a été découverte dans l'application de gestion commerciale de votre entreprise. La vulnérabilité permet à un utilisateur authentifié avec des privilèges standards d'exécuter des requêtes SQL arbitraires sur la base de données.
 
-2. **Rôles et responsabilités** :
-   - **Responsable de crise** : Coordination générale et prise de décision
-   - **Expert technique** : Analyse technique et actions de confinement
-   - **Juriste** : Aspects légaux et réglementaires (RGPD, obligations de notification)
-   - **Communicant** : Gestion des communications internes et externes
-   - **Responsable métier** : Évaluation de l'impact sur les activités critiques
+1. Évaluez la gravité de cette vulnérabilité
+2. Proposez une méthode de correction immédiate et pérenne
+3. Rédigez une procédure d'analyse post-incident pour éviter que ce type de vulnérabilité ne se reproduise
 
-3. **Modèle de communication** :
-   - **Interne** : Message factuel aux employés expliquant les perturbations, les consignes à suivre et les prochaines étapes
-   - **Clients** : Information sur les impacts potentiels, mesures prises et canal de suivi
-   - **Autorités** : Notification détaillée et transparente conforme aux obligations légales
-   - **Partenaires** : Information sur les impacts sur les services partagés et mesures de protection à prendre
-   - **Presse** : Communiqué concis évitant les spéculations, focalisé sur les actions engagées
+### Correction
 
-### Exercice 6.2 : Audit de conformité RGPD
+1. **Évaluation de la gravité** :
+   - **Gravité élevée (CVSS ~8.0)** : La vulnérabilité permet d'exécuter des requêtes SQL arbitraires
+   - **Vecteur d'attaque** : Nécessite une authentification (impact limité)
+   - **Impacts potentiels** : 
+     * Accès non autorisé à des données sensibles
+     * Modification ou suppression de données
+     * Élévation de privilèges potentielle
+     * Non-conformité au RGPD si des données personnelles sont exposées
 
-**Rappel théorique**
-Le RGPD (Règlement Général sur la Protection des Données) impose des obligations aux organisations traitant des données à caractère personnel :
-- Licéité, transparence et limitation des finalités du traitement
-- Minimisation des données et limitation de la conservation
-- Sécurité appropriée et accountability (responsabilité démontrable)
-- Respect des droits des personnes (accès, rectification, effacement, etc.)
+2. **Méthode de correction** :
+   - **Correction immédiate** :
+     * Déploiement d'un correctif d'urgence remplaçant les requêtes dynamiques par des requêtes paramétrées
+     * Mise en place d'un WAF (Web Application Firewall) pour bloquer les tentatives d'injection
+   
+   - **Solution pérenne** :
+     * Revue complète du code pour identifier d'autres instances similaires
+     * Utilisation systématique d'un ORM ou de requêtes préparées
+     * Implémentation de validation stricte des entrées utilisateur
+     * Principe du moindre privilège pour les connexions à la base de données
 
-**Énoncé**
-Dans le cadre d'un audit RGPD pour une application de gestion de ressources humaines :
-1. Élaborez une grille d'audit pour évaluer la conformité
-2. Identifiez trois non-conformités courantes et leurs corrections
-3. Proposez une méthode pour maintenir la conformité dans le temps
+3. **Procédure d'analyse post-incident** :
+   - **Documentation de l'incident** :
+     * Chronologie détaillée
+     * Code vulnérable identifié
+     * Méthode d'exploitation utilisée
+   
+   - **Analyse des causes profondes** :
+     * Comment la vulnérabilité a-t-elle été introduite ?
+     * Pourquoi n'a-t-elle pas été détectée plus tôt ?
+     * Quelles pratiques de développement ont contribué au problème ?
+   
+   - **Améliorations des processus** :
+     * Intégration d'outils d'analyse statique dans le pipeline CI/CD
+     * Formation des développeurs aux pratiques de codage sécurisé
+     * Mise à jour des standards de développement et des revues de code
+     * Tests de pénétration réguliers sur l'application
 
-**Correction**
+## Exercice 6.2 : Intégration du RGPD dans le développement d'applications (20 min)
 
-1. **Grille d'audit RGPD** :
+### Rappel théorique
+Le concept de "Privacy by Design" (protection des données dès la conception) est un principe fondamental du RGPD qui impose :
+- L'intégration de la protection des données dès la conception des applications
+- La mise en œuvre de mesures techniques et organisationnelles appropriées
+- La minimisation des données traitées
+- La mise en place de mécanismes permettant aux utilisateurs d'exercer leurs droits
 
-   | Critère | Points de contrôle | Conformité |
-   |---------|-------------------|------------|
-   | Registre des traitements | Existence, exhaustivité, mise à jour | □ |
-   | Information | Mentions légales, politique de confidentialité | □ |
-   | Consentement | Mécanisme explicite, tracé, révocable | □ |
-   | Sécurité | Chiffrement, contrôle d'accès, PIA | □ |
-   | Exercice des droits | Procédure, délais, traçabilité | □ |
-   | Sous-traitance | Clauses contractuelles, garanties | □ |
-   | Conservation | Durées définies, purge automatique | □ |
-   | Violation | Procédure de notification | □ |
+### Énoncé
 
-2. **Non-conformités courantes et corrections** :
-   - **Non-conformité** : Conservation excessive des données RH
-     * **Correction** : Définir des durées de conservation par type de données et mettre en place une purge automatique
+Vous développez une application web de gestion de réservations d'hôtel qui collecte et traite des données personnelles des clients.
 
-   - **Non-conformité** : Accès non différencié aux dossiers du personnel
-     * **Correction** : Implémenter un contrôle d'accès basé sur les rôles avec cloisonnement par service
+1. Identifiez les exigences du RGPD qui impactent directement le développement
+2. Proposez des fonctionnalités techniques pour répondre au droit à l'effacement (droit à l'oubli)
+3. Concevez un mécanisme de journalisation des accès aux données personnelles conforme au RGPD
 
-   - **Non-conformité** : Absence de journalisation des accès aux données sensibles
-     * **Correction** : Déployer un système de logging des consultations/modifications avec horodatage et identité
+### Correction
 
-3. **Méthode pour maintenir la conformité** :
-   - Désignation d'un référent RGPD avec formation continue
-   - Revue trimestrielle du registre des traitements
-   - Tests réguliers des procédures d'exercice des droits
-   - Audits internes annuels et externe tous les deux ans
-   - Intégration de la conformité dès la conception des évolutions (Privacy by Design)
+1. **Exigences RGPD impactant le développement** :
+   - **Minimisation des données** : Ne collecter que les données strictement nécessaires
+   - **Limitation de la conservation** : Définir des durées de conservation appropriées
+   - **Sécurité** : Chiffrement des données sensibles, protection contre les attaques
+   - **Droits des personnes** : Mécanismes permettant l'accès, la rectification, l'effacement, etc.
+   - **Consentement** : Recueil explicite et granulaire du consentement
+   - **Journalisation** : Traçabilité des accès et modifications de données personnelles
 
-### Exercice 6.3 : Analyse post-incident
+2. **Fonctionnalités pour le droit à l'effacement** :
+   - **Interface administrateur** dédiée pour traiter les demandes d'effacement
+   - **Processus technique d'anonymisation** plutôt que suppression physique pour préserver l'intégrité référentielle
+   - **Cascade d'effacement** dans toutes les tables liées (réservations, préférences, commentaires)
+   - **Mécanisme de sauvegarde intermédiaire** des données avant effacement pour répondre aux obligations légales
+   - **Notification automatique** de confirmation d'effacement à l'utilisateur
+   - **Journal d'audit** des demandes d'effacement et de leur traitement
 
-**Rappel théorique**
-L'analyse post-incident (ou retour d'expérience) est une phase critique qui permet :
-- De comprendre précisément ce qui s'est passé
-- D'identifier les lacunes dans la détection et la réponse
-- D'améliorer les procédures et les défenses
-- De partager les connaissances avec la communauté
-- De mettre à jour la politique de sécurité
+3. **Mécanisme de journalisation conforme** :
+   - **Structure de la journalisation** :
+     * Qui : identifiant de l'utilisateur ou du système accédant aux données
+     * Quoi : nature de l'opération (lecture, modification, suppression)
+     * Quand : horodatage précis
+     * Sur quoi : type de données et identifiant de l'enregistrement
+     * Pourquoi : finalité de l'accès ou référence à la fonctionnalité
+   
+   - **Implémentation technique** :
+     * Journalisation dans une base de données séparée avec accès restreint
+     * Chiffrement des journaux
+     * Conservation limitée à 6 mois avec purge automatique
+     * Impossibilité de désactivation par les administrateurs
+     * Alertes automatiques sur les schémas d'accès anormaux
 
-**Énoncé**
-Suite à une compromission de compte privilégié ayant entraîné une fuite de données :
-1. Proposez une méthodologie d'analyse post-incident
-2. Créez un modèle de rapport d'analyse
-3. Suggérez trois améliorations techniques et organisationnelles
+## Exercice 6.3 : Gestion d'une fuite de données dans une application (20 min)
 
-**Correction**
+### Rappel théorique
+En cas de violation de données à caractère personnel, le RGPD impose :
+- Une notification à l'autorité de contrôle (CNIL en France) dans les 72 heures
+- Une communication aux personnes concernées si le risque pour leurs droits et libertés est élevé
+- Une documentation interne de toutes les violations
 
-1. **Méthodologie d'analyse post-incident** :
-   - **Collecte des preuves** : Logs systèmes, réseau, applications, témoignages
-   - **Chronologie** : Reconstruction précise des événements
-   - **Analyse de la cause racine** : Identification des vulnérabilités exploitées
-   - **Évaluation de l'impact** : Quantification des dommages
-   - **Évaluation de la réponse** : Efficacité des mesures prises
-   - **Élaboration des recommandations** : Mesures préventives et correctives
+En parallèle, une approche technique structurée est nécessaire pour traiter l'incident.
 
-2. **Modèle de rapport d'analyse** :
-   - **Résumé exécutif** : Synthèse pour la direction
-   - **Description de l'incident** : Nature, chronologie, impacts
-   - **Analyse technique** : Vecteur d'attaque, TTPs (Tactics, Techniques, Procedures)
-   - **Évaluation de la réponse** : Forces et faiblesses
-   - **Recommandations** : Mesures correctives et préventives
-   - **Plan d'action** : Responsables, délais, ressources
-   - **Annexes** : Logs, IOCs (Indicators of Compromise), références
+### Énoncé
 
-3. **Améliorations techniques et organisationnelles** :
-   - **Technique** : Déploiement d'une solution PAM (Privileged Access Management) avec authentification multifacteur et sessions enregistrées
-   - **Technique** : Implémentation d'un SIEM avec alertes sur les comportements anormaux des comptes privilégiés
-   - **Organisationnelle** : Révision de la procédure d'attribution des droits administrateurs avec validation multiple et revue trimestrielle
+Votre équipe découvre qu'une vulnérabilité dans l'API de votre application mobile a permis l'exfiltration de données utilisateurs (noms, emails, téléphones, adresses) pendant les deux dernières semaines.
+
+1. Détaillez les actions techniques immédiates à mettre en œuvre
+2. Rédigez un plan de communication conforme aux exigences du RGPD
+3. Proposez des mesures correctives à long terme pour l'API et l'application
+
+### Correction
+
+1. **Actions techniques immédiates** :
+   - **Isolation de la vulnérabilité** : Désactivation temporaire de l'endpoint vulnérable ou mise en place d'un correctif d'urgence
+   - **Analyse de l'étendue** : Examination des logs d'API pour déterminer quelles données ont été compromises et quels utilisateurs sont affectés
+   - **Collecte de preuves** : Sauvegarde sécurisée des logs et des artifacts techniques pour l'investigation
+   - **Correction de la vulnérabilité** : Développement et déploiement d'un correctif pour l'API
+   - **Vérification** : Tests de pénétration pour confirmer que la vulnérabilité est résolue
+   - **Surveillance renforcée** : Mise en place d'alertes spécifiques pour détecter des comportements similaires
+
+2. **Plan de communication RGPD** :
+   - **Notification à la CNIL** (sous 72h) contenant :
+     * Nature de la violation
+     * Catégories et nombre approximatif de personnes concernées
+     * Catégories et volume de données compromises
+     * Conséquences probables
+     * Mesures prises pour y remédier et atténuer les impacts
+   
+   - **Communication aux personnes concernées** :
+     * Description claire de la nature de la violation
+     * Coordonnées du DPO ou d'un point de contact
+     * Conséquences possibles pour les personnes
+     * Mesures prises pour remédier à la situation
+     * Recommandations de mesures préventives (changement de mot de passe, etc.)
+   
+   - **Documentation interne** :
+     * Rapport technique détaillé
+     * Chronologie de l'incident
+     * Impact sur les données et les personnes
+     * Mesures prises et leur efficacité
+
+3. **Mesures correctives à long terme** :
+   - **Révision de l'architecture API** :
+     * Implémentation d'une authentification forte (OAuth 2.0, JWT avec durée limitée)
+     * Limitation de débit (throttling) pour prévenir les extractions massives
+     * Chiffrement des données sensibles de bout en bout
+   
+   - **Améliorations du cycle de développement** :
+     * Intégration de tests de sécurité automatisés dans le CI/CD
+     * Revues de code axées sur la sécurité
+     * Formation des développeurs aux vulnérabilités API (OWASP API Security Top 10)
+   
+   - **Surveillance et détection** :
+     * Mise en place d'un système de détection d'anomalies sur les appels API
+     * Audit régulier des accès aux données sensibles
+     * Tests d'intrusion périodiques ciblant spécifiquement l'API

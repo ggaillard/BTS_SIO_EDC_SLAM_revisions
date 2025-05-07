@@ -1,96 +1,74 @@
-# QCM de positionnement - Analyse des risques et besoins de sécurité
+# QCM de positionnement - Gestion des incidents et conformité orienté SLAM
 
-Ce QCM vous permet d'évaluer vos connaissances avant d'aborder le module. Cochez vos réponses et cliquez sur "Calculer le score" pour voir votre résultat.
+Ce QCM vous permet d'évaluer vos connaissances avant d'aborder le module. Répondez aux questions puis vérifiez vos réponses pour savoir quels points nécessitent votre attention.
 
-<form id="qcmForm">
-  <div class="question">
-    <p><strong>1. Que signifie l'acronyme DICP en sécurité informatique ?</strong></p>
-    <input type="radio" id="q1a" name="q1" value="a">
-    <label for="q1a">a) Disponibilité, Intégrité, Confidentialité, Performance</label><br>
+!!! quizdown id="q1"
     
-    <input type="radio" id="q1b" name="q1" value="b">
-    <label for="q1b">b) Disponibilité, Intégrité, Confidentialité, Preuve</label><br>
+    ### Que signifie SDLC dans le contexte de la sécurité applicative ?
     
-    <input type="radio" id="q1c" name="q1" value="c">
-    <label for="q1c">c) Données, Information, Connaissance, Protection</label><br>
+    - [ ] Secure Data Link Control
+    - [x] Software Development Life Cycle
+    - [ ] System Defense Level Certification
+    - [ ] Security Detection and Log Collection
     
-    <input type="radio" id="q1d" name="q1" value="d">
-    <label for="q1d">d) Défense, Intégrité, Contrôle, Protection</label>
-  </div>
+    > **Explication :** SDLC signifie Software Development Life Cycle (cycle de vie du développement logiciel). Dans le contexte de la sécurité, on parle souvent de Secure SDLC, qui consiste à intégrer la sécurité à chaque étape du cycle de développement, de la conception initiale jusqu'à la maintenance, en passant par le développement, les tests et le déploiement.
 
-  <div class="question">
-    <p><strong>2. Parmi ces éléments, lequel n'est PAS une catégorie du modèle STRIDE ?</strong></p>
-    <input type="radio" id="q2a" name="q2" value="a">
-    <label for="q2a">a) Spoofing (usurpation d'identité)</label><br>
+!!! quizdown id="q2"
+
+    ### Quelle pratique n'est PAS recommandée lors de la gestion d'un incident de sécurité impliquant une fuite de données dans une application ?
     
-    <input type="radio" id="q2b" name="q2" value="b">
-    <label for="q2b">b) Tampering (altération de données)</label><br>
+    - [ ] Documenter chronologiquement toutes les étapes de l'investigation
+    - [ ] Identifier et corriger la vulnérabilité ayant permis l'incident
+    - [x] Effacer immédiatement les logs pour empêcher l'attaquant d'y accéder
+    - [ ] Notifier les autorités et les personnes concernées conformément au RGPD
     
-    <input type="radio" id="q2c" name="q2" value="c">
-    <label for="q2c">c) Tracking (suivi des utilisateurs)</label><br>
+    > **Explication :** Effacer les logs est une mauvaise pratique car ils constituent des preuves essentielles pour l'investigation de l'incident et peuvent être nécessaires pour des raisons légales ou réglementaires. De plus, cette action pourrait détruire des informations précieuses sur le mode opératoire de l'attaquant et les données compromises.
+
+!!! quizdown id="q3"
+
+    ### Qu'est-ce que le DevSecOps ?
     
-    <input type="radio" id="q2d" name="q2" value="d">
-    <label for="q2d">d) Elevation of privilege (élévation de privilèges)</label>
-  </div>
+    - [ ] Un outil d'analyse de code automatisé
+    - [ ] Un framework de test d'intrusion pour applications web
+    - [x] Une approche qui intègre la sécurité dans le processus DevOps
+    - [ ] Un standard de certification pour les développeurs en sécurité
+    
+    > **Explication :** DevSecOps est une approche qui intègre la sécurité dans le processus DevOps, en automatisant les contrôles de sécurité tout au long du cycle de développement et d'exploitation des applications. Cela permet d'identifier et de corriger les problèmes de sécurité plus tôt dans le cycle de développement, réduisant ainsi les coûts et les risques.
 
-  <!-- Ajoutez d'autres questions de la même manière -->
+!!! quizdown id="q4"
 
-  <button type="button" onclick="calculateScore()">Calculer le score</button>
-</form>
+    ### Quelle action fait partie d'une analyse post-mortem après un incident de sécurité applicative ?
+    
+    - [ ] Blâmer publiquement l'équipe responsable de la vulnérabilité
+    - [x] Identifier les améliorations à apporter au code et aux processus de développement
+    - [ ] Restaurer les systèmes sans analyser la cause première
+    - [ ] Imposer immédiatement des changements radicaux dans l'architecture logicielle
+    
+    > **Explication :** Une bonne analyse post-mortem après un incident se concentre sur l'apprentissage et l'amélioration, pas sur la recherche de coupables. Elle vise à identifier les améliorations à apporter au code, aux pratiques de développement et aux processus pour éviter que des incidents similaires ne se reproduisent à l'avenir. C'est une approche constructive qui permet de renforcer la sécurité des applications.
 
-<div id="results" style="display: none;">
-  <h2>Résultats</h2>
-  <p>Votre score : <span id="score">0</span>/5</p>
-  <div id="feedback"></div>
-  <div id="corrections" style="display: none;">
-    <h3>Réponses correctes :</h3>
-    <p>1. b) Disponibilité, Intégrité, Confidentialité, Preuve</p>
-    <p>2. c) Tracking (suivi des utilisateurs)</p>
-    <!-- Ajoutez les autres réponses correctes -->
-  </div>
-  <button type="button" onclick="showCorrections()">Voir les réponses correctes</button>
-</div>
+!!! quizdown id="q5"
 
-<script>
-function calculateScore() {
-  const answers = {
-    q1: "b",
-    q2: "c",
-    q3: "b",
-    q4: "b",
-    q5: "b"
-  };
+    ### Quel élément constitue une preuve d'une violation de données dans une application web ?
+    
+    - [ ] Un avis personnel d'un développeur sur la gravité de l'incident
+    - [ ] Une estimation du coût financier de l'incident
+    - [x] Les journaux d'accès à la base de données montrant des requêtes anormales
+    - [ ] Un rapport verbal d'un utilisateur signalant un comportement étrange
+    
+    > **Explication :** Les journaux d'accès à la base de données constituent une preuve technique tangible qui peut montrer des modèles d'accès anormaux, des requêtes malveillantes ou des extractions massives de données caractéristiques d'une violation. Ces logs sont essentiels pour l'investigation, peuvent être analysés de manière objective et servent souvent de preuves dans les enquêtes officielles.
+
+## Interprétation de votre score
+
+- **5/5** : Excellent ! Vous avez déjà une bonne connaissance des principes de gestion des incidents et de conformité appliqués au développement logiciel.
   
-  let score = 0;
-  let feedback = "";
+- **3-4/5** : Bon travail ! Vous connaissez les bases mais certains concepts méritent d'être approfondis.
   
-  // Vérifier chaque réponse
-  for (const [question, correctAnswer] of Object.entries(answers)) {
-    const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
-    
-    if (selectedOption) {
-      if (selectedOption.value === correctAnswer) {
-        score++;
-      }
-    }
-  }
-  
-  // Afficher le score et le feedback
-  document.getElementById("score").textContent = score;
-  
-  if (score === 5) {
-    feedback = "Excellent ! Vous maîtrisez déjà les concepts de base de l'analyse des risques.";
-  } else if (score >= 3) {
-    feedback = "Bon travail ! Vous avez de bonnes connaissances, mais certains concepts méritent d'être approfondis.";
-  } else {
-    feedback = "Ce module va vous permettre d'acquérir les bases essentielles de l'analyse des risques.";
-  }
-  
-  document.getElementById("feedback").textContent = feedback;
-  document.getElementById("results").style.display = "block";
-}
+- **0-2/5** : Ce module sera particulièrement bénéfique pour vous, car il vous permettra d'acquérir les connaissances essentielles sur la gestion des incidents et la conformité dans le contexte du développement logiciel, des compétences fondamentales pour un développeur SLAM.
 
-function showCorrections() {
-  document.getElementById("corrections").style.display = "block";
-}
-</script>
+## Points clés à retenir avant de commencer
+
+- La gestion des incidents dans le développement logiciel implique des processus spécifiques pour détecter, analyser et résoudre les problèmes de sécurité
+- L'intégration de la sécurité tout au long du cycle de développement logiciel est essentielle
+- La conformité aux réglementations comme le RGPD nécessite des pratiques de développement spécifiques
+- Une bonne analyse post-incident permet d'améliorer continuellement la sécurité des applications
+- La documentation des incidents de sécurité est cruciale tant pour l'aspect technique que pour la conformité légale
