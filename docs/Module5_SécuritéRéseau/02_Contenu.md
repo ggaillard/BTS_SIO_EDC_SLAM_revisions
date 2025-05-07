@@ -1,6 +1,3 @@
-## Fichier 1: Module5_SécuritéRéseau/02_Contenu.md
-
-```markdown
 # Module 5 : Sécurité des applications et des services web
 
 ## Exercice 5.1 : Configuration des en-têtes de sécurité HTTP (20 min)
