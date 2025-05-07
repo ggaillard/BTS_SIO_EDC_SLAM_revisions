@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#module-6-gestion-des-incidents-et-conformite" class="md-skip">
+        <a href="#module-6-gestion-des-incidents-et-conformite-oriente-slam" class="md-skip">
           Aller au contenu
         </a>
       
@@ -1082,6 +1082,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1114,6 +1116,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1122,37 +1126,121 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#module-6-gestion-des-incidents-et-conformite" class="md-nav__link">
+  <a href="#exercice-61-analyse-dune-vulnerabilite-de-securite-applicative-20-min" class="md-nav__link">
     <span class="md-ellipsis">
-      Module 6 : Gestion des incidents et conformité
+      Exercice 6.1 : Analyse d'une vulnérabilité de sécurité applicative (20 min)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Module 6 : Gestion des incidents et conformité">
+    <nav class="md-nav" aria-label="Exercice 6.1 : Analyse d&#39;une vulnérabilité de sécurité applicative (20 min)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-61-elaboration-dun-plan-de-reponse-aux-incidents" class="md-nav__link">
+  <a href="#rappel-theorique" class="md-nav__link">
     <span class="md-ellipsis">
-      Exercice 6.1 : Élaboration d'un plan de réponse aux incidents
+      Rappel théorique
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-62-audit-de-conformite-rgpd" class="md-nav__link">
+  <a href="#enonce" class="md-nav__link">
     <span class="md-ellipsis">
-      Exercice 6.2 : Audit de conformité RGPD
+      Énoncé
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-63-analyse-post-incident" class="md-nav__link">
+  <a href="#correction" class="md-nav__link">
     <span class="md-ellipsis">
-      Exercice 6.3 : Analyse post-incident
+      Correction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-62-integration-du-rgpd-dans-le-developpement-dapplications-20-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice 6.2 : Intégration du RGPD dans le développement d'applications (20 min)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice 6.2 : Intégration du RGPD dans le développement d&#39;applications (20 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rappel-theorique_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rappel théorique
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enonce_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Énoncé
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correction_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-63-gestion-dune-fuite-de-donnees-dans-une-application-20-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice 6.3 : Gestion d'une fuite de données dans une application (20 min)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice 6.3 : Gestion d&#39;une fuite de données dans une application (20 min)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rappel-theorique_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rappel théorique
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enonce_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Énoncé
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correction_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correction
     </span>
   </a>
   
@@ -1218,191 +1306,229 @@
 
 
 
-  <h1>Contenu du module</h1>
-
-<h2 id="module-6-gestion-des-incidents-et-conformite">Module 6 : Gestion des incidents et conformité</h2>
-<h3 id="exercice-61-elaboration-dun-plan-de-reponse-aux-incidents">Exercice 6.1 : Élaboration d'un plan de réponse aux incidents</h3>
-<p><strong>Rappel théorique</strong>
-Un plan de réponse aux incidents de sécurité comporte généralement six phases :
-1. <strong>Préparation</strong> : mise en place préalable des processus et outils
-2. <strong>Identification</strong> : détection et qualification de l'incident
-3. <strong>Confinement</strong> : limitation de l'impact et de la propagation
-4. <strong>Éradication</strong> : suppression de la menace
-5. <strong>Rétablissement</strong> : retour à la normale
-6. <strong>Retour d'expérience</strong> : analyse et amélioration continue</p>
-<p><strong>Énoncé</strong>
-Pour une entreprise de e-commerce ayant subi une attaque par ransomware :
-1. Élaborez un plan de réponse immédiate (premières 24h)
-2. Définissez les rôles et responsabilités des membres de l'équipe de réponse
-3. Proposez un modèle de communication de crise pour les parties prenantes</p>
-<p><strong>Correction</strong></p>
+<h1 id="module-6-gestion-des-incidents-et-conformite-oriente-slam">Module 6 : Gestion des incidents et conformité orienté SLAM</h1>
+<h2 id="exercice-61-analyse-dune-vulnerabilite-de-securite-applicative-20-min">Exercice 6.1 : Analyse d'une vulnérabilité de sécurité applicative (20 min)</h2>
+<h3 id="rappel-theorique">Rappel théorique</h3>
+<p>Dans le développement logiciel, la gestion des vulnérabilités de sécurité suit généralement ces étapes :
+1. <strong>Identification</strong> : découverte de la vulnérabilité (tests, signalement, scanners de code)
+2. <strong>Évaluation</strong> : qualification de la gravité et des impacts potentiels
+3. <strong>Correction</strong> : développement et déploiement d'un correctif
+4. <strong>Communication</strong> : information des parties prenantes
+5. <strong>Post-mortem</strong> : analyse des causes profondes et amélioration des processus</p>
+<p>Le framework CVSS (Common Vulnerability Scoring System) permet d'évaluer la gravité des vulnérabilités sur une échelle de 0 à 10.</p>
+<h3 id="enonce">Énoncé</h3>
+<p>Une vulnérabilité d'injection SQL a été découverte dans l'application de gestion commerciale de votre entreprise. La vulnérabilité permet à un utilisateur authentifié avec des privilèges standards d'exécuter des requêtes SQL arbitraires sur la base de données.</p>
 <ol>
-<li><strong>Plan de réponse immédiate (24h)</strong> :</li>
-<li><strong>H+0-1</strong> : Constatation et alerte de l'équipe de réponse</li>
-<li><strong>H+1-2</strong> : Isolation réseau des systèmes affectés et sauvegarde forensique</li>
-<li><strong>H+2-4</strong> : Évaluation de l'étendue de la compromission et identification du ransomware</li>
-<li><strong>H+4-8</strong> : Constitution de la cellule de crise et décision sur la continuité d'activité</li>
-<li><strong>H+8-12</strong> : Mise en œuvre du plan de continuité et préparation des communications</li>
-<li>
-<p><strong>H+12-24</strong> : Début de l'investigation, signalement aux autorités (ANSSI, CNIL)</p>
-</li>
-<li>
-<p><strong>Rôles et responsabilités</strong> :</p>
-</li>
-<li><strong>Responsable de crise</strong> : Coordination générale et prise de décision</li>
-<li><strong>Expert technique</strong> : Analyse technique et actions de confinement</li>
-<li><strong>Juriste</strong> : Aspects légaux et réglementaires (RGPD, obligations de notification)</li>
-<li><strong>Communicant</strong> : Gestion des communications internes et externes</li>
-<li>
-<p><strong>Responsable métier</strong> : Évaluation de l'impact sur les activités critiques</p>
-</li>
-<li>
-<p><strong>Modèle de communication</strong> :</p>
-</li>
-<li><strong>Interne</strong> : Message factuel aux employés expliquant les perturbations, les consignes à suivre et les prochaines étapes</li>
-<li><strong>Clients</strong> : Information sur les impacts potentiels, mesures prises et canal de suivi</li>
-<li><strong>Autorités</strong> : Notification détaillée et transparente conforme aux obligations légales</li>
-<li><strong>Partenaires</strong> : Information sur les impacts sur les services partagés et mesures de protection à prendre</li>
-<li><strong>Presse</strong> : Communiqué concis évitant les spéculations, focalisé sur les actions engagées</li>
+<li>Évaluez la gravité de cette vulnérabilité</li>
+<li>Proposez une méthode de correction immédiate et pérenne</li>
+<li>Rédigez une procédure d'analyse post-incident pour éviter que ce type de vulnérabilité ne se reproduise</li>
 </ol>
-<h3 id="exercice-62-audit-de-conformite-rgpd">Exercice 6.2 : Audit de conformité RGPD</h3>
-<p><strong>Rappel théorique</strong>
-Le RGPD (Règlement Général sur la Protection des Données) impose des obligations aux organisations traitant des données à caractère personnel :
-- Licéité, transparence et limitation des finalités du traitement
-- Minimisation des données et limitation de la conservation
-- Sécurité appropriée et accountability (responsabilité démontrable)
-- Respect des droits des personnes (accès, rectification, effacement, etc.)</p>
-<p><strong>Énoncé</strong>
-Dans le cadre d'un audit RGPD pour une application de gestion de ressources humaines :
-1. Élaborez une grille d'audit pour évaluer la conformité
-2. Identifiez trois non-conformités courantes et leurs corrections
-3. Proposez une méthode pour maintenir la conformité dans le temps</p>
-<p><strong>Correction</strong></p>
+<h3 id="correction">Correction</h3>
 <ol>
-<li><strong>Grille d'audit RGPD</strong> :</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>Critère</th>
-<th>Points de contrôle</th>
-<th>Conformité</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Registre des traitements</td>
-<td>Existence, exhaustivité, mise à jour</td>
-<td>□</td>
-</tr>
-<tr>
-<td>Information</td>
-<td>Mentions légales, politique de confidentialité</td>
-<td>□</td>
-</tr>
-<tr>
-<td>Consentement</td>
-<td>Mécanisme explicite, tracé, révocable</td>
-<td>□</td>
-</tr>
-<tr>
-<td>Sécurité</td>
-<td>Chiffrement, contrôle d'accès, PIA</td>
-<td>□</td>
-</tr>
-<tr>
-<td>Exercice des droits</td>
-<td>Procédure, délais, traçabilité</td>
-<td>□</td>
-</tr>
-<tr>
-<td>Sous-traitance</td>
-<td>Clauses contractuelles, garanties</td>
-<td>□</td>
-</tr>
-<tr>
-<td>Conservation</td>
-<td>Durées définies, purge automatique</td>
-<td>□</td>
-</tr>
-<tr>
-<td>Violation</td>
-<td>Procédure de notification</td>
-<td>□</td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li><strong>Non-conformités courantes et corrections</strong> :</li>
+<li><strong>Évaluation de la gravité</strong> :</li>
+<li><strong>Gravité élevée (CVSS ~8.0)</strong> : La vulnérabilité permet d'exécuter des requêtes SQL arbitraires</li>
+<li><strong>Vecteur d'attaque</strong> : Nécessite une authentification (impact limité)</li>
 <li>
-<p><strong>Non-conformité</strong> : Conservation excessive des données RH</p>
+<p><strong>Impacts potentiels</strong> : </p>
 <ul>
-<li><strong>Correction</strong> : Définir des durées de conservation par type de données et mettre en place une purge automatique</li>
+<li>Accès non autorisé à des données sensibles</li>
+<li>Modification ou suppression de données</li>
+<li>Élévation de privilèges potentielle</li>
+<li>Non-conformité au RGPD si des données personnelles sont exposées</li>
 </ul>
 </li>
 <li>
-<p><strong>Non-conformité</strong> : Accès non différencié aux dossiers du personnel</p>
+<p><strong>Méthode de correction</strong> :</p>
+</li>
+<li>
+<p><strong>Correction immédiate</strong> :</p>
 <ul>
-<li><strong>Correction</strong> : Implémenter un contrôle d'accès basé sur les rôles avec cloisonnement par service</li>
+<li>Déploiement d'un correctif d'urgence remplaçant les requêtes dynamiques par des requêtes paramétrées</li>
+<li>Mise en place d'un WAF (Web Application Firewall) pour bloquer les tentatives d'injection</li>
 </ul>
 </li>
 <li>
-<p><strong>Non-conformité</strong> : Absence de journalisation des accès aux données sensibles</p>
+<p><strong>Solution pérenne</strong> :</p>
 <ul>
-<li><strong>Correction</strong> : Déployer un système de logging des consultations/modifications avec horodatage et identité</li>
+<li>Revue complète du code pour identifier d'autres instances similaires</li>
+<li>Utilisation systématique d'un ORM ou de requêtes préparées</li>
+<li>Implémentation de validation stricte des entrées utilisateur</li>
+<li>Principe du moindre privilège pour les connexions à la base de données</li>
 </ul>
 </li>
 <li>
-<p><strong>Méthode pour maintenir la conformité</strong> :</p>
+<p><strong>Procédure d'analyse post-incident</strong> :</p>
 </li>
-<li>Désignation d'un référent RGPD avec formation continue</li>
-<li>Revue trimestrielle du registre des traitements</li>
-<li>Tests réguliers des procédures d'exercice des droits</li>
-<li>Audits internes annuels et externe tous les deux ans</li>
-<li>Intégration de la conformité dès la conception des évolutions (Privacy by Design)</li>
+<li>
+<p><strong>Documentation de l'incident</strong> :</p>
+<ul>
+<li>Chronologie détaillée</li>
+<li>Code vulnérable identifié</li>
+<li>Méthode d'exploitation utilisée</li>
+</ul>
+</li>
+<li>
+<p><strong>Analyse des causes profondes</strong> :</p>
+<ul>
+<li>Comment la vulnérabilité a-t-elle été introduite ?</li>
+<li>Pourquoi n'a-t-elle pas été détectée plus tôt ?</li>
+<li>Quelles pratiques de développement ont contribué au problème ?</li>
+</ul>
+</li>
+<li>
+<p><strong>Améliorations des processus</strong> :</p>
+<ul>
+<li>Intégration d'outils d'analyse statique dans le pipeline CI/CD</li>
+<li>Formation des développeurs aux pratiques de codage sécurisé</li>
+<li>Mise à jour des standards de développement et des revues de code</li>
+<li>Tests de pénétration réguliers sur l'application</li>
+</ul>
+</li>
 </ol>
-<h3 id="exercice-63-analyse-post-incident">Exercice 6.3 : Analyse post-incident</h3>
-<p><strong>Rappel théorique</strong>
-L'analyse post-incident (ou retour d'expérience) est une phase critique qui permet :
-- De comprendre précisément ce qui s'est passé
-- D'identifier les lacunes dans la détection et la réponse
-- D'améliorer les procédures et les défenses
-- De partager les connaissances avec la communauté
-- De mettre à jour la politique de sécurité</p>
-<p><strong>Énoncé</strong>
-Suite à une compromission de compte privilégié ayant entraîné une fuite de données :
-1. Proposez une méthodologie d'analyse post-incident
-2. Créez un modèle de rapport d'analyse
-3. Suggérez trois améliorations techniques et organisationnelles</p>
-<p><strong>Correction</strong></p>
+<h2 id="exercice-62-integration-du-rgpd-dans-le-developpement-dapplications-20-min">Exercice 6.2 : Intégration du RGPD dans le développement d'applications (20 min)</h2>
+<h3 id="rappel-theorique_1">Rappel théorique</h3>
+<p>Le concept de "Privacy by Design" (protection des données dès la conception) est un principe fondamental du RGPD qui impose :
+- L'intégration de la protection des données dès la conception des applications
+- La mise en œuvre de mesures techniques et organisationnelles appropriées
+- La minimisation des données traitées
+- La mise en place de mécanismes permettant aux utilisateurs d'exercer leurs droits</p>
+<h3 id="enonce_1">Énoncé</h3>
+<p>Vous développez une application web de gestion de réservations d'hôtel qui collecte et traite des données personnelles des clients.</p>
 <ol>
-<li><strong>Méthodologie d'analyse post-incident</strong> :</li>
-<li><strong>Collecte des preuves</strong> : Logs systèmes, réseau, applications, témoignages</li>
-<li><strong>Chronologie</strong> : Reconstruction précise des événements</li>
-<li><strong>Analyse de la cause racine</strong> : Identification des vulnérabilités exploitées</li>
-<li><strong>Évaluation de l'impact</strong> : Quantification des dommages</li>
-<li><strong>Évaluation de la réponse</strong> : Efficacité des mesures prises</li>
+<li>Identifiez les exigences du RGPD qui impactent directement le développement</li>
+<li>Proposez des fonctionnalités techniques pour répondre au droit à l'effacement (droit à l'oubli)</li>
+<li>Concevez un mécanisme de journalisation des accès aux données personnelles conforme au RGPD</li>
+</ol>
+<h3 id="correction_1">Correction</h3>
+<ol>
+<li><strong>Exigences RGPD impactant le développement</strong> :</li>
+<li><strong>Minimisation des données</strong> : Ne collecter que les données strictement nécessaires</li>
+<li><strong>Limitation de la conservation</strong> : Définir des durées de conservation appropriées</li>
+<li><strong>Sécurité</strong> : Chiffrement des données sensibles, protection contre les attaques</li>
+<li><strong>Droits des personnes</strong> : Mécanismes permettant l'accès, la rectification, l'effacement, etc.</li>
+<li><strong>Consentement</strong> : Recueil explicite et granulaire du consentement</li>
 <li>
-<p><strong>Élaboration des recommandations</strong> : Mesures préventives et correctives</p>
+<p><strong>Journalisation</strong> : Traçabilité des accès et modifications de données personnelles</p>
 </li>
 <li>
-<p><strong>Modèle de rapport d'analyse</strong> :</p>
+<p><strong>Fonctionnalités pour le droit à l'effacement</strong> :</p>
 </li>
-<li><strong>Résumé exécutif</strong> : Synthèse pour la direction</li>
-<li><strong>Description de l'incident</strong> : Nature, chronologie, impacts</li>
-<li><strong>Analyse technique</strong> : Vecteur d'attaque, TTPs (Tactics, Techniques, Procedures)</li>
-<li><strong>Évaluation de la réponse</strong> : Forces et faiblesses</li>
-<li><strong>Recommandations</strong> : Mesures correctives et préventives</li>
-<li><strong>Plan d'action</strong> : Responsables, délais, ressources</li>
+<li><strong>Interface administrateur</strong> dédiée pour traiter les demandes d'effacement</li>
+<li><strong>Processus technique d'anonymisation</strong> plutôt que suppression physique pour préserver l'intégrité référentielle</li>
+<li><strong>Cascade d'effacement</strong> dans toutes les tables liées (réservations, préférences, commentaires)</li>
+<li><strong>Mécanisme de sauvegarde intermédiaire</strong> des données avant effacement pour répondre aux obligations légales</li>
+<li><strong>Notification automatique</strong> de confirmation d'effacement à l'utilisateur</li>
 <li>
-<p><strong>Annexes</strong> : Logs, IOCs (Indicators of Compromise), références</p>
+<p><strong>Journal d'audit</strong> des demandes d'effacement et de leur traitement</p>
 </li>
 <li>
-<p><strong>Améliorations techniques et organisationnelles</strong> :</p>
+<p><strong>Mécanisme de journalisation conforme</strong> :</p>
 </li>
-<li><strong>Technique</strong> : Déploiement d'une solution PAM (Privileged Access Management) avec authentification multifacteur et sessions enregistrées</li>
-<li><strong>Technique</strong> : Implémentation d'un SIEM avec alertes sur les comportements anormaux des comptes privilégiés</li>
-<li><strong>Organisationnelle</strong> : Révision de la procédure d'attribution des droits administrateurs avec validation multiple et revue trimestrielle</li>
+<li>
+<p><strong>Structure de la journalisation</strong> :</p>
+<ul>
+<li>Qui : identifiant de l'utilisateur ou du système accédant aux données</li>
+<li>Quoi : nature de l'opération (lecture, modification, suppression)</li>
+<li>Quand : horodatage précis</li>
+<li>Sur quoi : type de données et identifiant de l'enregistrement</li>
+<li>Pourquoi : finalité de l'accès ou référence à la fonctionnalité</li>
+</ul>
+</li>
+<li>
+<p><strong>Implémentation technique</strong> :</p>
+<ul>
+<li>Journalisation dans une base de données séparée avec accès restreint</li>
+<li>Chiffrement des journaux</li>
+<li>Conservation limitée à 6 mois avec purge automatique</li>
+<li>Impossibilité de désactivation par les administrateurs</li>
+<li>Alertes automatiques sur les schémas d'accès anormaux</li>
+</ul>
+</li>
+</ol>
+<h2 id="exercice-63-gestion-dune-fuite-de-donnees-dans-une-application-20-min">Exercice 6.3 : Gestion d'une fuite de données dans une application (20 min)</h2>
+<h3 id="rappel-theorique_2">Rappel théorique</h3>
+<p>En cas de violation de données à caractère personnel, le RGPD impose :
+- Une notification à l'autorité de contrôle (CNIL en France) dans les 72 heures
+- Une communication aux personnes concernées si le risque pour leurs droits et libertés est élevé
+- Une documentation interne de toutes les violations</p>
+<p>En parallèle, une approche technique structurée est nécessaire pour traiter l'incident.</p>
+<h3 id="enonce_2">Énoncé</h3>
+<p>Votre équipe découvre qu'une vulnérabilité dans l'API de votre application mobile a permis l'exfiltration de données utilisateurs (noms, emails, téléphones, adresses) pendant les deux dernières semaines.</p>
+<ol>
+<li>Détaillez les actions techniques immédiates à mettre en œuvre</li>
+<li>Rédigez un plan de communication conforme aux exigences du RGPD</li>
+<li>Proposez des mesures correctives à long terme pour l'API et l'application</li>
+</ol>
+<h3 id="correction_2">Correction</h3>
+<ol>
+<li><strong>Actions techniques immédiates</strong> :</li>
+<li><strong>Isolation de la vulnérabilité</strong> : Désactivation temporaire de l'endpoint vulnérable ou mise en place d'un correctif d'urgence</li>
+<li><strong>Analyse de l'étendue</strong> : Examination des logs d'API pour déterminer quelles données ont été compromises et quels utilisateurs sont affectés</li>
+<li><strong>Collecte de preuves</strong> : Sauvegarde sécurisée des logs et des artifacts techniques pour l'investigation</li>
+<li><strong>Correction de la vulnérabilité</strong> : Développement et déploiement d'un correctif pour l'API</li>
+<li><strong>Vérification</strong> : Tests de pénétration pour confirmer que la vulnérabilité est résolue</li>
+<li>
+<p><strong>Surveillance renforcée</strong> : Mise en place d'alertes spécifiques pour détecter des comportements similaires</p>
+</li>
+<li>
+<p><strong>Plan de communication RGPD</strong> :</p>
+</li>
+<li>
+<p><strong>Notification à la CNIL</strong> (sous 72h) contenant :</p>
+<ul>
+<li>Nature de la violation</li>
+<li>Catégories et nombre approximatif de personnes concernées</li>
+<li>Catégories et volume de données compromises</li>
+<li>Conséquences probables</li>
+<li>Mesures prises pour y remédier et atténuer les impacts</li>
+</ul>
+</li>
+<li>
+<p><strong>Communication aux personnes concernées</strong> :</p>
+<ul>
+<li>Description claire de la nature de la violation</li>
+<li>Coordonnées du DPO ou d'un point de contact</li>
+<li>Conséquences possibles pour les personnes</li>
+<li>Mesures prises pour remédier à la situation</li>
+<li>Recommandations de mesures préventives (changement de mot de passe, etc.)</li>
+</ul>
+</li>
+<li>
+<p><strong>Documentation interne</strong> :</p>
+<ul>
+<li>Rapport technique détaillé</li>
+<li>Chronologie de l'incident</li>
+<li>Impact sur les données et les personnes</li>
+<li>Mesures prises et leur efficacité</li>
+</ul>
+</li>
+<li>
+<p><strong>Mesures correctives à long terme</strong> :</p>
+</li>
+<li>
+<p><strong>Révision de l'architecture API</strong> :</p>
+<ul>
+<li>Implémentation d'une authentification forte (OAuth 2.0, JWT avec durée limitée)</li>
+<li>Limitation de débit (throttling) pour prévenir les extractions massives</li>
+<li>Chiffrement des données sensibles de bout en bout</li>
+</ul>
+</li>
+<li>
+<p><strong>Améliorations du cycle de développement</strong> :</p>
+<ul>
+<li>Intégration de tests de sécurité automatisés dans le CI/CD</li>
+<li>Revues de code axées sur la sécurité</li>
+<li>Formation des développeurs aux vulnérabilités API (OWASP API Security Top 10)</li>
+</ul>
+</li>
+<li>
+<p><strong>Surveillance et détection</strong> :</p>
+<ul>
+<li>Mise en place d'un système de détection d'anomalies sur les appels API</li>
+<li>Audit régulier des accès aux données sensibles</li>
+<li>Tests d'intrusion périodiques ciblant spécifiquement l'API</li>
+</ul>
+</li>
 </ol>
 
 
