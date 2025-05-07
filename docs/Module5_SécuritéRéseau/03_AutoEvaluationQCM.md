@@ -1,133 +1,134 @@
-# QCM d'auto-évaluation - Analyse des risques
+# QCM d'auto-évaluation - Sécurité des applications et services web
 
 Ce QCM vous permet de vérifier votre compréhension des notions abordées dans ce module. Répondez aux questions pour évaluer votre progression.
 
 !!! quizdown id="qa1"
 
-    ### Un système de paiement en ligne a besoin d'un niveau élevé de :
+    ### Quelle configuration d'en-tête HTTP est correcte pour empêcher le site d'être chargé dans un iframe (protection contre le clickjacking) ?
     
-    - [ ] Disponibilité uniquement
-    - [ ] Intégrité uniquement
-    - [ ] Disponibilité et intégrité uniquement
-    - [x] Disponibilité, intégrité et confidentialité
+    - [x] `X-Frame-Options: DENY`
+    - [ ] `X-XSS-Protection: 1`
+    - [ ] `Content-Security-Policy: no-iframe`
+    - [ ] `X-Content-Type-Options: nosniff`
     
-    > **Explication :** Un système de paiement en ligne nécessite :
-    > - Une **disponibilité** élevée car les transactions doivent pouvoir être effectuées à tout moment
-    > - Une **intégrité** élevée car les montants des transactions ne doivent pas être altérés
-    > - Une **confidentialité** élevée car les données bancaires sont des informations sensibles
-    > 
-    > La preuve est également importante (pour éviter la répudiation des transactions), mais les trois autres critères sont particulièrement critiques pour ce type de système.
+    > **Explication :** L'en-tête `X-Frame-Options: DENY` empêche complètement la page d'être chargée dans un iframe, un frame ou un object, ce qui protège contre les attaques de clickjacking où un attaquant pourrait superposer un site légitime dans un iframe transparent pour inciter l'utilisateur à cliquer sur des éléments sans le savoir. L'option `DENY` est plus restrictive que `SAMEORIGIN`, qui permet l'intégration dans des pages du même domaine.
 
 !!! quizdown id="qa2"
 
-    ### Quelle vulnérabilité correspond à la catégorie "Information Disclosure" du modèle STRIDE ?
+    ### Dans le contexte des API REST, quelle méthode d'authentification est la plus adaptée pour une application mobile grand public ?
     
-    - [ ] Un attaquant modifie le prix d'un produit dans la base de données
-    - [ ] Un attaquant se connecte avec les identifiants d'un autre utilisateur
-    - [x] Un attaquant accède à la liste des clients et leurs coordonnées
-    - [ ] Un attaquant rend le site web indisponible par une attaque DDoS
+    - [ ] Basic Authentication (identifiant et mot de passe)
+    - [ ] Clés API statiques
+    - [x] OAuth 2.0 avec refresh tokens
+    - [ ] Certificats clients mutuels SSL/TLS
     
-    > **Explication :** Dans le modèle STRIDE :
-    > - La modification des prix correspond à du **Tampering** (altération de données)
-    > - L'utilisation d'identifiants volés correspond à du **Spoofing** (usurpation d'identité)
-    > - L'accès non autorisé à des informations correspond à de l'**Information Disclosure** (divulgation d'informations)
-    > - Rendre un site indisponible correspond à du **Denial of Service** (déni de service)
+    > **Explication :** OAuth 2.0 avec refresh tokens est particulièrement adapté aux applications mobiles grand public car :
+    > - Il évite de stocker les identifiants de l'utilisateur dans l'application
+    > - Il permet une authentification via des fournisseurs d'identité tiers (social login)
+    > - Les refresh tokens permettent de renouveler l'accès sans nouvelle authentification
+    > - Il offre un contrôle granulaire des autorisations (scopes)
+    > 
+    > Basic Authentication exposerait les identifiants à chaque requête, les clés API statiques sont difficiles à révoquer individuellement, et les certificats clients sont complexes à déployer pour le grand public.
 
 !!! quizdown id="qa3"
 
-    ### Parmi ces mesures, laquelle est considérée comme corrective ?
+    ### Quelle pratique est recommandée pour la gestion des secrets (clés API, identifiants de base de données) dans une application déployée ?
     
-    - [ ] Mise en place d'un pare-feu
-    - [ ] Formation des utilisateurs à la sécurité
-    - [x] Restauration des données à partir d'une sauvegarde
-    - [ ] Journalisation des accès au système
+    - [ ] Stocker les secrets dans le code source avec un chiffrement personnalisé
+    - [ ] Utiliser des fichiers de configuration en texte clair avec des permissions restrictives
+    - [ ] Hardcoder les secrets dans les binaires compilés
+
+- [x] Utiliser des variables d'environnement ou un gestionnaire de secrets spécialisé
     
-    > **Explication :**
-    > - Un **pare-feu** est une mesure préventive qui bloque les accès non autorisés
-    > - La **formation des utilisateurs** est une mesure préventive qui réduit les risques d'erreurs humaines
-    > - La **restauration des données** est une mesure corrective qui permet de revenir à un état fonctionnel après un incident
-    > - La **journalisation** est une mesure détective qui permet de détecter et analyser les incidents
+    > **Explication :** Pour la gestion des secrets (clés API, identifiants de base de données, etc.), la meilleure pratique consiste à utiliser des variables d'environnement ou des gestionnaires de secrets spécialisés (comme HashiCorp Vault, AWS Secrets Manager ou Azure Key Vault). Ces solutions offrent plusieurs avantages :
+    > - Séparation du code et des secrets
+    > - Possibilité de rotation des secrets sans modifier le code
+    > - Contrôle d'accès granulaire
+    > - Journalisation des accès aux secrets
+    > - Possibilités de chiffrement avancées
+    >
+    > Les autres approches présentent des risques importants : les secrets dans le code source peuvent être exposés lors d'une fuite de code, les fichiers de configuration en texte clair peuvent être accidentellement partagés, et les secrets hardcodés dans les binaires peuvent être extraits par rétro-ingénierie.
 
 !!! quizdown id="qa4"
 
-    ### Quelle méthode serait la plus appropriée pour évaluer les besoins de sécurité d'une application ?
+    ### Quelle technique permet de se protéger contre les attaques par injection SQL dans une application web ?
     
-    - [ ] Analyse des logs système
-    - [ ] Test de pénétration
-    - [x] Analyse d'impact et évaluation des risques
-    - [ ] Audit de conformité RGPD
+    - [ ] Filtrer les caractères spéciaux dans les noms de table
+    - [ ] Limiter la longueur des champs de saisie
+    - [x] Utiliser des requêtes préparées avec des paramètres
+    - [ ] Encoder les requêtes SQL en Base64
     
-    > **Explication :**
-    > - L'**analyse des logs** permet de détecter des incidents de sécurité mais pas d'évaluer les besoins
-    > - Le **test de pénétration** permet d'identifier des vulnérabilités techniques mais pas de déterminer les besoins de sécurité
-    > - L'**analyse d'impact et évaluation des risques** permet d'identifier les actifs à protéger, les menaces potentielles et leurs impacts, ce qui est fondamental pour déterminer les besoins de sécurité
-    > - L'**audit de conformité RGPD** vérifie le respect de la réglementation sur les données personnelles, mais ne couvre pas tous les aspects de la sécurité
+    > **Explication :** Les requêtes préparées (ou paramétrées) constituent la meilleure protection contre les injections SQL car elles séparent structurellement le code SQL des données fournies par l'utilisateur. Avec les requêtes préparées :
+    > - La structure de la requête (SQL) est envoyée séparément des paramètres
+    > - Le SGBD traite les paramètres comme des données, jamais comme du code
+    > - Les caractères spéciaux dans les paramètres ne peuvent pas modifier la structure de la requête
+    >
+    > Les autres techniques mentionnées sont insuffisantes : limiter la longueur des champs n'empêche pas les injections courtes, filtrer uniquement les caractères spéciaux peut être contourné, et l'encodage en Base64 ne protège pas contre les injections si le décodage est fait avant la construction de la requête.
 
 !!! quizdown id="qa5"
 
-    ### Dans le contexte d'une attaque par injection SQL, quelle mesure préventive est la plus efficace ?
+    ### Quelle fonctionnalité du protocole HTTPS n'est PAS fournie par TLS (Transport Layer Security) ?
     
-    - [ ] Surveillance des logs de la base de données
-    - [x] Utilisation de requêtes préparées
-    - [ ] Sauvegarde régulière de la base de données
-    - [ ] Limitation du nombre de requêtes par utilisateur
+    - [ ] Chiffrement des données
+    - [ ] Authentification du serveur
+    - [ ] Vérification de l'intégrité des données
+    - [x] Validation des entrées utilisateur
     
-    > **Explication :**
-    > - La **surveillance des logs** est une mesure détective, pas préventive
-    > - Les **requêtes préparées** séparent le code SQL des données, empêchant les injections SQL à la source
-    > - La **sauvegarde** est une mesure corrective qui permet de restaurer les données après une attaque
-    > - La **limitation des requêtes** peut réduire l'impact d'attaques par force brute mais n'empêche pas les injections SQL
+    > **Explication :** TLS (Transport Layer Security), le protocole qui sécurise les connexions HTTPS, fournit trois fonctionnalités principales :
+    > - Le chiffrement des données, qui assure la confidentialité des échanges
+    > - L'authentification du serveur via des certificats, qui permet au client de vérifier l'identité du serveur
+    > - La vérification de l'intégrité des données, qui garantit que les informations n'ont pas été altérées en transit
+    >
+    > En revanche, TLS n'offre aucune protection contre les entrées utilisateur malveillantes. La validation des entrées doit être implémentée au niveau de l'application web elle-même, indépendamment du protocole de transport utilisé.
 
 !!! quizdown id="qa6"
 
-    ### Pour un système de vote électronique, quel critère DICP est particulièrement important pour garantir qu'un vote ne peut pas être modifié ?
+    ### Dans le cadre d'une application web, quel attribut de cookie renforce la sécurité contre les attaques XSS ?
     
-    - [ ] Disponibilité
-    - [x] Intégrité
-    - [ ] Confidentialité
-    - [ ] Preuve
+    - [ ] SameSite=Strict
+    - [x] HttpOnly
+    - [ ] Secure
+    - [ ] Expires
     
-    > **Explication :** Pour un système de vote électronique :
-    > - L'**intégrité** garantit que les votes ne peuvent pas être modifiés une fois enregistrés
-    > - La **confidentialité** assure le secret du vote
-    > - La **disponibilité** permet aux électeurs de voter quand ils le souhaitent
-    > - La **preuve** permet de vérifier qu'un vote a bien été pris en compte
+    > **Explication :** L'attribut `HttpOnly` des cookies est spécifiquement conçu pour protéger contre les attaques XSS (Cross-Site Scripting). Lorsqu'un cookie est marqué comme `HttpOnly`, il n'est pas accessible via JavaScript (via `document.cookie`), ce qui empêche un script malveillant injecté dans la page de voler le cookie.
     >
-    > L'intégrité est particulièrement critique car elle garantit que la volonté des électeurs est respectée.
+    > Les autres attributs ont des rôles différents :
+    > - `SameSite=Strict` protège contre les attaques CSRF en empêchant l'envoi du cookie lors de requêtes cross-site
+    > - `Secure` garantit que le cookie n'est transmis que via HTTPS, protégeant contre l'interception
+    > - `Expires` définit simplement la durée de vie du cookie
 
 !!! quizdown id="qa7"
 
-    ### Quelle affirmation concernant les événements redoutés est correcte ?
+    ### Quelle pratique est recommandée pour sécuriser une API REST contre les attaques par force brute ?
     
-    - [ ] Un événement redouté est toujours causé par une attaque externe
-    - [x] Un événement redouté peut avoir plusieurs causes différentes
-    - [ ] Un événement redouté a toujours un impact faible sur l'organisation
-    - [ ] Un événement redouté ne concerne que la confidentialité des données
+    - [ ] Utiliser exclusivement le protocole SOAP au lieu de REST
+    - [ ] Chiffrer le corps de toutes les requêtes
+    - [x] Mettre en place une limitation de débit (rate limiting)
+    - [ ] Utiliser uniquement la méthode GET
     
-    > **Explication :**
-    > - Un événement redouté peut être causé par des attaques externes, mais aussi par des erreurs humaines, des pannes matérielles, des catastrophes naturelles, etc.
-    > - Un même événement redouté (par exemple : "les données client sont divulguées") peut avoir diverses causes (hacking, erreur d'un employé, perte d'un appareil...)
-    > - L'impact peut être faible, moyen ou élevé selon le contexte
-    > - Les événements redoutés peuvent concerner tous les critères DICP, pas uniquement la confidentialité
+    > **Explication :** La limitation de débit (rate limiting) est une technique efficace pour protéger les API contre les attaques par force brute, en limitant le nombre de requêtes qu'un client peut effectuer dans un intervalle de temps donné. Cela rend les attaques par force brute impraticables car elles nécessitent généralement un grand nombre de tentatives rapides.
+    >
+    > Les autres options ne sont pas adaptées : SOAP n'est pas intrinsèquement plus sécurisé que REST, le chiffrement du corps des requêtes n'empêche pas la multiplication des tentatives, et limiter l'API aux méthodes GET rendrait l'API inutilisable pour de nombreuses opérations (création, modification, suppression).
 
 !!! quizdown id="qa8"
 
-    ### Qu'est-ce qu'une "menace" dans le contexte de l'analyse des risques ?
+    ### Quelle est la meilleure approche pour implémenter l'autorisation dans une application web multi-utilisateurs ?
     
-    - [ ] Une vulnérabilité dans un système informatique
-    - [x] Un événement susceptible d'avoir un impact négatif sur un actif
-    - [ ] Une mesure de protection contre les attaques
-    - [ ] Un indicateur de performance de sécurité
+    - [ ] Vérifier les permissions côté client uniquement
+    - [ ] Stocker le rôle de l'utilisateur dans un cookie non sécurisé
+    - [ ] Implémenter des contrôles d'accès au niveau de la base de données uniquement
+    - [x] Combiner des contrôles d'accès au niveau application et données
     
-    > **Explication :** Dans le contexte de l'analyse des risques :
-    > - Une **menace** est un événement potentiel qui peut porter atteinte à la sécurité (ex: piratage, incendie)
-    > - Une **vulnérabilité** est une faiblesse qui peut être exploitée par une menace
-    > - Une **mesure de protection** (ou contrôle) est mise en place pour réduire les risques
-    > - Un **risque** est la combinaison d'une menace, d'une vulnérabilité et d'un impact potentiel
+    > **Explication :** Une approche robuste d'autorisation dans une application web multi-utilisateurs combine des contrôles d'accès à plusieurs niveaux :
+    > - Au niveau de l'interface utilisateur (masquer les fonctionnalités non autorisées)
+    > - Au niveau du contrôleur/backend (vérifier les permissions avant d'exécuter les actions)
+    > - Au niveau de la base de données (restrictions d'accès aux tables et enregistrements)
+    >
+    > Cette défense en profondeur assure que même si un niveau est compromis, les autres continuent à protéger les ressources. Les vérifications côté client seules sont facilement contournables, les cookies non sécurisés peuvent être modifiés, et les contrôles uniquement en base de données ne protègent pas contre les vulnérabilités d'application.
 
 ## Interprétation de votre score
 
-- **7-8/8** : Excellent ! Vous avez une très bonne compréhension des concepts d'analyse des risques.
+- **7-8/8** : Excellent ! Vous avez une très bonne compréhension des principes de sécurité des applications et services web.
   
 - **5-6/8** : Bon travail ! Vous maîtrisez les concepts essentiels mais quelques points méritent d'être revus.
   
@@ -137,18 +138,19 @@ Ce QCM vous permet de vérifier votre compréhension des notions abordées dans 
 
 ## Points clés à retenir
 
-1. **Analysez toujours les besoins DICP** selon le contexte et les enjeux métier
+1. **Utilisez les en-têtes de sécurité HTTP** pour renforcer la sécurité de vos applications web
 
-2. **Catégorisez les menaces** à l'aide de modèles comme STRIDE pour être exhaustif
+2. **Sécurisez vos API REST** avec une authentification et autorisation robustes
 
-3. **Mettez en place des mesures de sécurité** préventives, détectives et correctives
+3. **Protégez-vous contre les vulnérabilités web courantes** (XSS, CSRF, injections SQL)
 
-4. **Évaluez les risques** en fonction de la probabilité et de l'impact des menaces
+4. **Appliquez le principe de défense en profondeur** en combinant plusieurs couches de sécurité
 
-5. **Priorisez les actions** en fonction du niveau de risque et des contraintes (coût, temps, ressources)
+5. **Intégrez la sécurité dans votre processus de développement et déploiement**
 
 ## Pour aller plus loin
 
-- Familiarisez-vous avec les méthodologies d'analyse de risques comme EBIOS, MEHARI ou ISO 27005
-- Entraînez-vous à identifier les risques dans différents contextes métier
-- Pratiquez l'évaluation des besoins DICP sur des cas concrets
+- Consultez régulièrement le Top 10 OWASP des vulnérabilités web
+- Testez la sécurité de vos applications avec des outils comme OWASP ZAP ou Burp Suite
+- Familiarisez-vous avec les frameworks de sécurité web modernes
+- Participez à des challenges de sécurité (CTF) pour améliorer vos compétences
