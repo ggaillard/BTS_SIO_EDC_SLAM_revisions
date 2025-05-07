@@ -4,10 +4,10 @@
 
 ### Rappel théorique
 Les quatre critères fondamentaux de la sécurité sont :
-- **Disponibilité** : le service doit être utilisable quand nécessaire
-- **Intégrité** : les données doivent être exactes et complètes
-- **Confidentialité** : les données ne doivent pas être divulguées aux personnes non autorisées
-- **Preuve/Traçabilité** : il doit être possible d'attribuer les actions à leur auteur
+ - **Disponibilité** : le service doit être utilisable quand nécessaire
+ - **Intégrité** : les données doivent être exactes et complètes
+ - **Confidentialité** : les données ne doivent pas être divulguées aux personnes non autorisées
+ - **Preuve/Traçabilité** : il doit être possible d'attribuer les actions à leur auteur
 
 L'évaluation de ces critères dépend du contexte métier et des enjeux liés à l'information ou au service.
 
@@ -50,6 +50,7 @@ Pour chacun des cas d'utilisation suivants, évaluez les besoins en termes de DI
 
 ### Rappel théorique
 Une menace est un scénario qui peut porter atteinte à la sécurité du système. Le modèle STRIDE permet de catégoriser les menaces :
+
 - **Spoofing** (usurpation d'identité) : se faire passer pour quelqu'un d'autre
 - **Tampering** (altération de données) : modification non autorisée des données
 - **Repudiation** (rejet d'une action effectuée) : nier avoir effectué une action
