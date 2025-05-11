@@ -10,10 +10,11 @@ Ce QCM vous permet d'évaluer vos connaissances avant d'aborder le module. Répo
   <py-choice>Défense, Intégrité, Contrôle, Protection</py-choice>
   <py-feedback>
     La réponse correcte est "Disponibilité, Intégrité, Confidentialité, Preuve". Ces quatre critères sont fondamentaux en sécurité informatique :
-    - **Disponibilité** : Les données et services doivent être accessibles quand nécessaire
-    - **Intégrité** : Les données ne doivent pas être altérées
-    - **Confidentialité** : Les données ne doivent être accessibles qu'aux personnes autorisées
-    - **Preuve** (ou traçabilité) : Les actions doivent pouvoir être attribuées à leur auteur
+
+        - **Disponibilité** : Les données et services doivent être accessibles quand nécessaire
+        - **Intégrité** : Les données ne doivent pas être altérées
+        - **Confidentialité** : Les données ne doivent être accessibles qu'aux personnes autorisées
+        - **Preuve** (ou traçabilité) : Les actions doivent pouvoir être attribuées à leur auteur
   </py-feedback>
 </py-multiple-choice>
 
@@ -25,12 +26,13 @@ Ce QCM vous permet d'évaluer vos connaissances avant d'aborder le module. Répo
   <py-choice>Elevation of privilege (élévation de privilèges)</py-choice>
   <py-feedback>
     Le modèle STRIDE est un modèle de classification des menaces développé par Microsoft qui comprend :
-    - **S**poofing (usurpation d'identité)
-    - **T**ampering (altération de données)
-    - **R**epudiation (rejet d'une action effectuée)
-    - **I**nformation disclosure (divulgation d'informations)
-    - **D**enial of service (déni de service)
-    - **E**levation of privilege (élévation de privilèges)
+
+        - **S**poofing (usurpation d'identité)
+        - **T**ampering (altération de données)
+        - **R**epudiation (rejet d'une action effectuée)
+        - **I**nformation disclosure (divulgation d'informations)
+        - **D**enial of service (déni de service)
+        - **E**levation of privilege (élévation de privilèges)
     
     "Tracking" n'en fait pas partie - c'est un distracteur.
   </py-feedback>
@@ -44,9 +46,10 @@ Ce QCM vous permet d'évaluer vos connaissances avant d'aborder le module. Répo
   <py-choice>Une mesure qui analyse l'impact d'une attaque</py-choice>
   <py-feedback>
     Les mesures de sécurité peuvent être classées en trois catégories :
-    - **Préventives** : empêchent une attaque de réussir (ex: pare-feu, chiffrement)
-    - **Détectives** : détectent qu'une attaque a eu lieu (ex: IDS, journalisation)
-    - **Correctives** : restaurent le système après une attaque (ex: sauvegarde, plan de reprise)
+        
+        - **Préventives** : empêchent une attaque de réussir (ex: pare-feu, chiffrement)
+        - **Détectives** : détectent qu'une attaque a eu lieu (ex: IDS, journalisation)
+        - **Correctives** : restaurent le système après une attaque (ex: sauvegarde, plan de reprise)
     
     L'analyse d'impact est généralement réalisée avant la mise en place des mesures, lors de l'évaluation des risques.
   </py-feedback>
@@ -60,10 +63,11 @@ Ce QCM vous permet d'évaluer vos connaissances avant d'aborder le module. Répo
   <py-choice>Preuve</py-choice>
   <py-feedback>
     Bien que tous les critères soient importants pour un dossier médical :
-    - L'**intégrité** est cruciale car des données médicales erronées peuvent avoir des conséquences fatales (mauvais diagnostic, traitement inapproprié)
-    - La **confidentialité** est aussi très importante en raison du caractère sensible des données médicales
-    - La **disponibilité** est nécessaire pour les soins d'urgence
-    - La **preuve** permet de savoir qui a accédé au dossier
+
+        - L'**intégrité** est cruciale car des données médicales erronées peuvent avoir des conséquences fatales (mauvais diagnostic, traitement inapproprié)
+        - La **confidentialité** est aussi très importante en raison du caractère sensible des données médicales
+        - La **disponibilité** est nécessaire pour les soins d'urgence
+        - La **preuve** permet de savoir qui a accédé au dossier
     
     Mais l'intégrité est généralement considérée comme prioritaire car des données erronées peuvent directement mettre en danger la vie du patient.
   </py-feedback>

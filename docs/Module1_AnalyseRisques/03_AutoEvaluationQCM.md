@@ -154,7 +154,9 @@ def check_score():
     
     score_element.innerHTML = result
 
+
 # Ajouter un bouton pour vérifier le score
+
 from js import document
 button = document.createElement("button")
 button.innerHTML = "Vérifier mon score"
