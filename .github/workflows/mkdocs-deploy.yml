@@ -17,6 +17,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          # Installer le thème Pyodide-MkDocs
+          pip install pyodide-mkdocs-theme
+          pip install mkdocs-material mkdocs-mermaid2-plugin
+          pip install numpy matplotlib pandas
+          # Autres dépendances
           pip install -r requirements.txt
       - name: Deploy MkDocs
         run: mkdocs gh-deploy --force || echo "No changes to deploy"

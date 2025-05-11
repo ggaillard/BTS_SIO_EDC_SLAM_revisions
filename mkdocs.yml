@@ -1,54 +1,48 @@
 site_name: BTS SIO SLAM E6 - Révision
 site_description: Programme de révision pour l'épreuve E6 du BTS SIO SLAM
-site_author: Votre Nom
-repo_name: ggaillard/BTS_SIO_EDC_SLAM_revisions
-site_url: https://ggaillard.github.io/BTS_SIO_EDC_SLAM_revisions/
+site_author: G.GAILLARD
+site_url: https://votrecompte.github.io/BTS_SIO_EDC_SLAM_revisions/
 
+# Configuration du thème Pyodide
 theme:
-  name: material
+  name: pyodide-mkdocs-theme 
   language: fr
+  pyodide:
+    packages: ['numpy', 'matplotlib', 'pandas']
+    terminal: true
+    auto_load: false
   features:
     - navigation.tabs
     - navigation.sections
-    - toc.integrate
-    - content.code.copy
     - navigation.top
-    - navigation.tracking
-    - content.tabs.link
+    - content.code.copy
 
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Passer au mode sombre
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Passer au mode clair
-
-plugins:
-  - search
-  - quizdown
-  - mermaid2
-
+# Extensions Markdown
 markdown_extensions:
   - admonition
-  - codehilite
-  - footnotes
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:
+      generic: true
   - attr_list
-  - pymdownx.highlight
-  - pymdownx.superfences
-  - admonition
-  - pymdownx.details
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - md_in_html
+
+# Plugins
+plugins:
+  - search
+  - mermaid2
+  - pyodide:
+      default_packages: []  # Packages à charger par défaut
+
+# JavaScript supplémentaire pour MathJax
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
   - Accueil: index.md
