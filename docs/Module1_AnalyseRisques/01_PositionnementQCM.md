@@ -92,45 +92,48 @@ Ce QCM vous permet d'évaluer vos connaissances avant d'aborder le module. Répo
 </py-multiple-choice>
 
 ---
+
 ## Interprétation de votre score
-
-<py-script>
-def check_score():
-    score = 0
-    score_element = document.getElementById("score-display")
-    
-    # Vérifier l'état des questions (le sélecteur exact dépend de l'implémentation de Pyodide)
-    questions = document.querySelectorAll("py-multiple-choice")
-    total = questions.length
-    
-    for q in questions:
-        if q.getAttribute("answered") == "correctly":
-            score += 1
-    
-    # Afficher le résultat
-    result = f"Votre score : {score}/{total}<br><br>"
-    
-    if score == total:
-        result += "**Excellent !** Vous maîtrisez déjà les concepts de base de l'analyse des risques. Ce module vous permettra d'approfondir vos connaissances."
-    elif score >= 3:
-        result += "**Bon travail !** Vous avez de bonnes connaissances de base, mais certains concepts méritent d'être approfondis. Ce module vous aidera à consolider votre compréhension."
-    else:
-        result += "**Ce module sera particulièrement bénéfique pour vous**, car il vous permettra d'acquérir les bases essentielles de l'analyse des risques, un domaine fondamental en cybersécurité."
-    
-    score_element.innerHTML = result
-
-# Ajouter un bouton pour vérifier le score
-
-from js import document
-button = document.createElement("button")
-button.innerHTML = "Vérifier mon score"
-button.classList.add("md-button")
-button.onclick = check_score
-document.getElementById("score-button-container").appendChild(button)
-</py-script>
 
 <div id="score-button-container"></div>
 <div id="score-display"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  function checkScore() {
+    const questions = document.querySelectorAll('py-multiple-choice');
+    let score = 0;
+    const total = questions.length;
+    
+    questions.forEach(question => {
+      if (question.getAttribute('answered') === 'correctly') {
+        score++;
+      }
+    });
+    
+    let result = `Votre score : ${score}/${total}<br><br>`;
+    
+    if (score === total) {
+      result += "<strong>Excellent !</strong> Vous maîtrisez déjà les concepts de base de l'analyse des risques. Ce module vous permettra d'approfondir vos connaissances.";
+    } else if (score >= 3) {
+      result += "<strong>Bon travail !</strong> Vous avez de bonnes connaissances de base, mais certains concepts méritent d'être approfondis. Ce module vous aidera à consolider votre compréhension.";
+    } else {
+      result += "<strong>Ce module sera particulièrement bénéfique pour vous</strong>, car il vous permettra d'acquérir les bases essentielles de l'analyse des risques, un domaine fondamental en cybersécurité.";
+    }
+    
+    document.getElementById('score-display').innerHTML = result;
+  }
+  
+  const container = document.getElementById('score-button-container');
+  if (container && !container.querySelector('button')) {
+    const button = document.createElement('button');
+    button.textContent = 'Vérifier mon score';
+    button.className = 'md-button';
+    button.addEventListener('click', checkScore);
+    container.appendChild(button);
+  }
+});
+</script>
 
 ---
 
