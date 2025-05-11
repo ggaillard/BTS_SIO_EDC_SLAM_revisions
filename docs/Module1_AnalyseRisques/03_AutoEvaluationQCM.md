@@ -127,113 +127,53 @@ Ce QCM vous permet de vérifier votre compréhension des notions abordées dans 
 
 ## Interprétation de votre score
 
-<py-script>
-def check_score():
-    score = 0
-    score_element = document.getElementById("score-display")
-    
-    # Vérifier l'état des questions (le sélecteur exact dépend de l'implémentation de Pyodide)
-    questions = document.querySelectorAll("py-multiple-choice")
-    total = questions.length
-    
-    for q in questions:
-        if q.getAttribute("answered") == "correctly":
-            score += 1
-    
-    # Afficher le résultat
-    result = f"Votre score : {score}/{total}<br><br>"
-    
-    if score >= 7:
-        result += "**Excellent !** Vous avez une très bonne compréhension des concepts d'analyse des risques."
-    elif score >= 5:
-        result += "**Bon travail !** Vous maîtrisez les concepts essentiels mais quelques points méritent d'être revus."
-    elif score >= 3:
-        result += "**Des bases solides**, mais plusieurs notions importantes nécessitent une révision."
-    else:
-        result += "**Il est recommandé de revoir l'ensemble du module** pour consolider vos connaissances."
-    
-    score_element.innerHTML = result
-
-
-# Ajouter un bouton pour vérifier le score
-
-from js import document
-button = document.createElement("button")
-button.innerHTML = "Vérifier mon score"
-button.classList.add("md-button")
-button.onclick = check_score
-document.getElementById("score-button-container").appendChild(button)
-</py-script>
-
 <div id="score-button-container"></div>
 <div id="score-display"></div>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  function checkScore() {
+    const questions = document.querySelectorAll('py-multiple-choice');
+    let score = 0;
+    const total = questions.length;
+    
+    questions.forEach(question => {
+      if (question.getAttribute('answered') === 'correctly') {
+        score++;
+      }
+    });
+    
+    let result = `Votre score : ${score}/${total}<br><br>`;
+    
+    if (score >= 7) {
+      result += "<strong>Excellent !</strong> Vous avez une très bonne compréhension des concepts d'analyse des risques.";
+    } else if (score >= 5) {
+      result += "<strong>Bon travail !</strong> Vous maîtrisez les concepts essentiels mais quelques points méritent d'être revus.";
+    } else if (score >= 3) {
+      result += "<strong>Des bases solides</strong>, mais plusieurs notions importantes nécessitent une révision.";
+    } else {
+      result += "<strong>Il est recommandé de revoir l'ensemble du module</strong> pour consolider vos connaissances.";
+    }
+    
+    document.getElementById('score-display').innerHTML = result;
+  }
+  
+  const container = document.getElementById('score-button-container');
+  if (container && !container.querySelector('button')) {
+    const button = document.createElement('button');
+    button.textContent = 'Vérifier mon score';
+    button.className = 'md-button';
+    button.addEventListener('click', checkScore);
+    container.appendChild(button);
+  }
+});
+</script>
+
 ## Points clés à retenir
 
-<py-terminal id="dicp-visualization">
-import matplotlib.pyplot as plt
-import numpy as np
-import io
-import base64
-from IPython.display import display, HTML
-
-# Données pour le radar chart DICP
-categories = ['Disponibilité', 'Intégrité', 'Confidentialité', 'Preuve']
-N = len(categories)
-
-# Exemples de besoins pour différents systèmes (échelle 0-3)
-medical_records = [3, 3, 3, 3]  # Dossiers médicaux
-banking_system = [3, 3, 3, 2]   # Système bancaire
-public_website = [3, 2, 1, 0]   # Site web public
-hr_system = [2, 3, 3, 2]        # Système RH
-
-# Conversion en radians et répétition du premier point pour fermer le polygone
-angles = [n / float(N) * 2 * np.pi for n in range(N)]
-angles += angles[:1]
-
-medical_records += medical_records[:1]
-banking_system += banking_system[:1]
-public_website += public_website[:1]
-hr_system += hr_system[:1]
-
-# Création du graphique
-fig, ax = plt.subplots(figsize=(10, 6), subplot_kw=dict(polar=True))
-
-# Ajout des systèmes
-ax.plot(angles, medical_records, linewidth=2, label="Dossiers médicaux")
-ax.plot(angles, banking_system, linewidth=2, label="Système bancaire")
-ax.plot(angles, public_website, linewidth=2, label="Site web public")
-ax.plot(angles, hr_system, linewidth=2, label="Système RH")
-
-# Remplissage
-ax.fill(angles, medical_records, alpha=0.1)
-ax.fill(angles, banking_system, alpha=0.1)
-ax.fill(angles, public_website, alpha=0.1)
-ax.fill(angles, hr_system, alpha=0.1)
-
-# Ajout des catégories
-ax.set_xticks(angles[:-1])
-ax.set_xticklabels(categories)
-
-# Configuration des axes
-ax.set_yticks([0, 1, 2, 3])
-ax.set_yticklabels(['0', '1', '2', '3'])
-ax.set_ylim(0, 3)
-
-# Légende et titre
-ax.legend(loc='upper right', bbox_to_anchor=(0.1, 0.1))
-plt.title("Besoins DICP pour différents systèmes d'information", size=15)
-
-# Affichage
-plt.tight_layout()
-
-# Convertir le graphique en image pour l'affichage
-buf = io.BytesIO()
-plt.savefig(buf, format='png')
-buf.seek(0)
-img_str = "data:image/png;base64," + base64.b64encode(buf.read()).decode('utf-8')
-print(f'<img src="{img_str}" alt="Visualisation DICP">')
-</py-terminal>
+<div class="dicp-visualization">
+  <img src="https://mermaid.ink/img/pako:eNp1kk1PwzAMhv-KlXMp0iY621AHQky7wGkIIYTiNlYWmjRynE2o6n8njdautDCfnMSP4zevs2O1QaTYiGtTk0NXOuN3nqYXd7Nyt7DFGstKOxKUqRZNhRb1TRVYVYEDORjdeBYQr8C65aJ6tLakJw06jU4_kdLgluUGlC5FxzOWZPL2brLO3oUNOoLHUHYFllQzzpJfQQrPvtTuOCeSK1VmXuOSGJ7cObxNyBMd8TzvhPSxFDU4ZMkJ4RQuDYHdUSXr1hJLWHxBeJLJR3EsEq9ZMV6f1jhA_Z_ZOvUcaMxOVzU6FsR3pPvpZJYDV5YiPb9-2PddbZc31C0uXmVFVsw6aDiGDC1RXTnxlM-dUuzjKGVJ7GXTldZhOIplD5y-r4Xp2sY77mOFSpsyigjXCOkw5vIllrMk2pEzG5p2qNhk9i2m-TTP4wP_Oi1hQFB_QOYh9gYr16BVrDdkx7CRplEs_QI1ObaP" alt="Visualisation DICP">
+</div>
 
 1. **Analysez toujours les besoins DICP** selon le contexte et les enjeux métier
 
@@ -247,33 +187,19 @@ print(f'<img src="{img_str}" alt="Visualisation DICP">')
 
 ## Pour aller plus loin
 
-<py-repl id="additional-resources">
-# Ressources complémentaires sur l'analyse des risques
-resources = {
-    "Méthodologies": [
-        "EBIOS Risk Manager (ANSSI)",
-        "MEHARI (CLUSIF)",
-        "ISO 27005",
-        "NIST SP 800-30"
-    ],
-    "Outils": [
-        "PILAR (EAR/PILAR)",
-        "OCTAVE",
-        "MONARC (CASES)",
-        "CORAS"
-    ],
-    "Formations": [
-        "MOOC SecNumacadémie (ANSSI)",
-        "Certifications ISO 27001",
-        "Formations CLUSIF"
-    ]
-}
+### Méthodologies
+- EBIOS Risk Manager (ANSSI)
+- MEHARI (CLUSIF)
+- ISO 27005
+- NIST SP 800-30
 
-# Affichage des ressources
-print("# Ressources pour approfondir vos connaissances en analyse des risques\n")
-for category, items in resources.items():
-    print(f"## {category}")
-    for item in items:
-        print(f"- {item}")
-    print()
-</py-repl>
+### Outils
+- PILAR (EAR/PILAR)
+- OCTAVE
+- MONARC (CASES)
+- CORAS
+
+### Formations
+- MOOC SecNumacadémie (ANSSI)
+- Certifications ISO 27001
+- Formations CLUSIF
