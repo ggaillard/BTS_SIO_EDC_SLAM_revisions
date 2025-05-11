@@ -91,6 +91,7 @@ Ce QCM vous permet d'évaluer vos connaissances avant d'aborder le module. Répo
   </py-feedback>
 </py-multiple-choice>
 
+---
 ## Interprétation de votre score
 
 <py-script>
@@ -119,6 +120,7 @@ def check_score():
     score_element.innerHTML = result
 
 # Ajouter un bouton pour vérifier le score
+
 from js import document
 button = document.createElement("button")
 button.innerHTML = "Vérifier mon score"
@@ -129,6 +131,8 @@ document.getElementById("score-button-container").appendChild(button)
 
 <div id="score-button-container"></div>
 <div id="score-display"></div>
+
+---
 
 ## Points clés à retenir avant de commencer
 

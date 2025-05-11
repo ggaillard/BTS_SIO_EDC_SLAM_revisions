@@ -27,12 +27,17 @@ markdown_extensions:
       generic: true
   - attr_list
   - md_in_html
+  - pymdownx.tasklist
   - pymdownx.details
-  - pymdownx.tabbed
+
+# Plugins
+plugins:
+  - search
+  - mermaid2
+  - mkdocs-jupyter
 
 # JavaScript supplémentaire pour MathJax et Pyodide
 extra_javascript:
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js
   - js/pyodide-init.js
@@ -41,12 +46,6 @@ extra_javascript:
 # Feuilles de style supplémentaires
 extra_css:
   - css/custom.css
-
-# Plugins
-plugins:
-  - search
-  - mermaid2
-
 
 # Structure de navigation
 
