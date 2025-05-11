@@ -1,0 +1,39 @@
+name: Build and Deploy MkDocs
+
+on:
+  push:
+    branches:
+      - main  # ou master, selon votre branche principale
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mkdocs-material
+          
+          # Selon la solution choisie, installez les plugins nécessaires :
+          # Solution 1
+          pip install mkdocs-jupyter
+          
+          # Solution 4
+          # pip install mkdocs-quiz
+          
+          # Autres dépendances si nécessaires
+          pip install pillow matplotlib numpy pandas
+      
+      - name: Build and Deploy
+        run: |
+          mkdocs gh-deploy --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

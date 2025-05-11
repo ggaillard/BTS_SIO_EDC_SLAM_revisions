@@ -10,18 +10,87 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
+          
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          # Installer le thème Pyodide-MkDocs
-          pip install pyodide-mkdocs-theme
           pip install mkdocs-material mkdocs-mermaid2-plugin
           pip install numpy matplotlib pandas
-          # Autres dépendances
-          pip install -r requirements.txt
+          
+      - name: Prepare custom JS and CSS directories
+        run: |
+          mkdir -p docs/js docs/css
+          
+      - name: Create pyodide-init.js
+        run: |
+          cat > docs/js/pyodide-init.js << 'EOL'
+          // Chargement de Pyodide et initialisation
+          let pyodideReadyPromise;
+
+          async function initPyodide() {
+            if (!pyodideReadyPromise) {
+              pyodideReadyPromise = new Promise(async (resolve, reject) => {
+                try {
+                  // Chargement de Pyodide
+                  console.log("Chargement de Pyodide...");
+                  self.pyodide = await loadPyodide({
+                    indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/"
+                  });
+                  
+                  // Installation des packages nécessaires
+                  console.log("Installation des packages...");
+                  await self.pyodide.loadPackagesFromImports(`
+                    import numpy
+                    import matplotlib
+                    import pandas
+                  `);
+                  
+                  // Initialisation terminée
+                  console.log("Pyodide est prêt!");
+                  resolve(self.pyodide);
+                } catch (error) {
+                  console.error("Erreur lors de l'initialisation de Pyodide:", error);
+                  reject(error);
+                }
+              });
+            }
+            return pyodideReadyPromise;
+          }
+
+          // Démarrer le chargement dès que possible
+          document.addEventListener('DOMContentLoaded', initPyodide);
+          EOL
+          
+      - name: Create custom-elements.js
+        run: |
+          cat > docs/js/custom-elements.js << 'EOL'
+          // Définition des composants web personnalisés pour le Module 1
+
+          // [Insérer ici le code de custom-elements.js fourni précédemment]
+          EOL
+          # Note: GitHub Actions peut avoir une limite sur la taille des chaînes insérées
+          # Vous devrez peut-être diviser le contenu en plusieurs morceaux
+          
+      - name: Create custom.css
+        run: |
+          cat > docs/css/custom.css << 'EOL'
+          /* Styles généraux pour les composants Python */
+          py-multiple-choice,
+          py-script,
+          py-terminal,
+          py-editor,
+          py-accordion {
+            display: block;
+            margin: 20px 0;
+          }
+
+          /* [Insérer ici le reste du code CSS fourni précédemment] */
+          EOL
+          
       - name: Deploy MkDocs
-        run: mkdocs gh-deploy --force || echo "No changes to deploy"
+        run: mkdocs gh-deploy --force

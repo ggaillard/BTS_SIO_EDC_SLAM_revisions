@@ -3,14 +3,10 @@ site_description: Programme de révision pour l'épreuve E6 du BTS SIO SLAM
 site_author: G.GAILLARD
 site_url: https://votrecompte.github.io/BTS_SIO_EDC_SLAM_revisions/
 
-# Configuration du thème Pyodide
+# Configuration du thème
 theme:
-  name: pyodide-mkdocs-theme 
+  name: material
   language: fr
-  pyodide:
-    packages: ['numpy', 'matplotlib', 'pandas']
-    terminal: true
-    auto_load: false
   features:
     - navigation.tabs
     - navigation.sections
@@ -31,18 +27,28 @@ markdown_extensions:
       generic: true
   - attr_list
   - md_in_html
+  - pymdownx.details
+  - pymdownx.tabbed
+
+# JavaScript supplémentaire pour MathJax et Pyodide
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js
+  - js/pyodide-init.js
+  - js/custom-elements.js
+
+# Feuilles de style supplémentaires
+extra_css:
+  - css/custom.css
 
 # Plugins
 plugins:
   - search
   - mermaid2
-  - pyodide:
-      default_packages: []  # Packages à charger par défaut
 
-# JavaScript supplémentaire pour MathJax
-extra_javascript:
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Structure de navigation
 
 nav:
   - Accueil: index.md
