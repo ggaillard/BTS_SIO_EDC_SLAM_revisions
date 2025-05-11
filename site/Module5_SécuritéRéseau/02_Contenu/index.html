@@ -1449,55 +1449,59 @@
 </code></pre></div>
 <h4 id="2-role-de-chaque-en-tete">2. Rôle de chaque en-tête</h4>
 <ol>
-<li><strong>Content-Security-Policy</strong> : </li>
+<li>
+<p><strong>Content-Security-Policy</strong> : </p>
+<ul>
 <li>Définit les sources fiables pour chaque type de contenu</li>
 <li>Bloque l'exécution de scripts non autorisés et prévient les attaques XSS</li>
-<li>
-<p>Empêche le chargement de ressources depuis des domaines non approuvés</p>
+<li>Empêche le chargement de ressources depuis des domaines non approuvés</li>
+</ul>
 </li>
 <li>
 <p><strong>X-XSS-Protection</strong> : </p>
-</li>
+<ul>
 <li>Active la protection contre les XSS intégrée aux navigateurs</li>
-<li>
-<p><code>mode=block</code> arrête complètement le rendu de la page en cas de détection d'attaque</p>
+<li><code>mode=block</code> arrête complètement le rendu de la page en cas de détection d'attaque</li>
+</ul>
 </li>
 <li>
 <p><strong>X-Content-Type-Options</strong> : </p>
-</li>
+<ul>
 <li>Empêche le navigateur de "deviner" le type MIME d'une ressource</li>
-<li>
-<p>Prévient les attaques basées sur le MIME sniffing</p>
+<li>Prévient les attaques basées sur le MIME sniffing</li>
+</ul>
 </li>
 <li>
 <p><strong>X-Frame-Options</strong> : </p>
-</li>
+<ul>
 <li>Empêche l'application d'être chargée dans un iframe</li>
-<li>
-<p>Protège contre les attaques de clickjacking</p>
+<li>Protège contre les attaques de clickjacking</li>
+</ul>
 </li>
 <li>
 <p><strong>Strict-Transport-Security</strong> : </p>
-</li>
+<ul>
 <li>Force le navigateur à utiliser HTTPS pour toutes les requêtes</li>
 <li>Protège contre les attaques de déclassement HTTPS vers HTTP</li>
 <li><code>includeSubDomains</code> applique la politique à tous les sous-domaines</li>
-<li>
-<p><code>preload</code> permet l'inclusion dans la liste de préchargement HSTS des navigateurs</p>
+<li><code>preload</code> permet l'inclusion dans la liste de préchargement HSTS des navigateurs</li>
+</ul>
 </li>
 <li>
 <p><strong>Referrer-Policy</strong> : </p>
-</li>
+<ul>
 <li>Contrôle les informations d'origine transmises lors de la navigation</li>
-<li>
-<p>Protège les informations sensibles présentes dans les URLs</p>
+<li>Protège les informations sensibles présentes dans les URLs</li>
+</ul>
 </li>
 <li>
 <p><strong>Set-Cookie avec attributs de sécurité</strong> : </p>
-</li>
+<ul>
 <li><code>HttpOnly</code> empêche l'accès aux cookies via JavaScript</li>
 <li><code>Secure</code> limite l'envoi des cookies aux connexions HTTPS</li>
 <li><code>SameSite=Strict</code> protège contre les attaques CSRF</li>
+</ul>
+</li>
 </ol>
 <h4 id="3-implementation-dans-differents-environnements">3. Implémentation dans différents environnements</h4>
 <p><strong>PHP</strong> (comme montré ci-dessus)</p>
@@ -1536,13 +1540,15 @@
 <h2 id="exercice-52-securisation-des-api-rest-20-min">Exercice 5.2 : Sécurisation des API REST (20 min)</h2>
 <h3 id="rappel-theorique_1">Rappel théorique</h3>
 <p>Les API REST (Representational State Transfer) sont omniprésentes dans le développement d'applications modernes. Leur sécurisation est cruciale car elles exposent souvent des données sensibles et des fonctionnalités critiques.</p>
-<p>Les principales mesures de sécurité pour les API REST incluent :
-- <strong>Authentification</strong> : Vérifier l'identité de l'appelant (JWT, OAuth 2.0, clés API)
-- <strong>Autorisation</strong> : Vérifier les droits d'accès aux ressources
-- <strong>Validation des entrées</strong> : Prévenir les injections et autres attaques
-- <strong>Chiffrement</strong> : Protéger les données en transit (HTTPS)
-- <strong>Limitation de débit</strong> : Prévenir les abus et les attaques par déni de service
-- <strong>Journalisation et surveillance</strong> : Détecter les comportements suspects</p>
+<p>Les principales mesures de sécurité pour les API REST incluent :</p>
+<ul>
+<li><strong>Authentification</strong> : Vérifier l'identité de l'appelant (JWT, OAuth 2.0, clés API)</li>
+<li><strong>Autorisation</strong> : Vérifier les droits d'accès aux ressources</li>
+<li><strong>Validation des entrées</strong> : Prévenir les injections et autres attaques</li>
+<li><strong>Chiffrement</strong> : Protéger les données en transit (HTTPS)</li>
+<li><strong>Limitation de débit</strong> : Prévenir les abus et les attaques par déni de service</li>
+<li><strong>Journalisation et surveillance</strong> : Détecter les comportements suspects</li>
+</ul>
 <h3 id="enonce_1">Énoncé</h3>
 <p>Vous développez une API REST pour une application de gestion de projets. Cette API permet aux utilisateurs de créer, lire, mettre à jour et supprimer des projets et des tâches.</p>
 <ol>
