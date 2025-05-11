@@ -1,220 +1,168 @@
-# Module 1 : Analyse des risques et besoins de sécurité
+# Module 2 : RGPD et protection des données personnelles
 
-## Exercice 1.1 : Évaluation des critères DICP (20 min)
+## Exercice 2.1 : Identification des données à caractère personnel (20 min)
 
 ### Rappel théorique
-Les quatre critères fondamentaux de la sécurité sont :
+Selon le RGPD, une **donnée à caractère personnel** est toute information se rapportant à une personne physique identifiée ou identifiable. 
 
-- **Disponibilité** : le service doit être utilisable quand nécessaire
-- **Intégrité** : les données doivent être exactes et complètes
-- **Confidentialité** : les données ne doivent pas être divulguées aux personnes non autorisées
-- **Preuve/Traçabilité** : il doit être possible d'attribuer les actions à leur auteur
+Les **données sensibles** forment une catégorie particulière de données personnelles dont le traitement présente des risques importants pour les libertés fondamentales. Il s'agit notamment des données concernant :
+- L'origine raciale ou ethnique
+- Les opinions politiques
+- Les convictions religieuses ou philosophiques
+- L'appartenance syndicale
+- Les données génétiques ou biométriques
+- Les données concernant la santé
+- La vie sexuelle ou l'orientation sexuelle
 
-L'évaluation de ces critères dépend du contexte métier et des enjeux liés à l'information ou au service.
+Pour protéger ces données, il est nécessaire d'utiliser des techniques comme le chiffrement (réversible) ou le hachage (irréversible).
 
 ### Énoncé
 
-Pour chacun des cas d'utilisation suivants, évaluez les besoins en termes de DICP selon l'échelle : 0 (pas important), + (important), ++ (très important). Justifiez brièvement votre évaluation.
+Dans le schéma de base de données suivant, identifiez :
+1. Les données à caractère personnel
+2. Les données sensibles au sens du RGPD
+3. Les données qui devraient être soit chiffrées, soit hachées
 
-1. Un médecin consulte le dossier médical d'un patient
-2. Un client effectue un virement bancaire en ligne
-3. Un étudiant consulte ses notes sur le portail de l'université
-4. Un employé enregistre ses heures de travail dans le système de pointage
-
-Exemple de format pour votre réponse:
 ```
-1. Un médecin consulte le dossier médical d'un patient
-   - Disponibilité: ++ (justification...)
-   - Intégrité: ++ (justification...)
-   - Confidentialité: ++ (justification...)
-   - Preuve: + (justification...)
+Utilisateur(id, nom, prenom, email, dateNaissance, numSecu, adresseIP, religion, motDePasse)
+Commande(id, dateCommande, montant, idUtilisateur)
+Paiement(id, numeroCarte, dateExpiration, cryptogramme, idCommande)
 ```
-
-### Solution
 
 ??? info "Afficher la correction"
-    **1. Un médecin consulte le dossier médical d'un patient**
-    
-    - **Disponibilité** : ++ (Le dossier doit être accessible en permanence, surtout en cas d'urgence)
-    - **Intégrité** : ++ (Des données médicales erronées peuvent avoir des conséquences graves)
-    - **Confidentialité** : ++ (Les données médicales sont sensibles et protégées par le secret médical)
-    - **Preuve** : ++ (Il est essentiel de tracer qui a accédé aux dossiers médicaux pour des raisons légales et éthiques)
-    
-    **2. Un client effectue un virement bancaire en ligne**
-    
-    - **Disponibilité** : + (Le service doit être disponible, mais une indisponibilité temporaire est acceptable)
-    - **Intégrité** : ++ (Le montant et les coordonnées bancaires doivent être exacts)
-    - **Confidentialité** : ++ (Les informations bancaires sont confidentielles)
-    - **Preuve** : ++ (Les transactions bancaires doivent être traçables pour des raisons légales)
-    
-    **3. Un étudiant consulte ses notes sur le portail de l'université**
-    
-    - **Disponibilité** : + (Une indisponibilité temporaire est acceptable)
-    - **Intégrité** : ++ (Les notes doivent être exactes)
-    - **Confidentialité** : + (Les notes sont personnelles mais pas hautement sensibles)
-    - **Preuve** : + (Il est important de savoir qui a consulté ou modifié les notes)
-    
-    **4. Un employé enregistre ses heures de travail dans le système de pointage**
-    
-    - **Disponibilité** : + (Le système doit être disponible pendant les heures de travail)
-    - **Intégrité** : ++ (Les heures doivent être exactes pour la paie et les statistiques)
-    - **Confidentialité** : + (Ces informations sont relativement confidentielles)
-    - **Preuve** : ++ (Il est important de savoir qui a enregistré quelles heures pour éviter la fraude)
+    #### 1. Données à caractère personnel
+    - Table Utilisateur : nom, prenom, email, dateNaissance, numSecu, adresseIP, religion
+    - Table Paiement : numeroCarte, dateExpiration, cryptogramme
 
-## Exercice 1.2 : Identification des menaces (20 min)
+    #### 2. Données sensibles au sens du RGPD
+    - Table Utilisateur : religion
+    - Table Utilisateur : numSecu (considérée comme sensible car c'est un identifiant unique pouvant révéler des informations sur la santé et l'origine)
+
+    #### 3. Données à chiffrer ou à hacher
+    - **À hacher (irréversible)** : 
+      - motDePasse (hachage avec sel)
+
+    - **À chiffrer (réversible)** :
+      - numSecu
+      - numeroCarte
+      - dateExpiration
+      - cryptogramme
+      - religion
+
+## Exercice 2.2 : Mise en conformité RGPD (20 min)
 
 ### Rappel théorique
-Une menace est un scénario qui peut porter atteinte à la sécurité du système. Le modèle STRIDE permet de catégoriser les menaces :
-
-- **Spoofing** (usurpation d'identité) : se faire passer pour quelqu'un d'autre
-- **Tampering** (altération de données) : modification non autorisée des données
-- **Repudiation** (rejet d'une action effectuée) : nier avoir effectué une action
-- **Information disclosure** (divulgation d'informations) : accès non autorisé à des informations
-- **Denial of service** (déni de service) : rendre un service indisponible
-- **Elevation of privilege** (élévation de privilèges) : obtenir des droits supérieurs
+Le RGPD repose sur plusieurs principes fondamentaux :
+- **Licéité, loyauté et transparence** : traitement légal, équitable et transparent
+- **Limitation des finalités** : collecte pour des finalités déterminées, explicites et légitimes
+- **Minimisation des données** : adéquates, pertinentes et limitées à ce qui est nécessaire
+- **Exactitude** : exactes et tenues à jour
+- **Limitation de conservation** : conservation limitée dans le temps
+- **Intégrité et confidentialité** : sécurité appropriée des données
+- **Responsabilité** : le responsable de traitement doit démontrer sa conformité
 
 ### Énoncé
 
-Pour un site e-commerce comprenant une zone client avec historique des commandes, paiement en ligne et profil utilisateur, identifiez :
-1. Deux menaces pour chaque catégorie du modèle STRIDE
-2. Pour chaque menace, indiquez un impact potentiel sur l'entreprise
-
-Exemple de présentation :
-```
-Spoofing:
-- Menace 1: Un attaquant utilise les identifiants volés d'un client
-  Impact: Perte de confiance des clients, atteinte à la réputation
-- Menace 2: ...
-  Impact: ...
-```
-
-### Solution
+Pour une application de gestion de rendez-vous médicaux, proposez :
+1. Trois mesures techniques pour assurer le respect du principe de minimisation des données
+2. Deux mesures pour garantir le droit à l'effacement (droit à l'oubli)
+3. Un mécanisme de recueil du consentement conforme au RGPD
 
 ??? info "Afficher la correction"
-    **Spoofing (usurpation d'identité)**
-    
-    - **Menace 1**: Un attaquant utilise les identifiants volés d'un client pour se connecter à son compte.  
-      **Impact**: Perte de confiance des clients, atteinte à la réputation, possibles poursuites judiciaires.
-    
-    - **Menace 2**: Un attaquant se fait passer pour le site e-commerce par phishing.  
-      **Impact**: Atteinte à l'image de marque, perte de confiance des clients, responsabilité légale potentielle.
-    
-    **Tampering (altération de données)**
-    
-    - **Menace 1**: Modification des prix des produits dans la base de données.  
-      **Impact**: Pertes financières, incohérences dans la comptabilité.
-    
-    - **Menace 2**: Altération de l'historique des commandes pour masquer des fraudes.  
-      **Impact**: Difficultés de suivi des commandes, litiges avec les clients, pertes financières.
-    
-    **Repudiation (rejet d'une action effectuée)**
-    
-    - **Menace 1**: Un client nie avoir passé une commande livrée.  
-      **Impact**: Pertes financières, coûts de gestion des litiges.
-    
-    - **Menace 2**: Un employé nie avoir modifié des informations sensibles.  
-      **Impact**: Difficultés à identifier l'origine d'une fuite de données, obstacles aux investigations.
-    
-    **Information disclosure (divulgation d'informations)**
-    
-    - **Menace 1**: Fuite de la base de données clients (noms, adresses, historiques d'achat).  
-      **Impact**: Violation du RGPD avec amendes potentielles, atteinte à la réputation, perte de confiance.
-    
-    - **Menace 2**: Accès non autorisé aux données de carte bancaire.  
-      **Impact**: Non-conformité PCI DSS, amendes, perte de l'autorisation de traiter des paiements.
-    
-    **Denial of service (déni de service)**
-    
-    - **Menace 1**: Attaque DDoS rendant le site inaccessible.  
-      **Impact**: Perte de chiffre d'affaires pendant la durée de l'indisponibilité, atteinte à la réputation.
-    
-    - **Menace 2**: Saturation de la base de données par des requêtes malveillantes.  
-      **Impact**: Ralentissements du site, expérience utilisateur dégradée, pertes de ventes.
-    
-    **Elevation of privilege (élévation de privilèges)**
-    
-    - **Menace 1**: Un attaquant exploite une vulnérabilité pour obtenir un accès administrateur.  
-      **Impact**: Compromission complète du système, accès à toutes les données sensibles.
-    
-    - **Menace 2**: Un client modifie ses paramètres pour accéder à des fonctionnalités réservées aux employés.  
-      **Impact**: Accès à des informations confidentielles, possibilité de modifier des paramètres critiques.
+    #### 1. Mesures techniques pour le principe de minimisation des données
+    1. **Définition précise des champs nécessaires** : Analyser chaque champ de la base de données et justifier sa nécessité pour la finalité du traitement. Supprimer les champs non essentiels (par exemple, collecter uniquement le numéro de téléphone et non l'adresse complète si seul un contact rapide est nécessaire).
 
-## Exercice 1.3 : Mesures de sécurité (20 min)
+    2. **Pseudonymisation des données** : Remplacer les identifiants directs (nom, prénom) par des identifiants indirects dans les tables de traitement, en conservant la table de correspondance dans un système sécurisé et distinct.
+
+    3. **Mise en place de durées de conservation différenciées** : Définir des durées de conservation distinctes selon le type de données, avec suppression automatique ou anonymisation des données qui ne sont plus nécessaires (par exemple, conserver l'historique médical pendant la durée légale, mais anonymiser les coordonnées après la fin de la relation avec le patient).
+
+    #### 2. Mesures pour garantir le droit à l'effacement
+    1. **Interface d'auto-gestion** : Développer une interface permettant aux patients de demander directement la suppression de leurs données via leur espace personnel, avec un processus de validation (par exemple, confirmation par email).
+
+    2. **Procédure technique d'effacement en cascade** : Mettre en place une procédure technique qui, lors de la demande d'effacement, supprime ou anonymise les données dans toutes les tables concernées, y compris les tables de logs et de sauvegarde, tout en respectant les obligations légales de conservation (par exemple, conserver certaines données médicales pendant la durée légale même après demande d'effacement).
+
+    #### 3. Mécanisme de recueil du consentement conforme
+    **Formulaire de consentement explicite et granulaire** :
+    - Présentation claire des finalités du traitement lors de la création du compte
+    - Cases à cocher distinctes et non pré-cochées pour chaque finalité (ex: "J'accepte que mes données soient utilisées pour la gestion de mes rendez-vous", "J'accepte de recevoir des rappels par SMS", etc.)
+    - Information claire sur le droit de retirer son consentement à tout moment
+    - Conservation d'une preuve horodatée du consentement (date, heure, version des conditions, choix effectués)
+    - Processus de renouvellement du consentement en cas de modification des finalités
+
+## Exercice 2.3 : Analyse d'impact relative à la protection des données (AIPD) (20 min)
 
 ### Rappel théorique
-Pour contrer les menaces, on peut mettre en place des mesures :
-- **Préventives** : empêchent la réalisation de la menace
-- **Détectives** : détectent qu'une menace s'est réalisée
-- **Correctives** : corrigent les effets d'une menace réalisée
+Une Analyse d'Impact relative à la Protection des Données (AIPD) est obligatoire lorsqu'un traitement est susceptible d'engendrer un risque élevé pour les droits et libertés des personnes concernées. L'article 35 du RGPD précise les cas où une AIPD est nécessaire, notamment :
+- Évaluation systématique et approfondie d'aspects personnels, y compris le profilage
+- Traitement à grande échelle de données sensibles
+- Surveillance systématique à grande échelle d'une zone accessible au public
 
-Ces mesures peuvent être techniques, organisationnelles ou juridiques.
+L'AIPD doit contenir :
+- Une description du traitement et de ses finalités
+- Une évaluation de la nécessité et de la proportionnalité du traitement
+- Une évaluation des risques pour les droits et libertés
+- Les mesures prévues pour faire face à ces risques
 
 ### Énoncé
 
-Pour le scénario suivant : "Un attaquant utilise une injection SQL pour accéder à la base de données clients d'une application web".
-
-1. Proposez trois mesures préventives
-2. Proposez deux mesures détectives
-3. Proposez une mesure corrective
-
-### Solution
+Pour un système de vidéosurveillance avec reconnaissance faciale installé dans un lycée :
+1. Justifiez pourquoi une AIPD est nécessaire
+2. Identifiez trois risques majeurs pour les droits et libertés des personnes concernées
+3. Proposez des mesures pour atténuer chacun de ces risques
 
 ??? info "Afficher la correction"
-    **Mesures préventives:**
-    
-    1. **Utiliser des requêtes préparées/paramétrées** : Séparer les données des instructions SQL pour empêcher l'interprétation des entrées utilisateur comme du code.
-    
-    2. **Valider et filtrer les entrées utilisateur** : Vérifier que les données correspondent au format attendu (type, longueur, caractères autorisés).
-    
-    3. **Appliquer le principe du moindre privilège** : L'utilisateur de base de données utilisé par l'application ne doit avoir que les droits strictement nécessaires.
-    
-    4. **Utiliser un ORM (Object-Relational Mapping)** : Ces outils gèrent automatiquement l'échappement des données et les requêtes préparées.
-    
-    5. **Mettre à jour régulièrement** : Appliquer les correctifs de sécurité sur les frameworks, bibliothèques et SGBD utilisés.
-    
-    **Mesures détectives:**
-    
-    1. **Mettre en place un système de détection d'intrusion (IDS)** : Pour identifier les tentatives d'injections SQL.
-    
-    2. **Journaliser les requêtes SQL** : Enregistrer les requêtes avec leur source pour analyse ultérieure.
-    
-    3. **Surveiller les activités anormales** : Mettre en place une surveillance des requêtes inhabituelles ou excessives.
-    
-    4. **Auditer régulièrement** : Examiner les logs de la base de données pour détecter des activités suspectes.
-    
-    **Mesures correctives:**
-    
-    1. **Maintenir des sauvegardes régulières** : Permettre la restauration de la base de données en cas de corruption.
-    
-    2. **Mettre en place un plan de reprise d'activité** : Procédures documentées pour restaurer les systèmes compromis.
-    
-    3. **Isoler les systèmes compromis** : Limiter la propagation de l'attaque dans l'infrastructure.
+    #### 1. Justification de la nécessité d'une AIPD
+    Une AIPD est nécessaire pour ce système pour plusieurs raisons :
+    - Il s'agit d'une surveillance systématique à grande échelle d'une zone accessible au public (le lycée)
+    - Le système utilise la reconnaissance faciale, qui traite des données biométriques considérées comme sensibles par le RGPD
+    - Le traitement concerne des personnes vulnérables (mineurs)
+    - Le traitement est automatisé et peut conduire à des décisions produisant des effets juridiques (par exemple, identification d'intrusions ou de comportements interdits)
+
+    #### 2. Risques majeurs pour les droits et libertés
+    1. **Atteinte à la vie privée et surveillance excessive** : Les élèves et le personnel pourraient se sentir constamment surveillés, ce qui pourrait affecter leur comportement, leur liberté d'expression et créer un sentiment d'oppression.
+
+    2. **Discrimination et biais algorithmiques** : Les systèmes de reconnaissance faciale peuvent présenter des biais, notamment en fonction de l'origine ethnique ou du genre, pouvant conduire à des identifications erronées et des discriminations.
+
+    3. **Détournement de finalité** : Les données collectées pour la sécurité pourraient être utilisées à d'autres fins non prévues initialement (contrôle des retards, surveillance du comportement des élèves, etc.).
+
+    #### 3. Mesures d'atténuation des risques
+    1. **Pour l'atteinte à la vie privée** :
+       - Limiter les zones couvertes par la vidéosurveillance (exclure les toilettes, vestiaires, salles de classe)
+       - Définir des horaires précis de fonctionnement (uniquement en dehors des heures de cours)
+       - Informer clairement tous les usagers (panneaux d'information, règlement intérieur)
+       - Mettre en place un comité d'éthique incluant des représentants des élèves et des parents
+
+    2. **Pour les risques de discrimination** :
+       - Tester rigoureusement les algorithmes pour détecter et corriger les biais
+       - Mettre en place une validation humaine systématique avant toute décision basée sur la reconnaissance faciale
+       - Former le personnel à la diversité et aux biais algorithmiques
+       - Auditer régulièrement le système pour vérifier l'absence de discrimination
+
+    3. **Pour le détournement de finalité** :
+       - Définir strictement les finalités du traitement dans une politique écrite
+       - Limiter techniquement les possibilités d'extraction et d'utilisation des données
+       - Mettre en place une journalisation des accès au système
+       - Prévoir des sanctions en cas d'utilisation non conforme aux finalités déclarées
+       - Définir une durée de conservation limitée avec suppression automatique
 
 ## Points clés à retenir
 
-1. **Analysez toujours les besoins DICP** selon le contexte et les enjeux métier
-2. **Catégorisez les menaces** à l'aide de modèles comme STRIDE pour être exhaustif
-3. **Mettez en place des mesures de sécurité** préventives, détectives et correctives
-4. **Évaluez les risques** en fonction de la probabilité et de l'impact des menaces
-5. **Priorisez les actions** en fonction du niveau de risque et des contraintes (coût, temps, ressources)
+<div class="rgpd-visualization">
+  <img src="https://mermaid.ink/img/pako:eNptkstqwzAQRX9l0CqFpA_bjYlJoV20q0JpoQu5jMdjW8SWjDSOU9P_XtlJ7TSQnbhzz72akXMUWiOKmJcujQbqoNbKagtaGrB5wQwovQIjbQOWrKw5GKy5hUbJysi04AY-tTKUOkjwNWEeMMUKJ3_hEMsHSLFlFl6tNj6-Ew5u03pCDBWzuLDKRs-BtQFBTcmZ0aBxNNtGDwPZvKTdQEZrlvFX3irhD0pHPwFLe8gMGRK6G4xHwrTpxcZnJz-_uRcnVF4tQrxqHf5NtICFgJd3iI9rXwbCzn6iN8a9Tc0DpOSk3Hp56e_vJVptxWJ51vf9V_8w-HL3jLyGPCrYqK3EqIgVK4iCuqYgvDNVpZMPEciZbU0HEcds9kVMp5M03kef_psBQbdHzoP3DlqZQCVWpUV_hYW2FYn4BVSXxGY" alt="Visualisation RGPD">
+</div>
+
+1. **Identifiez clairement les données personnelles** dans vos traitements et distinguez les données sensibles
+
+2. **Appliquez les principes fondamentaux** du RGPD : licéité, loyauté, transparence, minimisation, exactitude, limitation de conservation, intégrité et confidentialité
+
+3. **Documentez la conformité** : registre des traitements, analyses d'impact, procédures internes
+
+4. **Sécurisez les données** par des mesures techniques et organisationnelles appropriées
+
+5. **Respectez les droits des personnes** concernées et facilitez leur exercice
 
 ## Pour aller plus loin
 
-### Méthodologies
-- EBIOS Risk Manager (ANSSI)
-- MEHARI (CLUSIF)
-- ISO 27005
-- NIST SP 800-30
-
-### Outils
-- PILAR (EAR/PILAR)
-- OCTAVE
-- MONARC (CASES)
-- CORAS
-
-### Formations
-- MOOC SecNumacadémie (ANSSI)
-- Certifications ISO 27001
-- Formations CLUSIF
-```
-
+- Consultez les lignes directrices du Comité européen de la protection des données (CEPD)
+- Suivez les actualités et les décisions de la CNIL
+- Formez-vous aux techniques de protection des données dès la conception (privacy by design)

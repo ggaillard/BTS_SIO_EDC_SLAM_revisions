@@ -188,18 +188,23 @@ document.addEventListener('DOMContentLoaded', () => {
 ## Pour aller plus loin
 
 ### Méthodologies
-- EBIOS Risk Manager (ANSSI)
-- MEHARI (CLUSIF)
-- ISO 27005
-- NIST SP 800-30
+- [EBIOS Risk Manager (ANSSI)](https://www.ssi.gouv.fr/entreprise/management-du-risque/la-methode-ebios-risk-manager/)
+- [MEHARI (CLUSIF)](https://clusif.fr/publications/mehari-methode-harmonisee-danalyse-des-risques/)
+- [ISO 27005](https://www.iso.org/fr/standard/75281.html)
+- [NIST SP 800-30](https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final)
 
 ### Outils
-- PILAR (EAR/PILAR)
-- OCTAVE
-- MONARC (CASES)
-- CORAS
+- [PILAR (EAR/PILAR)](https://www.pilar-tools.com/en/tools/pilar/)
+- [OCTAVE](https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8419)
+- [MONARC (CASES)](https://monarc.lu/)
+- [CORAS](https://coras.sourceforge.net/)
 
 ### Formations
-- MOOC SecNumacadémie (ANSSI)
-- Certifications ISO 27001
-- Formations CLUSIF
+- [MOOC SecNumacadémie (ANSSI)](https://secnumacademie.gouv.fr/)
+- [Certifications ISO 27001](https://www.iso.org/fr/isoiec-27001-information-security.html)
+- [Formations CLUSIF](https://clusif.fr/formations/)
+
+### Autres ressources
+- [Lignes directrices du Comité européen de la protection des données (CEPD)](https://edpb.europa.eu/edpb_fr)
+- [Site de la CNIL](https://www.cnil.fr/)
+- [Guide RGPD pour les développeurs](https://www.cnil.fr/fr/guide-rgpd-du-developpeur)
