@@ -2,6 +2,7 @@
 
 Ce QCM vous permet d'évaluer vos connaissances avant d'aborder le module. Répondez aux questions puis vérifiez vos réponses pour savoir quels points nécessitent votre attention.
 
+
 !!! quizdown id="q1"
     
     ### Que signifie l'acronyme RGPD ?
