@@ -5,10 +5,10 @@
 ### Rappel théorique
 Les quatre critères fondamentaux de la sécurité sont :
 
-   - **Disponibilité** : le service doit être utilisable quand nécessaire
-   - **Intégrité** : les données doivent être exactes et complètes
-   - **Confidentialité** : les données ne doivent pas être divulguées aux personnes non autorisées
-   - **Preuve/Traçabilité** : il doit être possible d'attribuer les actions à leur auteur
+- **Disponibilité** : le service doit être utilisable quand nécessaire
+- **Intégrité** : les données doivent être exactes et complètes
+- **Confidentialité** : les données ne doivent pas être divulguées aux personnes non autorisées
+- **Preuve/Traçabilité** : il doit être possible d'attribuer les actions à leur auteur
 
 L'évaluation de ces critères dépend du contexte métier et des enjeux liés à l'information ou au service.
 
@@ -21,55 +21,45 @@ Pour chacun des cas d'utilisation suivants, évaluez les besoins en termes de DI
 3. Un étudiant consulte ses notes sur le portail de l'université
 4. Un employé enregistre ses heures de travail dans le système de pointage
 
-<py-terminal id="dicp-exercice">
-# Vous pouvez utiliser ce terminal pour prendre des notes ou structurer votre réponse
-# Exemple de format pour l'exercice 1:
-"""
+Exemple de format pour votre réponse:
+```
 1. Un médecin consulte le dossier médical d'un patient
    - Disponibilité: ++ (justification...)
    - Intégrité: ++ (justification...)
    - Confidentialité: ++ (justification...)
    - Preuve: + (justification...)
-"""
-</py-terminal>
+```
 
-### Solution interactive
+### Solution
 
-<py-accordion>
-  <py-accordion-item heading="Afficher la correction">
-    <h4>1. Un médecin consulte le dossier médical d'un patient</h4>
-    <ul>
-      <li><strong>Disponibilité</strong> : ++ (Le dossier doit être accessible en permanence, surtout en cas d'urgence)</li>
-      <li><strong>Intégrité</strong> : ++ (Des données médicales erronées peuvent avoir des conséquences graves)</li>
-      <li><strong>Confidentialité</strong> : ++ (Les données médicales sont sensibles et protégées par le secret médical)</li>
-      <li><strong>Preuve</strong> : ++ (Il est essentiel de tracer qui a accédé aux dossiers médicaux pour des raisons légales et éthiques)</li>
-    </ul>
-
-    <h4>2. Un client effectue un virement bancaire en ligne</h4>
-    <ul>
-      <li><strong>Disponibilité</strong> : + (Le service doit être disponible, mais une indisponibilité temporaire est acceptable)</li>
-      <li><strong>Intégrité</strong> : ++ (Le montant et les coordonnées bancaires doivent être exacts)</li>
-      <li><strong>Confidentialité</strong> : ++ (Les informations bancaires sont confidentielles)</li>
-      <li><strong>Preuve</strong> : ++ (Les transactions bancaires doivent être traçables pour des raisons légales)</li>
-    </ul>
-
-    <h4>3. Un étudiant consulte ses notes sur le portail de l'université</h4>
-    <ul>
-      <li><strong>Disponibilité</strong> : + (Une indisponibilité temporaire est acceptable)</li>
-      <li><strong>Intégrité</strong> : ++ (Les notes doivent être exactes)</li>
-      <li><strong>Confidentialité</strong> : + (Les notes sont personnelles mais pas hautement sensibles)</li>
-      <li><strong>Preuve</strong> : + (Il est important de savoir qui a consulté ou modifié les notes)</li>
-    </ul>
-
-    <h4>4. Un employé enregistre ses heures de travail dans le système de pointage</h4>
-    <ul>
-      <li><strong>Disponibilité</strong> : + (Le système doit être disponible pendant les heures de travail)</li>
-      <li><strong>Intégrité</strong> : ++ (Les heures doivent être exactes pour la paie et les statistiques)</li>
-      <li><strong>Confidentialité</strong> : + (Ces informations sont relativement confidentielles)</li>
-      <li><strong>Preuve</strong> : ++ (Il est important de savoir qui a enregistré quelles heures pour éviter la fraude)</li>
-    </ul>
-  </py-accordion-item>
-</py-accordion>
+??? info "Afficher la correction"
+    **1. Un médecin consulte le dossier médical d'un patient**
+    
+    - **Disponibilité** : ++ (Le dossier doit être accessible en permanence, surtout en cas d'urgence)
+    - **Intégrité** : ++ (Des données médicales erronées peuvent avoir des conséquences graves)
+    - **Confidentialité** : ++ (Les données médicales sont sensibles et protégées par le secret médical)
+    - **Preuve** : ++ (Il est essentiel de tracer qui a accédé aux dossiers médicaux pour des raisons légales et éthiques)
+    
+    **2. Un client effectue un virement bancaire en ligne**
+    
+    - **Disponibilité** : + (Le service doit être disponible, mais une indisponibilité temporaire est acceptable)
+    - **Intégrité** : ++ (Le montant et les coordonnées bancaires doivent être exacts)
+    - **Confidentialité** : ++ (Les informations bancaires sont confidentielles)
+    - **Preuve** : ++ (Les transactions bancaires doivent être traçables pour des raisons légales)
+    
+    **3. Un étudiant consulte ses notes sur le portail de l'université**
+    
+    - **Disponibilité** : + (Une indisponibilité temporaire est acceptable)
+    - **Intégrité** : ++ (Les notes doivent être exactes)
+    - **Confidentialité** : + (Les notes sont personnelles mais pas hautement sensibles)
+    - **Preuve** : + (Il est important de savoir qui a consulté ou modifié les notes)
+    
+    **4. Un employé enregistre ses heures de travail dans le système de pointage**
+    
+    - **Disponibilité** : + (Le système doit être disponible pendant les heures de travail)
+    - **Intégrité** : ++ (Les heures doivent être exactes pour la paie et les statistiques)
+    - **Confidentialité** : + (Ces informations sont relativement confidentielles)
+    - **Preuve** : ++ (Il est important de savoir qui a enregistré quelles heures pour éviter la fraude)
 
 ## Exercice 1.2 : Identification des menaces (20 min)
 
@@ -89,111 +79,65 @@ Pour un site e-commerce comprenant une zone client avec historique des commandes
 1. Deux menaces pour chaque catégorie du modèle STRIDE
 2. Pour chaque menace, indiquez un impact potentiel sur l'entreprise
 
-<py-editor id="stride-exercise" auto-run>
-# Utilisez cet éditeur pour structurer votre analyse STRIDE
-# Vous pouvez exécuter ce code pour générer un tableau des menaces
+Exemple de présentation :
+```
+Spoofing:
+- Menace 1: Un attaquant utilise les identifiants volés d'un client
+  Impact: Perte de confiance des clients, atteinte à la réputation
+- Menace 2: ...
+  Impact: ...
+```
 
-import pandas as pd
-from IPython.display import display, HTML
+### Solution
 
-# Structure pour organiser les menaces STRIDE
-stride_categories = {
-    "Spoofing": [],
-    "Tampering": [],
-    "Repudiation": [],
-    "Information disclosure": [],
-    "Denial of service": [],
-    "Elevation of privilege": []
-}
-
-# Exemple pour une catégorie
-stride_categories["Spoofing"] = [
-    {
-        "menace": "Un attaquant utilise les identifiants volés d'un client",
-        "impact": "Perte de confiance des clients, atteinte à la réputation"
-    },
-    {
-        "menace": "Votre exemple...",
-        "impact": "Votre impact..."
-    }
-]
-
-# Complétez les autres catégories ici
-# stride_categories["Tampering"] = [...]
-
-# Fonction pour afficher le tableau des menaces
-def display_stride_analysis():
-    all_rows = []
-    for category, threats in stride_categories.items():
-        for i, threat in enumerate(threats):
-            if i == 0:
-                all_rows.append([category, threat["menace"], threat["impact"]])
-            else:
-                all_rows.append(["", threat["menace"], threat["impact"]])
+??? info "Afficher la correction"
+    **Spoofing (usurpation d'identité)**
     
-    df = pd.DataFrame(all_rows, columns=["Catégorie STRIDE", "Menace", "Impact"])
-    display(HTML(df.to_html(index=False)))
-
-# Afficher le tableau (à compléter)
-display_stride_analysis()
-</py-editor>
-
-### Solution interactive
-
-<py-accordion>
-  <py-accordion-item heading="Afficher la correction">
-    <h4>Analyse STRIDE complète</h4>
-    <p>Voici une analyse des menaces STRIDE pour un site e-commerce :</p>
-
-    <h5>Spoofing (usurpation d'identité)</h5>
-    <ol>
-      <li><strong>Menace</strong> : Un attaquant utilise les identifiants volés d'un client pour se connecter à son compte.<br>
-      <strong>Impact</strong> : Perte de confiance des clients, atteinte à la réputation, possibles poursuites judiciaires.</li>
-      <li><strong>Menace</strong> : Un attaquant se fait passer pour le site e-commerce par phishing.<br>
-      <strong>Impact</strong> : Atteinte à l'image de marque, perte de confiance des clients, responsabilité légale potentielle.</li>
-    </ol>
-
-    <h5>Tampering (altération de données)</h5>
-    <ol>
-      <li><strong>Menace</strong> : Modification des prix des produits dans la base de données.<br>
-      <strong>Impact</strong> : Pertes financières, incohérences dans la comptabilité.</li>
-      <li><strong>Menace</strong> : Altération de l'historique des commandes pour masquer des fraudes.<br>
-      <strong>Impact</strong> : Difficultés de suivi des commandes, litiges avec les clients, pertes financières.</li>
-    </ol>
-
-    <h5>Repudiation (rejet d'une action effectuée)</h5>
-    <ol>
-      <li><strong>Menace</strong> : Un client nie avoir passé une commande livrée.<br>
-      <strong>Impact</strong> : Pertes financières, coûts de gestion des litiges.</li>
-      <li><strong>Menace</strong> : Un employé nie avoir modifié des informations sensibles.<br>
-      <strong>Impact</strong> : Difficultés à identifier l'origine d'une fuite de données, obstacles aux investigations.</li>
-    </ol>
-
-    <h5>Information disclosure (divulgation d'informations)</h5>
-    <ol>
-      <li><strong>Menace</strong> : Fuite de la base de données clients (noms, adresses, historiques d'achat).<br>
-      <strong>Impact</strong> : Violation du RGPD avec amendes potentielles, atteinte à la réputation, perte de confiance.</li>
-      <li><strong>Menace</strong> : Accès non autorisé aux données de carte bancaire.<br>
-      <strong>Impact</strong> : Non-conformité PCI DSS, amendes, perte de l'autorisation de traiter des paiements.</li>
-    </ol>
-
-    <h5>Denial of service (déni de service)</h5>
-    <ol>
-      <li><strong>Menace</strong> : Attaque DDoS rendant le site inaccessible.<br>
-      <strong>Impact</strong> : Perte de chiffre d'affaires pendant la durée de l'indisponibilité, atteinte à la réputation.</li>
-      <li><strong>Menace</strong> : Saturation de la base de données par des requêtes malveillantes.<br>
-      <strong>Impact</strong> : Ralentissements du site, expérience utilisateur dégradée, pertes de ventes.</li>
-    </ol>
-
-    <h5>Elevation of privilege (élévation de privilèges)</h5>
-    <ol>
-      <li><strong>Menace</strong> : Un attaquant exploite une vulnérabilité pour obtenir un accès administrateur.<br>
-      <strong>Impact</strong> : Compromission complète du système, accès à toutes les données sensibles.</li>
-      <li><strong>Menace</strong> : Un client modifie ses paramètres pour accéder à des fonctionnalités réservées aux employés.<br>
-      <strong>Impact</strong> : Accès à des informations confidentielles, possibilité de modifier des paramètres critiques.</li>
-    </ol>
-  </py-accordion-item>
-</py-accordion>
+    - **Menace 1**: Un attaquant utilise les identifiants volés d'un client pour se connecter à son compte.  
+      **Impact**: Perte de confiance des clients, atteinte à la réputation, possibles poursuites judiciaires.
+    
+    - **Menace 2**: Un attaquant se fait passer pour le site e-commerce par phishing.  
+      **Impact**: Atteinte à l'image de marque, perte de confiance des clients, responsabilité légale potentielle.
+    
+    **Tampering (altération de données)**
+    
+    - **Menace 1**: Modification des prix des produits dans la base de données.  
+      **Impact**: Pertes financières, incohérences dans la comptabilité.
+    
+    - **Menace 2**: Altération de l'historique des commandes pour masquer des fraudes.  
+      **Impact**: Difficultés de suivi des commandes, litiges avec les clients, pertes financières.
+    
+    **Repudiation (rejet d'une action effectuée)**
+    
+    - **Menace 1**: Un client nie avoir passé une commande livrée.  
+      **Impact**: Pertes financières, coûts de gestion des litiges.
+    
+    - **Menace 2**: Un employé nie avoir modifié des informations sensibles.  
+      **Impact**: Difficultés à identifier l'origine d'une fuite de données, obstacles aux investigations.
+    
+    **Information disclosure (divulgation d'informations)**
+    
+    - **Menace 1**: Fuite de la base de données clients (noms, adresses, historiques d'achat).  
+      **Impact**: Violation du RGPD avec amendes potentielles, atteinte à la réputation, perte de confiance.
+    
+    - **Menace 2**: Accès non autorisé aux données de carte bancaire.  
+      **Impact**: Non-conformité PCI DSS, amendes, perte de l'autorisation de traiter des paiements.
+    
+    **Denial of service (déni de service)**
+    
+    - **Menace 1**: Attaque DDoS rendant le site inaccessible.  
+      **Impact**: Perte de chiffre d'affaires pendant la durée de l'indisponibilité, atteinte à la réputation.
+    
+    - **Menace 2**: Saturation de la base de données par des requêtes malveillantes.  
+      **Impact**: Ralentissements du site, expérience utilisateur dégradée, pertes de ventes.
+    
+    **Elevation of privilege (élévation de privilèges)**
+    
+    - **Menace 1**: Un attaquant exploite une vulnérabilité pour obtenir un accès administrateur.  
+      **Impact**: Compromission complète du système, accès à toutes les données sensibles.
+    
+    - **Menace 2**: Un client modifie ses paramètres pour accéder à des fonctionnalités réservées aux employés.  
+      **Impact**: Accès à des informations confidentielles, possibilité de modifier des paramètres critiques.
 
 ## Exercice 1.3 : Mesures de sécurité (20 min)
 
@@ -213,42 +157,64 @@ Pour le scénario suivant : "Un attaquant utilise une injection SQL pour accéde
 2. Proposez deux mesures détectives
 3. Proposez une mesure corrective
 
-<py-exercise id="sql-injection-measures">
-  <py-title>Mesures de sécurité contre les injections SQL</py-title>
-  <py-specs>
-def check_solution(code_str):
-    """Vérifie si la solution proposée contient des mesures dans chaque catégorie"""
-    # Éléments à rechercher dans la solution
-    preventive_keywords = [
-        "requête préparée", "requetes preparees", "requêtes paramétrées", 
-        "requetes parametrees", "prepared statement", "orm", 
-        "validation", "filtr", "échap", "echap", 
-        "moindre privilège", "moindre privilege"
-    ]
+### Solution
+
+??? info "Afficher la correction"
+    **Mesures préventives:**
     
-    detective_keywords = [
-        "ids", "détection d'intrusion", "detection d'intrusion", 
-        "log", "journal", "audit", "surveill", "monitor"
-    ]
+    1. **Utiliser des requêtes préparées/paramétrées** : Séparer les données des instructions SQL pour empêcher l'interprétation des entrées utilisateur comme du code.
     
-    corrective_keywords = [
-        "sauvegarde", "backup", "restauration", "restoration", 
-        "plan de reprise", "disaster recovery"
-    ]
+    2. **Valider et filtrer les entrées utilisateur** : Vérifier que les données correspondent au format attendu (type, longueur, caractères autorisés).
     
-    # Vérifier la présence des éléments
-    preventive_count = sum(1 for kw in preventive_keywords if kw.lower() in code_str.lower())
-    detective_count = sum(1 for kw in detective_keywords if kw.lower() in code_str.lower())
-    corrective_count = sum(1 for kw in corrective_keywords if kw.lower() in code_str.lower())
+    3. **Appliquer le principe du moindre privilège** : L'utilisateur de base de données utilisé par l'application ne doit avoir que les droits strictement nécessaires.
     
-    if preventive_count < 3:
-        return False, f"Proposez au moins 3 mesures préventives différentes"
+    4. **Utiliser un ORM (Object-Relational Mapping)** : Ces outils gèrent automatiquement l'échappement des données et les requêtes préparées.
     
-    if detective_count < 2:
-        return False, f"Proposez au moins 2 mesures détectives différentes"
+    5. **Mettre à jour régulièrement** : Appliquer les correctifs de sécurité sur les frameworks, bibliothèques et SGBD utilisés.
     
-    if corrective_count < 1:
-        return False, f"Proposez au moins 1 mesure corrective"
+    **Mesures détectives:**
     
-    return True, "Excellente analyse ! Vous avez identifié des mesures dans chaque catégorie."
-  </
+    1. **Mettre en place un système de détection d'intrusion (IDS)** : Pour identifier les tentatives d'injections SQL.
+    
+    2. **Journaliser les requêtes SQL** : Enregistrer les requêtes avec leur source pour analyse ultérieure.
+    
+    3. **Surveiller les activités anormales** : Mettre en place une surveillance des requêtes inhabituelles ou excessives.
+    
+    4. **Auditer régulièrement** : Examiner les logs de la base de données pour détecter des activités suspectes.
+    
+    **Mesures correctives:**
+    
+    1. **Maintenir des sauvegardes régulières** : Permettre la restauration de la base de données en cas de corruption.
+    
+    2. **Mettre en place un plan de reprise d'activité** : Procédures documentées pour restaurer les systèmes compromis.
+    
+    3. **Isoler les systèmes compromis** : Limiter la propagation de l'attaque dans l'infrastructure.
+
+## Points clés à retenir
+
+1. **Analysez toujours les besoins DICP** selon le contexte et les enjeux métier
+2. **Catégorisez les menaces** à l'aide de modèles comme STRIDE pour être exhaustif
+3. **Mettez en place des mesures de sécurité** préventives, détectives et correctives
+4. **Évaluez les risques** en fonction de la probabilité et de l'impact des menaces
+5. **Priorisez les actions** en fonction du niveau de risque et des contraintes (coût, temps, ressources)
+
+## Pour aller plus loin
+
+### Méthodologies
+- EBIOS Risk Manager (ANSSI)
+- MEHARI (CLUSIF)
+- ISO 27005
+- NIST SP 800-30
+
+### Outils
+- PILAR (EAR/PILAR)
+- OCTAVE
+- MONARC (CASES)
+- CORAS
+
+### Formations
+- MOOC SecNumacadémie (ANSSI)
+- Certifications ISO 27001
+- Formations CLUSIF
+```
+
