@@ -1251,6 +1251,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#-ameliorations-du-cycle-de-developpement" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Améliorations du cycle de développement :
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-surveillance-et-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Surveillance et détection :
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1309,12 +1327,14 @@
 <h1 id="module-6-gestion-des-incidents-et-conformite-oriente-slam">Module 6 : Gestion des incidents et conformité orienté SLAM</h1>
 <h2 id="exercice-61-analyse-dune-vulnerabilite-de-securite-applicative-20-min">Exercice 6.1 : Analyse d'une vulnérabilité de sécurité applicative (20 min)</h2>
 <h3 id="rappel-theorique">Rappel théorique</h3>
-<p>Dans le développement logiciel, la gestion des vulnérabilités de sécurité suit généralement ces étapes :
-1. <strong>Identification</strong> : découverte de la vulnérabilité (tests, signalement, scanners de code)
-2. <strong>Évaluation</strong> : qualification de la gravité et des impacts potentiels
-3. <strong>Correction</strong> : développement et déploiement d'un correctif
-4. <strong>Communication</strong> : information des parties prenantes
-5. <strong>Post-mortem</strong> : analyse des causes profondes et amélioration des processus</p>
+<p>Dans le développement logiciel, la gestion des vulnérabilités de sécurité suit généralement ces étapes :</p>
+<ol>
+<li><strong>Identification</strong> : découverte de la vulnérabilité (tests, signalement, scanners de code)</li>
+<li><strong>Évaluation</strong> : qualification de la gravité et des impacts potentiels</li>
+<li><strong>Correction</strong> : développement et déploiement d'un correctif</li>
+<li><strong>Communication</strong> : information des parties prenantes</li>
+<li><strong>Post-mortem</strong> : analyse des causes profondes et amélioration des processus</li>
+</ol>
 <p>Le framework CVSS (Common Vulnerability Scoring System) permet d'évaluer la gravité des vulnérabilités sur une échelle de 0 à 10.</p>
 <h3 id="enonce">Énoncé</h3>
 <p>Une vulnérabilité d'injection SQL a été découverte dans l'application de gestion commerciale de votre entreprise. La vulnérabilité permet à un utilisateur authentifié avec des privilèges standards d'exécuter des requêtes SQL arbitraires sur la base de données.</p>
@@ -1325,21 +1345,27 @@
 </ol>
 <h3 id="correction">Correction</h3>
 <ol>
-<li><strong>Évaluation de la gravité</strong> :</li>
-<li><strong>Gravité élevée (CVSS ~8.0)</strong> : La vulnérabilité permet d'exécuter des requêtes SQL arbitraires</li>
-<li><strong>Vecteur d'attaque</strong> : Nécessite une authentification (impact limité)</li>
 <li>
-<p><strong>Impacts potentiels</strong> : </p>
-<ul>
-<li>Accès non autorisé à des données sensibles</li>
-<li>Modification ou suppression de données</li>
-<li>Élévation de privilèges potentielle</li>
-<li>Non-conformité au RGPD si des données personnelles sont exposées</li>
-</ul>
+<p><strong>Évaluation de la gravité</strong> :</p>
 </li>
+<li>
+<p><strong>Gravité élevée (CVSS ~8.0)</strong> : La vulnérabilité permet d'exécuter des requêtes SQL arbitraires</p>
+</li>
+<li>
+<p><strong>Vecteur d'attaque</strong> : Nécessite une authentification (impact limité)</p>
+</li>
+</ol>
+<p>-<strong>Impacts potentiels</strong> : </p>
+<div class="codehilite"><pre><span></span><code> <span class="k">*</span> Accès non autorisé à des données sensibles
+ <span class="k">*</span> Modification ou suppression de données
+ <span class="k">*</span> Élévation de privilèges potentielle
+ <span class="k">*</span> Non-conformité au RGPD si des données personnelles sont exposées
+</code></pre></div>
+
+<ol>
 <li>
 <p><strong>Méthode de correction</strong> :</p>
-</li>
+<ul>
 <li>
 <p><strong>Correction immédiate</strong> :</p>
 <ul>
@@ -1356,6 +1382,8 @@
 <li>Principe du moindre privilège pour les connexions à la base de données</li>
 </ul>
 </li>
+</ul>
+</li>
 <li>
 <p><strong>Procédure d'analyse post-incident</strong> :</p>
 </li>
@@ -1364,21 +1392,25 @@
 <ul>
 <li>Chronologie détaillée</li>
 <li>Code vulnérable identifié</li>
-<li>Méthode d'exploitation utilisée</li>
-</ul>
+<li>
+<p>Méthode d'exploitation utilisée</p>
 </li>
 <li>
 <p><strong>Analyse des causes profondes</strong> :</p>
-<ul>
-<li>Comment la vulnérabilité a-t-elle été introduite ?</li>
+</li>
+<li>
+<p>Comment la vulnérabilité a-t-elle été introduite ?</p>
+</li>
 <li>Pourquoi n'a-t-elle pas été détectée plus tôt ?</li>
-<li>Quelles pratiques de développement ont contribué au problème ?</li>
-</ul>
+<li>
+<p>Quelles pratiques de développement ont contribué au problème ?</p>
 </li>
 <li>
 <p><strong>Améliorations des processus</strong> :</p>
-<ul>
-<li>Intégration d'outils d'analyse statique dans le pipeline CI/CD</li>
+</li>
+<li>
+<p>Intégration d'outils d'analyse statique dans le pipeline CI/CD</p>
+</li>
 <li>Formation des développeurs aux pratiques de codage sécurisé</li>
 <li>Mise à jour des standards de développement et des revues de code</li>
 <li>Tests de pénétration réguliers sur l'application</li>
@@ -1387,11 +1419,13 @@
 </ol>
 <h2 id="exercice-62-integration-du-rgpd-dans-le-developpement-dapplications-20-min">Exercice 6.2 : Intégration du RGPD dans le développement d'applications (20 min)</h2>
 <h3 id="rappel-theorique_1">Rappel théorique</h3>
-<p>Le concept de "Privacy by Design" (protection des données dès la conception) est un principe fondamental du RGPD qui impose :
-- L'intégration de la protection des données dès la conception des applications
-- La mise en œuvre de mesures techniques et organisationnelles appropriées
-- La minimisation des données traitées
-- La mise en place de mécanismes permettant aux utilisateurs d'exercer leurs droits</p>
+<p>Le concept de "Privacy by Design" (protection des données dès la conception) est un principe fondamental du RGPD qui impose :</p>
+<ul>
+<li>L'intégration de la protection des données dès la conception des applications</li>
+<li>La mise en œuvre de mesures techniques et organisationnelles appropriées</li>
+<li>La minimisation des données traitées</li>
+<li>La mise en place de mécanismes permettant aux utilisateurs d'exercer leurs droits</li>
+</ul>
 <h3 id="enonce_1">Énoncé</h3>
 <p>Vous développez une application web de gestion de réservations d'hôtel qui collecte et traite des données personnelles des clients.</p>
 <ol>
@@ -1401,33 +1435,37 @@
 </ol>
 <h3 id="correction_1">Correction</h3>
 <ol>
-<li><strong>Exigences RGPD impactant le développement</strong> :</li>
+<li>
+<p><strong>Exigences RGPD impactant le développement</strong> :</p>
+<ul>
 <li><strong>Minimisation des données</strong> : Ne collecter que les données strictement nécessaires</li>
 <li><strong>Limitation de la conservation</strong> : Définir des durées de conservation appropriées</li>
 <li><strong>Sécurité</strong> : Chiffrement des données sensibles, protection contre les attaques</li>
 <li><strong>Droits des personnes</strong> : Mécanismes permettant l'accès, la rectification, l'effacement, etc.</li>
 <li><strong>Consentement</strong> : Recueil explicite et granulaire du consentement</li>
-<li>
-<p><strong>Journalisation</strong> : Traçabilité des accès et modifications de données personnelles</p>
+<li><strong>Journalisation</strong> : Traçabilité des accès et modifications de données personnelles</li>
+</ul>
 </li>
 <li>
 <p><strong>Fonctionnalités pour le droit à l'effacement</strong> :</p>
-</li>
+<ul>
 <li><strong>Interface administrateur</strong> dédiée pour traiter les demandes d'effacement</li>
 <li><strong>Processus technique d'anonymisation</strong> plutôt que suppression physique pour préserver l'intégrité référentielle</li>
 <li><strong>Cascade d'effacement</strong> dans toutes les tables liées (réservations, préférences, commentaires)</li>
 <li><strong>Mécanisme de sauvegarde intermédiaire</strong> des données avant effacement pour répondre aux obligations légales</li>
 <li><strong>Notification automatique</strong> de confirmation d'effacement à l'utilisateur</li>
-<li>
-<p><strong>Journal d'audit</strong> des demandes d'effacement et de leur traitement</p>
+<li><strong>Journal d'audit</strong> des demandes d'effacement et de leur traitement</li>
+</ul>
 </li>
 <li>
 <p><strong>Mécanisme de journalisation conforme</strong> :</p>
-</li>
+<ul>
 <li>
 <p><strong>Structure de la journalisation</strong> :</p>
-<ul>
-<li>Qui : identifiant de l'utilisateur ou du système accédant aux données</li>
+</li>
+<li>
+<p>Qui : identifiant de l'utilisateur ou du système accédant aux données</p>
+</li>
 <li>Quoi : nature de l'opération (lecture, modification, suppression)</li>
 <li>Quand : horodatage précis</li>
 <li>Sur quoi : type de données et identifiant de l'enregistrement</li>
@@ -1447,10 +1485,12 @@
 </ol>
 <h2 id="exercice-63-gestion-dune-fuite-de-donnees-dans-une-application-20-min">Exercice 6.3 : Gestion d'une fuite de données dans une application (20 min)</h2>
 <h3 id="rappel-theorique_2">Rappel théorique</h3>
-<p>En cas de violation de données à caractère personnel, le RGPD impose :
-- Une notification à l'autorité de contrôle (CNIL en France) dans les 72 heures
-- Une communication aux personnes concernées si le risque pour leurs droits et libertés est élevé
-- Une documentation interne de toutes les violations</p>
+<p>En cas de violation de données à caractère personnel, le RGPD impose :</p>
+<ul>
+<li>Une notification à l'autorité de contrôle (CNIL en France) dans les 72 heures</li>
+<li>Une communication aux personnes concernées si le risque pour leurs droits et libertés est élevé</li>
+<li>Une documentation interne de toutes les violations</li>
+</ul>
 <p>En parallèle, une approche technique structurée est nécessaire pour traiter l'incident.</p>
 <h3 id="enonce_2">Énoncé</h3>
 <p>Votre équipe découvre qu'une vulnérabilité dans l'API de votre application mobile a permis l'exfiltration de données utilisateurs (noms, emails, téléphones, adresses) pendant les deux dernières semaines.</p>
@@ -1461,18 +1501,20 @@
 </ol>
 <h3 id="correction_2">Correction</h3>
 <ol>
-<li><strong>Actions techniques immédiates</strong> :</li>
+<li>
+<p><strong>Actions techniques immédiates</strong> :</p>
+<ul>
 <li><strong>Isolation de la vulnérabilité</strong> : Désactivation temporaire de l'endpoint vulnérable ou mise en place d'un correctif d'urgence</li>
 <li><strong>Analyse de l'étendue</strong> : Examination des logs d'API pour déterminer quelles données ont été compromises et quels utilisateurs sont affectés</li>
 <li><strong>Collecte de preuves</strong> : Sauvegarde sécurisée des logs et des artifacts techniques pour l'investigation</li>
 <li><strong>Correction de la vulnérabilité</strong> : Développement et déploiement d'un correctif pour l'API</li>
 <li><strong>Vérification</strong> : Tests de pénétration pour confirmer que la vulnérabilité est résolue</li>
-<li>
-<p><strong>Surveillance renforcée</strong> : Mise en place d'alertes spécifiques pour détecter des comportements similaires</p>
+<li><strong>Surveillance renforcée</strong> : Mise en place d'alertes spécifiques pour détecter des comportements similaires</li>
+</ul>
 </li>
 <li>
 <p><strong>Plan de communication RGPD</strong> :</p>
-</li>
+<ul>
 <li>
 <p><strong>Notification à la CNIL</strong> (sous 72h) contenant :</p>
 <ul>
@@ -1481,6 +1523,8 @@
 <li>Catégories et volume de données compromises</li>
 <li>Conséquences probables</li>
 <li>Mesures prises pour y remédier et atténuer les impacts</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -1504,32 +1548,29 @@
 </li>
 <li>
 <p><strong>Mesures correctives à long terme</strong> :</p>
-</li>
+<ul>
+<li><strong>Révision de l'architecture API</strong> :</li>
 <li>
-<p><strong>Révision de l'architecture API</strong> :</p>
 <ul>
 <li>Implémentation d'une authentification forte (OAuth 2.0, JWT avec durée limitée)</li>
 <li>Limitation de débit (throttling) pour prévenir les extractions massives</li>
 <li>Chiffrement des données sensibles de bout en bout</li>
 </ul>
 </li>
-<li>
-<p><strong>Améliorations du cycle de développement</strong> :</p>
-<ul>
-<li>Intégration de tests de sécurité automatisés dans le CI/CD</li>
-<li>Revues de code axées sur la sécurité</li>
-<li>Formation des développeurs aux vulnérabilités API (OWASP API Security Top 10)</li>
-</ul>
-</li>
-<li>
-<p><strong>Surveillance et détection</strong> :</p>
-<ul>
-<li>Mise en place d'un système de détection d'anomalies sur les appels API</li>
-<li>Audit régulier des accès aux données sensibles</li>
-<li>Tests d'intrusion périodiques ciblant spécifiquement l'API</li>
 </ul>
 </li>
 </ol>
+<h2 id="-ameliorations-du-cycle-de-developpement">- <strong>Améliorations du cycle de développement</strong> :</h2>
+<div class="codehilite"><pre><span></span><code>   <span class="k">*</span> Intégration de tests de sécurité automatisés dans le CI/CD
+   <span class="k">*</span> Revues de code axées sur la sécurité
+   <span class="k">*</span> Formation des développeurs aux vulnérabilités API (OWASP API Security Top 10)
+</code></pre></div>
+
+<h2 id="-surveillance-et-detection">- <strong>Surveillance et détection</strong> :</h2>
+<div class="codehilite"><pre><span></span><code>   <span class="k">*</span> Mise en place d&#39;un système de détection d&#39;anomalies sur les appels API
+   <span class="k">*</span> Audit régulier des accès aux données sensibles
+   <span class="k">*</span> Tests d&#39;intrusion périodiques ciblant spécifiquement l&#39;API
+</code></pre></div>
 
 
 
