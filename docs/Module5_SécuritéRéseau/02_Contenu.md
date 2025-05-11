@@ -50,36 +50,43 @@ header("Set-Cookie: session=123; HttpOnly; Secure; SameSite=Strict");
 #### 2. Rôle de chaque en-tête
 
 1. **Content-Security-Policy** : 
-   - Définit les sources fiables pour chaque type de contenu
-   - Bloque l'exécution de scripts non autorisés et prévient les attaques XSS
-   - Empêche le chargement de ressources depuis des domaines non approuvés
+   
+      - Définit les sources fiables pour chaque type de contenu
+      - Bloque l'exécution de scripts non autorisés et prévient les attaques XSS
+      - Empêche le chargement de ressources depuis des domaines non approuvés
 
 2. **X-XSS-Protection** : 
-   - Active la protection contre les XSS intégrée aux navigateurs
-   - `mode=block` arrête complètement le rendu de la page en cas de détection d'attaque
+   
+      - Active la protection contre les XSS intégrée aux navigateurs
+      - `mode=block` arrête complètement le rendu de la page en cas de détection d'attaque
 
 3. **X-Content-Type-Options** : 
-   - Empêche le navigateur de "deviner" le type MIME d'une ressource
-   - Prévient les attaques basées sur le MIME sniffing
+   
+      - Empêche le navigateur de "deviner" le type MIME d'une ressource
+      - Prévient les attaques basées sur le MIME sniffing
 
 4. **X-Frame-Options** : 
-   - Empêche l'application d'être chargée dans un iframe
-   - Protège contre les attaques de clickjacking
+   
+      - Empêche l'application d'être chargée dans un iframe
+      - Protège contre les attaques de clickjacking
 
 5. **Strict-Transport-Security** : 
-   - Force le navigateur à utiliser HTTPS pour toutes les requêtes
-   - Protège contre les attaques de déclassement HTTPS vers HTTP
-   - `includeSubDomains` applique la politique à tous les sous-domaines
-   - `preload` permet l'inclusion dans la liste de préchargement HSTS des navigateurs
+   
+      - Force le navigateur à utiliser HTTPS pour toutes les requêtes
+      - Protège contre les attaques de déclassement HTTPS vers HTTP
+      - `includeSubDomains` applique la politique à tous les sous-domaines
+      - `preload` permet l'inclusion dans la liste de préchargement HSTS des navigateurs
 
 6. **Referrer-Policy** : 
-   - Contrôle les informations d'origine transmises lors de la navigation
-   - Protège les informations sensibles présentes dans les URLs
+   
+      - Contrôle les informations d'origine transmises lors de la navigation
+      - Protège les informations sensibles présentes dans les URLs
 
 7. **Set-Cookie avec attributs de sécurité** : 
-   - `HttpOnly` empêche l'accès aux cookies via JavaScript
-   - `Secure` limite l'envoi des cookies aux connexions HTTPS
-   - `SameSite=Strict` protège contre les attaques CSRF
+   
+      - `HttpOnly` empêche l'accès aux cookies via JavaScript
+      - `Secure` limite l'envoi des cookies aux connexions HTTPS
+      - `SameSite=Strict` protège contre les attaques CSRF
 
 #### 3. Implémentation dans différents environnements
 
@@ -127,12 +134,13 @@ public class WebSecurityConfig {
 Les API REST (Representational State Transfer) sont omniprésentes dans le développement d'applications modernes. Leur sécurisation est cruciale car elles exposent souvent des données sensibles et des fonctionnalités critiques.
 
 Les principales mesures de sécurité pour les API REST incluent :
-- **Authentification** : Vérifier l'identité de l'appelant (JWT, OAuth 2.0, clés API)
-- **Autorisation** : Vérifier les droits d'accès aux ressources
-- **Validation des entrées** : Prévenir les injections et autres attaques
-- **Chiffrement** : Protéger les données en transit (HTTPS)
-- **Limitation de débit** : Prévenir les abus et les attaques par déni de service
-- **Journalisation et surveillance** : Détecter les comportements suspects
+
+   - **Authentification** : Vérifier l'identité de l'appelant (JWT, OAuth 2.0, clés API)
+   - **Autorisation** : Vérifier les droits d'accès aux ressources
+   - **Validation des entrées** : Prévenir les injections et autres attaques
+   - **Chiffrement** : Protéger les données en transit (HTTPS)
+   - **Limitation de débit** : Prévenir les abus et les attaques par déni de service
+   - **Journalisation et surveillance** : Détecter les comportements suspects
 
 ### Énoncé
 
